@@ -1,0 +1,512 @@
+:root {
+  --anima-c-dark: #191813;
+  --anima-c-faint: #c9c7b8;
+  --anima-c-beige: #b5b3a4;
+  --anima-c-tan: #444444;
+  --anima-c-white: #ffffff;
+  --anima-c-black: #000000;
+  --anima-c-groove: #eeede0;
+}
+
+/* Sombre pas Sombre */
+.theme-dark {
+  --anima-c-dark: #a7a7a7;
+  --anima-c-faint: #c9c7b8;
+  --anima-c-beige: #b5b3a4;
+  --anima-c-tan: #444444;
+  --anima-c-white: #ffffff;
+  --anima-c-black: #000000;
+  --anima-c-groove: #eeede0;
+}
+
+/* Global styles */
+.window-app {
+  font-family: "Roboto", sans-serif;
+}
+
+.rollable:hover, .rollable:focus {
+  color: var(--anima-c-black);
+  text-shadow: 0 0 10px rgb(198, 192, 192);
+  cursor: pointer;
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px; /* Réduction de l'espacement entre les colonnes */
+  margin: 2px 0; /* Réduction de la marge */
+  padding: 0;
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px; /* Ajuste l'espacement entre les colonnes */
+  margin: 2px 0;
+  padding: 0;
+}
+
+.grid-6col {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 4px; /* Ajuste l'espacement entre les colonnes */
+  margin: 1px 0; /* Augmente la marge entre les sections */
+  padding: 0 1px; /* Ajoute du padding horizontal */
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-group-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flexshrink {
+  flex: 0;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flexlarge {
+  flex: 2;
+}
+
+.align-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.align-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.align-center {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Styles limited to anima sheets */
+.anima .item-form {
+  font-family: "Roboto", sans-serif;
+}
+
+.anima .sheet-header {
+  display: flex;
+  flex-wrap: wrap; /* Pour permettre aux éléments de passer à la ligne suivante si nécessaire */
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 3px; /* Augmente le padding pour plus d'espace */
+}
+
+.anima .sheet-header .profile-img {
+  height: 60px; /* Réduit la taille de l'image */
+  width: 60px; /* Réduit la taille de l'image */
+  border-radius: 50%; /* Rend l'image circulaire */
+  margin-right: 15px;
+}
+
+.anima .sheet-header .header-fields {
+  flex: 1;
+  width: calc(100% - 40); /* Ajuster la largeur en fonction de l'image de profil */
+}
+
+.input-small {
+  width: 60%;
+}
+
+.input-medium {
+  width: 60%;
+}
+
+.input-large {
+  width: 60%;
+}
+
+.grid-6col {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+}
+
+.resource {
+  display: flex;
+  align-items: center; /* Aligne les éléments verticalement au centre */
+  grid-column: span 1; /* Chaque ressource occupe une colonne */
+}
+
+.resource-label {
+  width: 50%; /* Ajustez cette valeur en fonction de vos besoins */
+  text-align: right;
+  margin-right: 5px; /* Espace entre le label et l'input */
+}
+
+.resource-content {
+  display: flex;
+  align-items: center; /* Aligne les éléments verticalement au centre */
+  width: 50%;
+}
+
+.resource-content input {
+  width: 100%; /* Assurer que les champs d'entrée prennent toute la largeur de leur conteneur */
+}
+
+.anima .sheet-tabs {
+  flex: 0;
+}
+
+.anima .sheet-body,
+.anima .sheet-body .tab,
+.anima .sheet-body .tab .editor {
+  height: 100%;
+}
+
+.anima .tab.Biographie {
+  flex: 1;
+}
+
+.anima .tab.Biographie .editor {
+  height: 100%;
+}
+
+.anima .tox .tox-editor-container {
+  background: var(--anima-c-white);
+}
+
+.anima .tox .tox-edit-area {
+  padding: 0 8px;
+}
+
+.anima .resource-label {
+  font-weight: bold;
+  margin-bottom: 1px; /* Réduction de la marge */
+}
+
+.anima .resource-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anima .resource-content input[type="text"] {
+  width: 100%; /* Augmente la largeur des champs */
+  margin: 0 2px; /* Réduction de la marge */
+  padding: 1px;
+  text-align: center;
+}
+
+.anima .ability {
+  margin-bottom: 2px;
+}
+
+.anima .ability-score,
+.anima .ability-mod {
+  flex: 0 0 44px;
+}
+
+.anima .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--anima-c-groove);
+  font-weight: bold;
+}
+
+.anima .items-header > * {
+  font-size: 14px;
+  text-align: center;
+}
+
+.anima .items-header .item-name {
+  font-weight: bold;
+  padding-left: 5px;
+  text-align: left;
+  display: flex;
+}
+
+.anima .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: var(--anima-c-tan);
+}
+
+.anima .items-list .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.anima .items-list .item-name {
+  flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  align-items: center;
+  display: flex;
+}
+
+.anima .items-list .item-name h3, .anima .items-list .item-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.anima .items-list .item-controls {
+  display: flex;
+  flex: 0 0 100px;
+  justify-content: flex-end;
+}
+
+.anima .items-list .item-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+}
+
+.anima .items-list .item {
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--anima-c-faint);
+}
+
+.anima .items-list .item:last-child {
+  border-bottom: none;
+}
+
+.anima .items-list .item .item-name {
+  color: var(--anima-c-dark);
+}
+
+.anima .items-list .item .item-name .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+
+.anima .items-list .item-prop {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+
+.anima .items-list .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--anima-c-groove);
+  font-weight: bold;
+}
+
+.anima .items-list .items-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+
+.anima .items-list .items-header .item-name {
+  padding-left: 5px;
+  text-align: left;
+}
+
+.anima .item-formula {
+  flex: 0 0 200px;
+  padding: 0 8px;
+}
+
+/* Scrollable container */
+.scrollable-container {
+  max-height: 100vh; /* Ajustez cette valeur selon vos besoins */
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid var(--anima-c-groove); /* Optionnel : ajouter une bordure pour distinguer la boîte défilable */
+}
+
+.anima .features-list .items-list .item-name {
+  font-size: 9px; /* Réduit la taille du texte des fonctionnalités */
+}
+
+.anima .features-list .items-list .item-controls a {
+  font-size: 8px; /* Réduit la taille du texte des contrôles */
+}
+
+.anima .placeholder h3 {
+  font-size: 12px; /* Taille normale pour le titre du placeholder */
+  color: var(--anima-c-dark);
+  margin-bottom: 10px;
+}
+
+.anima .placeholder p {
+  font-size: 10px;
+  color: var(--anima-c-tan);
+}
+
+.anima .placeholder h4 {
+  font-size: 10px; /* Taille normale pour les intertitres */
+  color: var(--anima-c-dark);
+  margin-top: 10px;
+  margin-bottom: 5px;
+  line-height: 1.5; /* Ajoute des interlignes */
+  text-align: right; /* Aligne les intertitres à droite */
+}
+
+.anima .skill-section hr {
+  border: none;
+  border-top: 1px solid var(--anima-c-groove);
+  margin: 10px 0;
+}
+
+.anima .effects-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--anima-c-groove);
+  font-weight: bold;
+}
+
+.anima .effects-header > * {
+  font-size: 14px;
+  text-align: center;
+}
+
+.anima .effects-header .effect-name {
+  font-weight: bold;
+  padding-left: 5px;
+  text-align: left;
+  display: flex;
+}
+
+.anima .effects-list {
+  list-style: none;
+  margin: 5;
+  padding: 5;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: var(--anima-c-tan);
+}
+
+.anima .effects-list .effect-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.anima .effects-list .effect-name {
+  flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  align-items: center;
+  display: flex;
+}
+
+.anima .effects-list .effect-name h3, .anima .effects-list .effect-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.anima .effects-list .effect-controls {
+  display: flex;
+  flex: 0 0 100px;
+  justify-content: flex-end;
+}
+
+.anima .effects-list .effect-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+}
+
+.anima .effects-list .effect {
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--anima-c-faint);
+}
+
+.anima .effects-list .effect:last-child {
+  border-bottom: none;
+}
+
+.anima .effects-list .effect .effect-name {
+  color: var(--anima-c-dark);
+}
+
+.anima .effects-list .effect .effect-name .effect-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+
+.anima .effects-list .effect-prop {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+
+.anima .effects-list .effects-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove var(--anima-c-groove);
+  font-weight: bold;
+}
+
+.anima .effects-list .effects-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+
+.anima .effects-list .effects-header .effect-name {
+  padding-left: 5px;
+  text-align: left;
+}
+
+.anima .effect-formula {
+  flex: 0 0 200px;
+  padding: 0 8px;
+}
+
+.anima .effects .item .effect-source,
+.anima .effects .item .effect-duration,
+.anima .effects .item .effect-controls {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+
+.anima .effects .item .effect-controls {
+  border: none;
+}

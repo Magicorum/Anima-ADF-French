@@ -1,0 +1,103 @@
+{
+  "ANIMA": {
+    "Ability": {
+      "Str": { "long": "Strength", "abbr": "str" },
+      "Con": { "long": "Constitution", "abbr": "con" },
+      "Dex": { "long": "Dexterity", "abbr": "dex" },
+      "Int": { "long": "Intelligence", "abbr": "int" },
+      "Wis": { "long": "Wisdom", "abbr": "wis" },
+      "Cha": { "long": "Charisma", "abbr": "cha" }
+    },
+    "SheetLabels": {
+      "Actor": "Anima Actor Sheet",
+      "Item": "Anima Item Sheet"
+    },
+    "Actor": {
+      "Tabs": {
+        "Biographie": "Biographie",
+        "Features": "Features",
+        "Gear": "Gear",
+        "Spells": "Spells",
+        "Effects": "Effects"
+      },
+      "base": {
+        "FIELDS": {
+          "Biographie": {"label": "Biographie"},
+          "health": {"label": "Health"},
+          "power": {"label": "Power"}
+        }
+      },
+      "Character": {
+        "FIELDS": {
+          "level": {"label": "Level"},
+          "race": {"label": "Race"},
+          "class": {"label": "Classe"},
+          "gender": {"label": "Genre"},
+          "height": {"label": "Taille"},
+          "weight": {"label": "Poids"},
+          "appearance": {"label": "Apparence"},
+          "xp": {"label": "PX"},
+          "pf": {"label": "PF"},
+          "presence": {"label": "Présence"}
+        }
+      },
+      "NPC": {
+        "FIELDS": {
+          "cr": {"label": "CR"},
+          "xp": {"label": "XP"},
+          "race": {"label": "Race"},
+          "class": {"label": "Classe"},
+          "gender": {"label": "Genre"},
+          "height": {"label": "Taille"},
+          "weight": {"label": "Poids"},
+          "appearance": {"label": "Apparence"},
+          "level": {"label": "Niveau"},
+          "pf": {"label": "PF"},
+          "presence": {"label": "Présence"}
+        }
+      }
+    },
+    "Item": {
+      "Tabs": {
+        "Attributes": "Attributes",
+        "Description": "Description",
+        "Effects": "Effects"
+      },
+      "Gear": {
+        "FIELDS": {
+          "rollFormula": {"label": "Roll Formula"},
+          "numDice": {"label": "Number of Dice"},
+          "dieSize": {"label": "Die Size"},
+          "rollMod": {"label": "Roll Modifier"},
+          "quantity": {"label": "Quantity"},
+          "weight": {"label": "Weight"}
+        }
+      },
+      "Spell": {
+        "FIELDS": {
+          "level": {"label": "Spell Level"}
+        },
+        "SpellLVL": "Level {level} Spells",
+        "AddLVL": "Add LVL {level}"
+      }
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "gear": "Gear",
+      "feature": "Feature",
+      "spell": "Spell"
+    }
+  }
+}

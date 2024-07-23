@@ -1,0 +1,256 @@
+{{! Sheet Header }}
+<header class='sheet-header'>
+  <img
+    class='profile-img'
+    src='{{actor.img}}'
+    data-edit='img'
+    data-action='onEditImage'
+    title='{{actor.name}}'
+    height='100'
+    width='100'
+  />
+  <div class='header-fields'>
+    <div class='document-name resource'>
+      <label class='resource-label'>
+        Identité :
+      </label>
+      <div class='resource-content'>
+        <input
+          name='name'
+          type='text'
+          value='{{actor.name}}'
+          placeholder='Name'
+          class='input-small'
+        />
+      </div>
+    </div>
+    {{! Utilisation d'une grille de 6 colonnes }}
+    <div class='resources grid grid-6col'>
+      {{! Health Field }}
+      <div class='resource'>
+        <label for='system.health.value' class='resource-label'>
+          {{localize 'ANIMA.Actor.base.FIELDS.health.label'}} :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.health.value'
+            value='{{system.health.value}}'
+            data-dtype='Number'
+          />
+          <span> / </span>
+          <input
+            type='text'
+            name='system.health.max'
+            value='{{system.health.max}}'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+
+      {{! Power Field }}
+      <div class='resource'>
+        <label for='system.power.value' class='resource-label'>
+          {{localize 'ANIMA.Actor.base.FIELDS.power.label'}} :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.power.value'
+            value='{{system.power.value}}'
+            data-dtype='Number'
+          />
+          <span> / </span>
+          <input
+            type='text'
+            name='system.power.max'
+            value='{{system.power.max}}'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+
+      {{! Level Field (Character) }}
+      {{#if (eq actor.type 'character')}}
+      <div class='resource'>
+        <label class='resource-label'>
+          {{localize 'ANIMA.Actor.Character.FIELDS.level.label'}} :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.attributes.level.value'
+            value='{{system.attributes.level.value}}'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+      {{/if}}
+
+      {{! CR/XP Fields (NPC) }}
+      {{#if (eq actor.type 'npc')}}
+      <div class='resource'>
+        <label class='resource-label'>
+          {{localize 'ANIMA.Actor.NPC.FIELDS.cr.label'}} / {{localize 'ANIMA.Actor.NPC.FIELDS.xp.label'}} :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.cr'
+            value='{{system.cr}}'
+            data-dtype='Number'
+          />
+          <span></span>
+          <input
+            type='text'
+            disabled='true'
+            name='system.xp'
+            value='{{system.xp}}'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+      {{/if}}
+
+      {{! New Fields }}
+
+      {{! Race Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          Race :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.race'
+            value='{{system.race}}'
+            class='input-large'
+          />
+        </div>
+      </div>
+
+      {{! Classe Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          Classe :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.class'
+            value='{{system.class}}'
+            class='input-large'
+          />
+        </div>
+      </div>
+
+      {{! Genre Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          Genre :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.gender'
+            value='{{system.gender}}'
+            class='input-medium'
+          />
+        </div>
+      </div>
+
+      {{! Taille Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          Taille :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.height'
+            value='{{system.height}}'
+            class='input-small'
+          />
+        </div>
+      </div>
+
+      {{! Poids Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          Poids :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.weight'
+            value='{{system.weight}}'
+            class='input-small'
+          />
+        </div>
+      </div>
+
+      {{! Apparence Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          Apparence :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.appearance'
+            value='{{system.appearance}}'
+            class='input-small'
+          />
+        </div>
+      </div>
+
+      {{! XP Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          PX :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.xp'
+            value='{{system.xp}}'
+            data-dtype='Number'
+            class='input-small'
+          />
+        </div>
+      </div>
+
+      {{! PF Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          PF :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.pf'
+            value='{{system.pf}}'
+            data-dtype='Number'
+            class='input-small'
+          />
+        </div>
+      </div>
+
+      {{! Présence Field }}
+      <div class='resource'>
+        <label class='resource-label'>
+          Présence :
+        </label>
+        <div class='resource-content'>
+          <input
+            type='text'
+            name='system.presence'
+            value='{{system.presence}}'
+            data-dtype='Number'
+            class='input-small'
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

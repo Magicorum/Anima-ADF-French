@@ -1,8 +1,8 @@
-# 🎲  Anima: Au delà de la Fantaisie [ Prepare to die Foundry Edition] 
+# 🎲  Anima: Au delà de la Fantaisie [ Prepare to Foundry Edition] 
 
 ![Foundry v11](https://img.shields.io/badge/foundry-v11-green) ![Foundry v12](https://img.shields.io/badge/foundry-v12-green)
 
-**[En développement] :** Anima: Au delà de la Fantaisie [ Prepare to die Foundry Edition] constitue un projet francophone pour le moment en préparation afin d'importer une interface viable et propice au déroulement du jeu de table.
+**[En développement] :** Anima: Au delà de la Fantaisie [ Prepare to Foundry Edition] constitue un projet francophone pour le moment en préparation afin d'importer une interface viable et propice au déroulement du jeu de table.
 
 Et l'homme oublia. Personne ne peut dire pourquoi cela arriva, ni comment. Il s'agit peut-être du déchaînement d'un phénomène naturel qui effaça nos souvenirs, ou alors nous transgressâmes une loi d'une puissance inconnue qui nous châtia pour cela. Ou alors, simplement, l'homme se le fit à lui-même.
 Comme de petits enfants, réduits à un niveau à peine supérieur à celui d'animaux, nous errâmes pendant des siècles tandis que notre civilisation infatuée s'écroulait autour de nous. Tout devint ruines. Les ruines se désagrégèrent en poussière. La poussière se dissipa ensuite sous le vent.
@@ -15,4 +15,4 @@ Comme de petits enfants, réduits à un niveau à peine supérieur à celui d'an
 
 ## Contacter l'équipe.
 >
-> Pour le moment, je vous invite à envoyer un message à Magicorum, si vous avez des questions ou des retours. 
+> 

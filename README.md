@@ -3,7 +3,7 @@
 ![Foundry v11](https://img.shields.io/badge/foundry-v11-green) ![Foundry v12](https://img.shields.io/badge/foundry-v12-green)
 
 ## Qu'est-ce Anima: Beyond Fantasy ?
-⚙️ | Anima: Beyond Fantasy constitue un système de jeu de rôle créé par des développeurs japonais et européens. Avec des listes exhaustives de pouvoirs surnaturels surnaturels et des capacités spéciales. Ce système de création de personnage détaillé ouvre des voies exotiques et beaucoup plus complexes par rapport aux jeux traditionnels.
+⚙️ | Anima: Beyond Fantasy constitue un système de jeu de rôle créé par des développeurs japonais et européens. Avec des listes exhaustives de pouvoirs surnaturels et des capacités spéciales. Ce système de création de personnage détaillé ouvre des voies exotiques et beaucoup plus complexes par rapport aux jeux traditionnels.
 <br>
 <br>
 <img align="" src="https://64.media.tumblr.com/d30f5566c0301a854aa62771d6e9c027/tumblr_o91r00ztHa1sg8uefo3_540.gif">

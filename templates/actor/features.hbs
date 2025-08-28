@@ -287,295 +287,539 @@
     <div class="right-column">
       <!-- Athlétiques -->
       <div class='skill-category-compact'>
-        <h4 class='category-header-compact'>Athlétiques <span class='base-char-compact'>AGI</span></h4>
+        <h4 class='category-header-compact'>Athlétiques</h4>
         <div class='skill-items-compact'>
-          {{#each system.secondaryAbilities.athletics as |skill key|}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{skill.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{skill.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='{{skill.name}}'>🎲</button>
+
+          <!-- Athlétiques - Acrobaties -->
+          {{#if system.secondaryAbilities.athletics.acrobatics}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Acrobaties</span>
+              <span class='skill-base-char'>AGI</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.acrobatics.value}}' title='Acrobaties'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.athletics.acrobatics.value' value='{{system.secondaryAbilities.athletics.acrobatics.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.athletics.acrobatics.temp' value='{{system.secondaryAbilities.athletics.acrobatics.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.acrobatics.special' value='{{system.secondaryAbilities.athletics.acrobatics.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.acrobatics.class' value='{{system.secondaryAbilities.athletics.acrobatics.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.acrobatics.base' value='{{system.secondaryAbilities.athletics.acrobatics.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.agility.value 5)}}{{floor (div (sub system.characteristics.agility.value 5) 2)}}{{else}}0{{/if}}</span>
               </div>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.athletics.{{key}}.temp' value='{{skill.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.athletics.{{key}}.special' value='{{skill.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.athletics.{{key}}.class' value='{{skill.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.athletics.{{key}}.base' value='{{skill.base}}' placeholder='B' class='skill-compact-input' />
+          </div>
+          {{/if}}
+
+          <!-- Athlétiques - Athlétisme -->
+          {{#if system.secondaryAbilities.athletics.athletics}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Athlétisme</span>
+              <span class='skill-base-char'>FOR</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.athletics.value}}' title='Athlétisme'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.athletics.athletics.value' value='{{system.secondaryAbilities.athletics.athletics.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.athletics.athletics.temp' value='{{system.secondaryAbilities.athletics.athletics.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.athletics.special' value='{{system.secondaryAbilities.athletics.athletics.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.athletics.class' value='{{system.secondaryAbilities.athletics.athletics.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.athletics.base' value='{{system.secondaryAbilities.athletics.athletics.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.strength.value 5)}}{{floor (div (sub system.characteristics.strength.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
-          {{/each}}
+          {{/if}}
+
+          <!-- Athlétiques - Escalade -->
+          {{#if system.secondaryAbilities.athletics.climb}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Escalade</span>
+              <span class='skill-base-char'>FOR</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.climb.value}}' title='Escalade'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.athletics.climb.value' value='{{system.secondaryAbilities.athletics.climb.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.athletics.climb.temp' value='{{system.secondaryAbilities.athletics.climb.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.climb.special' value='{{system.secondaryAbilities.athletics.climb.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.climb.class' value='{{system.secondaryAbilities.athletics.climb.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.climb.base' value='{{system.secondaryAbilities.athletics.climb.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.strength.value 5)}}{{floor (div (sub system.characteristics.strength.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+
+          <!-- Athlétiques - Saut -->
+          {{#if system.secondaryAbilities.athletics.jump}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Saut</span>
+              <span class='skill-base-char'>FOR</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.jump.value}}' title='Saut'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.athletics.jump.value' value='{{system.secondaryAbilities.athletics.jump.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.athletics.jump.temp' value='{{system.secondaryAbilities.athletics.jump.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.jump.special' value='{{system.secondaryAbilities.athletics.jump.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.jump.class' value='{{system.secondaryAbilities.athletics.jump.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.jump.base' value='{{system.secondaryAbilities.athletics.jump.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.strength.value 5)}}{{floor (div (sub system.characteristics.strength.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+
+          <!-- Athlétiques - Équitation -->
+          {{#if system.secondaryAbilities.athletics.ride}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Équitation</span>
+              <span class='skill-base-char'>AGI</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.ride.value}}' title='Équitation'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.athletics.ride.value' value='{{system.secondaryAbilities.athletics.ride.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.athletics.ride.temp' value='{{system.secondaryAbilities.athletics.ride.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.ride.special' value='{{system.secondaryAbilities.athletics.ride.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.ride.class' value='{{system.secondaryAbilities.athletics.ride.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.ride.base' value='{{system.secondaryAbilities.athletics.ride.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.agility.value 5)}}{{floor (div (sub system.characteristics.agility.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+
+          <!-- Athlétiques - Natation -->
+          {{#if system.secondaryAbilities.athletics.swim}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Natation</span>
+              <span class='skill-base-char'>FOR</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.swim.value}}' title='Natation'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.athletics.swim.value' value='{{system.secondaryAbilities.athletics.swim.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.athletics.swim.temp' value='{{system.secondaryAbilities.athletics.swim.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.swim.special' value='{{system.secondaryAbilities.athletics.swim.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.swim.class' value='{{system.secondaryAbilities.athletics.swim.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.athletics.swim.base' value='{{system.secondaryAbilities.athletics.swim.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.strength.value 5)}}{{floor (div (sub system.characteristics.strength.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+
         </div>
       </div>
 
-      <!-- Sociales -->
+            <!-- Sociales -->
       <div class='skill-category-compact'>
-        <h4 class='category-header-compact'>Sociales <span class='base-char-compact'>POU</span></h4>
+        <h4 class='category-header-compact'>Sociales</h4>
         <div class='skill-items-compact'>
+
+          <!-- Sociales - Style -->
           {{#if system.secondaryAbilities.social.style}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.social.style.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.social.style.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.style.value}}' title='{{system.secondaryAbilities.social.style.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Style</span>
+              <span class='skill-base-char'>DEX</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.social.style.temp' value='{{system.secondaryAbilities.social.style.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.style.special' value='{{system.secondaryAbilities.social.style.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.style.class' value='{{system.secondaryAbilities.social.style.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.style.base' value='{{system.secondaryAbilities.social.style.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.style.value}}' title='Style'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.social.style.value' value='{{system.secondaryAbilities.social.style.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.style.temp' value='{{system.secondaryAbilities.social.style.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.style.special' value='{{system.secondaryAbilities.social.style.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.style.class' value='{{system.secondaryAbilities.social.style.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.style.base' value='{{system.secondaryAbilities.social.style.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.dexterity.value 5)}}{{floor (div (sub system.characteristics.dexterity.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Sociales - Intimidation -->
           {{#if system.secondaryAbilities.social.intimidate}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.social.intimidate.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.social.intimidate.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.intimidate.value}}' title='{{system.secondaryAbilities.social.intimidate.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Intimidation</span>
+              <span class='skill-base-char'>FOR</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.social.intimidate.temp' value='{{system.secondaryAbilities.social.intimidate.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.intimidate.special' value='{{system.secondaryAbilities.social.intimidate.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.intimidate.class' value='{{system.secondaryAbilities.social.intimidate.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.intimidate.base' value='{{system.secondaryAbilities.social.intimidate.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.intimidate.value}}' title='Intimidation'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.social.intimidate.value' value='{{system.secondaryAbilities.social.intimidate.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.intimidate.temp' value='{{system.secondaryAbilities.social.intimidate.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.intimidate.special' value='{{system.secondaryAbilities.social.intimidate.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.intimidate.class' value='{{system.secondaryAbilities.social.intimidate.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.intimidate.base' value='{{system.secondaryAbilities.social.intimidate.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.strength.value 5)}}{{floor (div (sub system.characteristics.strength.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Sociales - Commandement -->
           {{#if system.secondaryAbilities.social.leadership}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.social.leadership.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.social.leadership.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.leadership.value}}' title='{{system.secondaryAbilities.social.leadership.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Commandement</span>
+              <span class='skill-base-char'>POU</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.social.leadership.temp' value='{{system.secondaryAbilities.social.leadership.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.leadership.special' value='{{system.secondaryAbilities.social.leadership.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.leadership.class' value='{{system.secondaryAbilities.social.leadership.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.leadership.base' value='{{system.secondaryAbilities.social.leadership.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.leadership.value}}' title='Commandement'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.social.leadership.value' value='{{system.secondaryAbilities.social.leadership.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.leadership.temp' value='{{system.secondaryAbilities.social.leadership.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.leadership.special' value='{{system.secondaryAbilities.social.leadership.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.leadership.class' value='{{system.secondaryAbilities.social.leadership.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.leadership.base' value='{{system.secondaryAbilities.social.leadership.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.power.value 5)}}{{floor (div (sub system.characteristics.power.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Sociales - Persuasion -->
           {{#if system.secondaryAbilities.social.persuasion}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.social.persuasion.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.social.persuasion.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.persuasion.value}}' title='{{system.secondaryAbilities.social.persuasion.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Persuasion</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.social.persuasion.temp' value='{{system.secondaryAbilities.social.persuasion.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.persuasion.special' value='{{system.secondaryAbilities.social.persuasion.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.persuasion.class' value='{{system.secondaryAbilities.social.persuasion.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.persuasion.base' value='{{system.secondaryAbilities.social.persuasion.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.persuasion.value}}' title='Persuasion'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.social.persuasion.value' value='{{system.secondaryAbilities.social.persuasion.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.persuasion.temp' value='{{system.secondaryAbilities.social.persuasion.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.persuasion.special' value='{{system.secondaryAbilities.social.persuasion.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.persuasion.class' value='{{system.secondaryAbilities.social.persuasion.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.persuasion.base' value='{{system.secondaryAbilities.social.persuasion.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Sociales - Commerce -->
           {{#if system.secondaryAbilities.social.trading}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.social.trading.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.social.trading.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.trading.value}}' title='{{system.secondaryAbilities.social.trading.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Commerce</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.social.trading.temp' value='{{system.secondaryAbilities.social.trading.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.trading.special' value='{{system.secondaryAbilities.social.trading.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.trading.class' value='{{system.secondaryAbilities.social.trading.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.trading.base' value='{{system.secondaryAbilities.social.trading.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.trading.value}}' title='Commerce'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.social.trading.value' value='{{system.secondaryAbilities.social.trading.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.trading.temp' value='{{system.secondaryAbilities.social.trading.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.trading.special' value='{{system.secondaryAbilities.social.trading.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.trading.class' value='{{system.secondaryAbilities.social.trading.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.trading.base' value='{{system.secondaryAbilities.social.trading.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Sociales - Étiquette -->
           {{#if system.secondaryAbilities.social.etiquette}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.social.etiquette.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.social.etiquette.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.etiquette.value}}' title='{{system.secondaryAbilities.social.etiquette.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Étiquette</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.social.etiquette.temp' value='{{system.secondaryAbilities.social.etiquette.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.etiquette.special' value='{{system.secondaryAbilities.social.etiquette.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.etiquette.class' value='{{system.secondaryAbilities.social.etiquette.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.social.etiquette.base' value='{{system.secondaryAbilities.social.etiquette.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.etiquette.value}}' title='Étiquette'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.social.etiquette.value' value='{{system.secondaryAbilities.social.etiquette.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.etiquette.temp' value='{{system.secondaryAbilities.social.etiquette.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.etiquette.special' value='{{system.secondaryAbilities.social.etiquette.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.etiquette.class' value='{{system.secondaryAbilities.social.etiquette.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.etiquette.base' value='{{system.secondaryAbilities.social.etiquette.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
+
         </div>
       </div>
 
-      <!-- Sensorielles -->
+            <!-- Sensorielles -->
       <div class='skill-category-compact'>
-        <h4 class='category-header-compact'>Sensorielles <span class='base-char-compact'>PER</span></h4>
+        <h4 class='category-header-compact'>Sensorielles</h4>
         <div class='skill-items-compact'>
-          {{#each system.secondaryAbilities.perceptive as |skill key|}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{skill.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{skill.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='{{skill.name}}'>🎲</button>
+
+          <!-- Sensorielles - Perception -->
+          {{#if system.secondaryAbilities.perceptive.notice}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Perception</span>
+              <span class='skill-base-char'>PER</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.notice.value}}' title='Perception'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.perceptive.notice.value' value='{{system.secondaryAbilities.perceptive.notice.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.perceptive.notice.temp' value='{{system.secondaryAbilities.perceptive.notice.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.notice.special' value='{{system.secondaryAbilities.perceptive.notice.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.notice.class' value='{{system.secondaryAbilities.perceptive.notice.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.notice.base' value='{{system.secondaryAbilities.perceptive.notice.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.perception.value 5)}}{{floor (div (sub system.characteristics.perception.value 5) 2)}}{{else}}0{{/if}}</span>
               </div>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.perceptive.{{key}}.temp' value='{{skill.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.perceptive.{{key}}.special' value='{{skill.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.perceptive.{{key}}.class' value='{{skill.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.perceptive.{{key}}.base' value='{{skill.base}}' placeholder='B' class='skill-compact-input' />
+          </div>
+          {{/if}}
+
+          <!-- Sensorielles - Fouille -->
+          {{#if system.secondaryAbilities.perceptive.search}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Fouille</span>
+              <span class='skill-base-char'>PER</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.search.value}}' title='Fouille'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.perceptive.search.value' value='{{system.secondaryAbilities.perceptive.search.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.perceptive.search.temp' value='{{system.secondaryAbilities.perceptive.search.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.search.special' value='{{system.secondaryAbilities.perceptive.search.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.search.class' value='{{system.secondaryAbilities.perceptive.search.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.search.base' value='{{system.secondaryAbilities.perceptive.search.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.perception.value 5)}}{{floor (div (sub system.characteristics.perception.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
-          {{/each}}
+          {{/if}}
+
+          <!-- Sensorielles - Pistage -->
+          {{#if system.secondaryAbilities.perceptive.track}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Pistage</span>
+              <span class='skill-base-char'>PER</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.track.value}}' title='Pistage'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.perceptive.track.value' value='{{system.secondaryAbilities.perceptive.track.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.perceptive.track.temp' value='{{system.secondaryAbilities.perceptive.track.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.track.special' value='{{system.secondaryAbilities.perceptive.track.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.track.class' value='{{system.secondaryAbilities.perceptive.track.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.perceptive.track.base' value='{{system.secondaryAbilities.perceptive.track.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.perception.value 5)}}{{floor (div (sub system.characteristics.perception.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+
         </div>
       </div>
 
       <!-- Intellectuelles -->
       <div class='skill-category-compact'>
-        <h4 class='category-header-compact'>Intellectuelles <span class='base-char-compact'>INT</span></h4>
+        <h4 class='category-header-compact'>Intellectuelles</h4>
         <div class='skill-items-compact'>
+
+          <!-- Intellectuelles - Animaux -->
           {{#if system.secondaryAbilities.intellectual.animals}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.intellectual.animals.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.intellectual.animals.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.animals.value}}' title='{{system.secondaryAbilities.intellectual.animals.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Animaux</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.intellectual.animals.temp' value='{{system.secondaryAbilities.intellectual.animals.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.animals.special' value='{{system.secondaryAbilities.intellectual.animals.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.animals.class' value='{{system.secondaryAbilities.intellectual.animals.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.animals.base' value='{{system.secondaryAbilities.intellectual.animals.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.animals.value}}' title='Animaux'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.intellectual.animals.value' value='{{system.secondaryAbilities.intellectual.animals.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.intellectual.animals.temp' value='{{system.secondaryAbilities.intellectual.animals.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.animals.special' value='{{system.secondaryAbilities.intellectual.animals.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.animals.class' value='{{system.secondaryAbilities.intellectual.animals.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.animals.base' value='{{system.secondaryAbilities.intellectual.animals.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Intellectuelles - Science -->
           {{#if system.secondaryAbilities.intellectual.science}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.intellectual.science.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.intellectual.science.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.science.value}}' title='{{system.secondaryAbilities.intellectual.science.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Science</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.intellectual.science.temp' value='{{system.secondaryAbilities.intellectual.science.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.science.special' value='{{system.secondaryAbilities.intellectual.science.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.science.class' value='{{system.secondaryAbilities.intellectual.science.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.science.base' value='{{system.secondaryAbilities.intellectual.science.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.science.value}}' title='Science'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.intellectual.science.value' value='{{system.secondaryAbilities.intellectual.science.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.intellectual.science.temp' value='{{system.secondaryAbilities.intellectual.science.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.science.special' value='{{system.secondaryAbilities.intellectual.science.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.science.class' value='{{system.secondaryAbilities.intellectual.science.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.science.base' value='{{system.secondaryAbilities.intellectual.science.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Intellectuelles - Droit -->
           {{#if system.secondaryAbilities.intellectual.law}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.intellectual.law.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.intellectual.law.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.law.value}}' title='{{system.secondaryAbilities.intellectual.law.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Droit</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.intellectual.law.temp' value='{{system.secondaryAbilities.intellectual.law.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.law.special' value='{{system.secondaryAbilities.intellectual.law.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.law.class' value='{{system.secondaryAbilities.intellectual.law.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.law.base' value='{{system.secondaryAbilities.intellectual.law.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.law.value}}' title='Droit'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.intellectual.law.value' value='{{system.secondaryAbilities.intellectual.law.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.intellectual.law.temp' value='{{system.secondaryAbilities.intellectual.law.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.law.special' value='{{system.secondaryAbilities.intellectual.law.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.law.class' value='{{system.secondaryAbilities.intellectual.law.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.law.base' value='{{system.secondaryAbilities.intellectual.law.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Intellectuelles - Herboristerie -->
           {{#if system.secondaryAbilities.intellectual.herbs}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.intellectual.herbs.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.intellectual.herbs.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.herbs.value}}' title='{{system.secondaryAbilities.intellectual.herbs.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Herboristerie</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.intellectual.herbs.temp' value='{{system.secondaryAbilities.intellectual.herbs.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.herbs.special' value='{{system.secondaryAbilities.intellectual.herbs.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.herbs.class' value='{{system.secondaryAbilities.intellectual.herbs.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.herbs.base' value='{{system.secondaryAbilities.intellectual.herbs.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.herbs.value}}' title='Herboristerie'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.intellectual.herbs.value' value='{{system.secondaryAbilities.intellectual.herbs.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.intellectual.herbs.temp' value='{{system.secondaryAbilities.intellectual.herbs.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.herbs.special' value='{{system.secondaryAbilities.intellectual.herbs.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.herbs.class' value='{{system.secondaryAbilities.intellectual.herbs.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.herbs.base' value='{{system.secondaryAbilities.intellectual.herbs.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Intellectuelles - Histoire -->
           {{#if system.secondaryAbilities.intellectual.history}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.intellectual.history.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.intellectual.history.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.history.value}}' title='{{system.secondaryAbilities.intellectual.history.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Histoire</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.intellectual.history.temp' value='{{system.secondaryAbilities.intellectual.history.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.history.special' value='{{system.secondaryAbilities.intellectual.history.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.history.class' value='{{system.secondaryAbilities.intellectual.history.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.history.base' value='{{system.secondaryAbilities.intellectual.history.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.history.value}}' title='Histoire'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.intellectual.history.value' value='{{system.secondaryAbilities.intellectual.history.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.intellectual.history.temp' value='{{system.secondaryAbilities.intellectual.history.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.history.special' value='{{system.secondaryAbilities.intellectual.history.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.history.class' value='{{system.secondaryAbilities.intellectual.history.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.history.base' value='{{system.secondaryAbilities.intellectual.history.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Intellectuelles - Tactique -->
           {{#if system.secondaryAbilities.intellectual.tactics}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.intellectual.tactics.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.intellectual.tactics.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.tactics.value}}' title='{{system.secondaryAbilities.intellectual.tactics.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Tactique</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.intellectual.tactics.temp' value='{{system.secondaryAbilities.intellectual.tactics.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.tactics.special' value='{{system.secondaryAbilities.intellectual.tactics.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.tactics.class' value='{{system.secondaryAbilities.intellectual.tactics.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.tactics.base' value='{{system.secondaryAbilities.intellectual.tactics.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.tactics.value}}' title='Tactique'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.intellectual.tactics.value' value='{{system.secondaryAbilities.intellectual.tactics.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.intellectual.tactics.temp' value='{{system.secondaryAbilities.intellectual.tactics.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.tactics.special' value='{{system.secondaryAbilities.intellectual.tactics.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.tactics.class' value='{{system.secondaryAbilities.intellectual.tactics.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.tactics.base' value='{{system.secondaryAbilities.intellectual.tactics.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
 
+          <!-- Intellectuelles - Arcanes -->
           {{#if system.secondaryAbilities.intellectual.arcane}}
-          <div class='skill-compact-item'>
-            <div class='skill-compact-header'>
-              <span class='skill-compact-name'>{{system.secondaryAbilities.intellectual.arcane.name}}</span>
-              <div class='skill-compact-values'>
-                <span class='skill-compact-final'>{{system.secondaryAbilities.intellectual.arcane.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.arcane.value}}' title='{{system.secondaryAbilities.intellectual.arcane.name}}'>🎲</button>
-              </div>
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section'>
+              <span class='skill-name'>Arcanes</span>
+              <span class='skill-base-char'>INT</span>
             </div>
-            <div class='skill-compact-inputs'>
-              <input type='number' name='system.secondaryAbilities.intellectual.arcane.temp' value='{{system.secondaryAbilities.intellectual.arcane.temp}}' placeholder='T' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.arcane.special' value='{{system.secondaryAbilities.intellectual.arcane.special}}' placeholder='S' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.arcane.class' value='{{system.secondaryAbilities.intellectual.arcane.class}}' placeholder='C' class='skill-compact-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.arcane.base' value='{{system.secondaryAbilities.intellectual.arcane.base}}' placeholder='B' class='skill-compact-input' />
+            <div class='skill-values-section'>
+              <div class='skill-roll-section'>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.arcane.value}}' title='Arcanes'>🎲</button>
+              </div>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.intellectual.arcane.value' value='{{system.secondaryAbilities.intellectual.arcane.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.intellectual.arcane.temp' value='{{system.secondaryAbilities.intellectual.arcane.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.arcane.special' value='{{system.secondaryAbilities.intellectual.arcane.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.arcane.class' value='{{system.secondaryAbilities.intellectual.arcane.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.intellectual.arcane.base' value='{{system.secondaryAbilities.intellectual.arcane.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{#if (gt system.characteristics.intelligence.value 5)}}{{floor (div (sub system.characteristics.intelligence.value 5) 2)}}{{else}}0{{/if}}</span>
+              </div>
             </div>
           </div>
           {{/if}}
+
         </div>
       </div>
 

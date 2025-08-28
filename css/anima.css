@@ -1,22 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 :root {
-  --anima-c-dark: #191813;
-  --anima-c-faint: #c9c7b8;
-  --anima-c-beige: #b5b3a4;
-  --anima-c-tan: #444444;
+  --anima-c-dark: #f0f0f0;
+  --anima-c-faint: #e0e0e0;
+  --anima-c-beige: #d0d0d0;
+  --anima-c-tan: #a0a0a0;
   --anima-c-white: #ffffff;
   --anima-c-black: #000000;
-  --anima-c-groove: #eeede0;
+  --anima-c-groove: #cccccc;
 }
 
-/* Sombre pas Sombre */
 .theme-dark {
-  --anima-c-dark: #a7a7a7;
-  --anima-c-faint: #c9c7b8;
-  --anima-c-beige: #b5b3a4;
-  --anima-c-tan: #444444;
+  --anima-c-dark: #f0f0f0;
+  --anima-c-faint: #e0e0e0;
+  --anima-c-beige: #d0d0d0;
+  --anima-c-tan: #a0a0a0;
   --anima-c-white: #ffffff;
   --anima-c-black: #000000;
-  --anima-c-groove: #eeede0;
+  --anima-c-groove: #cccccc;
 }
 
 /* Global styles */
@@ -26,33 +26,156 @@
 
 .rollable:hover, .rollable:focus {
   color: var(--anima-c-black);
-  text-shadow: 0 0 10px rgb(198, 192, 192);
+  text-shadow: 0 0 10px red;
   cursor: pointer;
 }
 
 .grid,
 .grid-2col {
   display: grid;
+  grid-column: span 2/span 2;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 3px; /* Réduction de l'espacement entre les colonnes */
-  margin: 2px 0; /* Réduction de la marge */
+  gap: 10px;
+  margin: 10px 0;
   padding: 0;
 }
 
 .grid-3col {
-  display: grid;
+  grid-column: span 3/span 3;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4px; /* Ajuste l'espacement entre les colonnes */
-  margin: 2px 0;
-  padding: 0;
+}
+
+.grid-4col {
+  grid-column: span 4/span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5/span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-6col {
-  display: grid;
+  grid-column: span 6/span 6;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 4px; /* Ajuste l'espacement entre les colonnes */
-  margin: 1px 0; /* Augmente la marge entre les sections */
-  padding: 0 1px; /* Ajoute du padding horizontal */
+}
+
+.grid-7col {
+  grid-column: span 7/span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8/span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9/span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10/span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11/span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12/span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
 }
 
 .flex-group-center,
@@ -101,123 +224,992 @@
 }
 
 /* Styles limited to anima sheets */
+.anima {
+  /* Dark Fantasy Header Styles */
+  /* Legacy support */
+  /* Characteristic Roll Tables - Dark Fantasy Theme */
+  /* New Anima Structure Styles - Dark Fantasy Theme */
+  /* Main Sections */
+  /* Characteristics Table */
+  /* Subsections */
+  /* Grid Layouts */
+  /* Input Styles */
+  /* Final Values */
+  /* Combat Values */
+  /* Legacy support */
+  /* Scrollable Containers */
+  /* Dark Fantasy Tab Navigation */
+  /* Main Content Areas - Dark Fantasy Theme */
+  /* Skills Section Styles */
+  /* Legacy support */
+}
 .anima .item-form {
   font-family: "Roboto", sans-serif;
 }
-
 .anima .sheet-header {
+  flex: 0 auto;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap; /* Pour permettre aux éléments de passer à la ligne suivante si nécessaire */
-  align-items: center;
-  margin-bottom: 5px;
-  padding: 3px; /* Augmente le padding pour plus d'espace */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
 }
-
 .anima .sheet-header .profile-img {
-  height: 60px; /* Réduit la taille de l'image */
-  width: 60px; /* Réduit la taille de l'image */
-  border-radius: 50%; /* Rend l'image circulaire */
-  margin-right: 15px;
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
 }
-
 .anima .sheet-header .header-fields {
   flex: 1;
-  width: calc(100% - 40); /* Ajuster la largeur en fonction de l'image de profil */
 }
-
-.input-small {
-  width: 60%;
-}
-
-.input-medium {
-  width: 60%;
-}
-
-.input-large {
-  width: 60%;
-}
-
-.grid-6col {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 5px;
-}
-
-.resource {
-  display: flex;
-  align-items: center; /* Aligne les éléments verticalement au centre */
-  grid-column: span 1; /* Chaque ressource occupe une colonne */
-}
-
-.resource-label {
-  width: 50%; /* Ajustez cette valeur en fonction de vos besoins */
-  text-align: right;
-  margin-right: 5px; /* Espace entre le label et l'input */
-}
-
-.resource-content {
-  display: flex;
-  align-items: center; /* Aligne les éléments verticalement au centre */
-  width: 50%;
-}
-
-.resource-content input {
-  width: 100%; /* Assurer que les champs d'entrée prennent toute la largeur de leur conteneur */
-}
-
 .anima .sheet-tabs {
   flex: 0;
 }
-
-.anima .sheet-body,
+.anima .sheet-body {
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px; /* Optional: add padding for better spacing */
+}
 .anima .sheet-body .tab,
 .anima .sheet-body .tab .editor {
   height: 100%;
 }
-
-.anima .tab.Biographie {
+.anima .tab.biographie {
   flex: 1;
 }
-
-.anima .tab.Biographie .editor {
+.anima .tab.biographie .editor {
   height: 100%;
 }
-
 .anima .tox .tox-editor-container {
   background: var(--anima-c-white);
 }
-
 .anima .tox .tox-edit-area {
   padding: 0 8px;
 }
-
-.anima .resource-label {
-  font-weight: bold;
-  margin-bottom: 1px; /* Réduction de la marge */
+.anima .sheet-header {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
-
-.anima .resource-content {
+.anima .header-main {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(90deg, rgba(13, 13, 13, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+  border-bottom: 1px solid #2a2a2a;
 }
-
-.anima .resource-content input[type="text"] {
-  width: 100%; /* Augmente la largeur des champs */
-  margin: 0 2px; /* Réduction de la marge */
-  padding: 1px;
+.anima .character-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.anima .profile-hexagon {
+  position: relative;
+  width: 50px;
+  height: 43px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.anima .profile-hexagon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+  border: 2px solid #8b7355;
+  transition: all 0.3s ease;
+}
+.anima .profile-hexagon:hover {
+  transform: scale(1.05);
+}
+.anima .profile-hexagon:hover::before {
+  border-color: #d4af37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+.anima .profile-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  z-index: 1;
+}
+.anima .identity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.anima .character-name {
+  margin: 0;
+}
+.anima .character-name-input {
+  background: transparent;
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-width: 180px;
+  transition: all 0.2s ease;
+}
+.anima .character-name-input::placeholder {
+  color: #888;
+}
+.anima .character-name-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .character-meta {
+  display: flex;
+  gap: 0.5rem;
+}
+.anima .meta-input {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #ddd;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  min-width: 70px;
+  transition: all 0.2s ease;
+}
+.anima .meta-input::placeholder {
+  color: #777;
+}
+.anima .meta-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  color: #e6d7b3;
+}
+.anima .vital-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .stat-group {
+  display: flex;
+  gap: 0.75rem;
+}
+.anima .stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 100px;
+}
+.anima .stat-label {
+  font-size: 0.7rem;
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   text-align: center;
 }
-
-.anima .ability {
+.anima .stat-values {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  justify-content: center;
+}
+.anima .stat-input {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.8rem;
+  text-align: center;
+  min-width: 45px;
+  transition: all 0.2s ease;
+}
+.anima .stat-input.current {
+  min-width: 40px;
+}
+.anima .stat-input.max {
+  min-width: 40px;
+  opacity: 0.8;
+}
+.anima .stat-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .stat-separator {
+  color: #666;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.anima .combat-stats {
+  display: flex;
+  gap: 0.75rem;
+}
+.anima .combat-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+  min-width: 80px;
+}
+.anima .combat-input {
+  background: rgba(40, 40, 40, 0.6);
+  border: 1px solid #555;
+  color: #ccc;
+  cursor: not-allowed;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.8rem;
+}
+.anima .combat-input:hover {
+  border-color: #666;
+}
+.anima .header-secondary {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border-top: 1px solid #2a2a2a;
+}
+.anima .secondary-fields {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.anima .field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 90px;
+  flex: 1;
+}
+.anima .field-label {
+  font-size: 0.65rem;
+  color: #888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+.anima .field-input {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #ddd;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+.anima .field-input::placeholder {
+  color: #777;
+}
+.anima .field-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  color: #e6d7b3;
+}
+.anima .ability,
+.anima .characteristic {
   margin-bottom: 2px;
 }
-
 .anima .ability-score,
-.anima .ability-mod {
+.anima .ability-mod,
+.anima .characteristic-score,
+.anima .characteristic-mod {
   flex: 0 0 44px;
 }
-
+.anima .characteristic-roll-table,
+.anima .combat-roll-table {
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .characteristic-roll-table h4,
+.anima .combat-roll-table h4 {
+  color: #d4af37;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.anima .roll-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+.anima .roll-table thead {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+  border-bottom: 1px solid #8b7355;
+}
+.anima .roll-table thead th {
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.anima .roll-table tbody tr {
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #333;
+}
+.anima .roll-table tbody tr:hover {
+  background-color: rgba(212, 175, 55, 0.05);
+  border-bottom-color: #8b7355;
+}
+.anima .roll-table tbody tr:nth-child(even) {
+  background: rgba(40, 40, 40, 0.5);
+}
+.anima .roll-table tbody tr:hover:nth-child(even) {
+  background-color: rgba(212, 175, 55, 0.08);
+}
+.anima .roll-table tbody td {
+  padding: 0.4rem 0.25rem;
+  text-align: center;
+  border-right: 1px solid #333;
+}
+.anima .roll-table tbody td:last-child {
+  border-right: none;
+}
+.anima .roll-table tbody td.characteristic-name {
+  text-align: left;
+  font-weight: 500;
+  color: #ddd;
+  padding-left: 0.5rem;
+}
+.anima .roll-table tbody td.characteristic-value {
+  font-weight: 600;
+  color: #e6d7b3;
+  font-size: 0.9rem;
+}
+.anima .roll-table tbody td.characteristic-mod {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+.anima .roll-table tbody td.roll-name {
+  text-align: left;
+  font-weight: 500;
+  color: #ddd;
+  padding-left: 0.5rem;
+}
+.anima .roll-table tbody td.roll-value {
+  font-weight: 600;
+  color: #e6d7b3;
+  font-size: 0.9rem;
+}
+.anima .roll-button {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(139, 115, 85, 0.3);
+}
+.anima .roll-button:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.4);
+}
+.anima .roll-button:active {
+  transform: scale(0.95);
+}
+.anima .attributes-section,
+.anima .skills-section {
+  margin-bottom: 2rem;
+}
+.anima .section-title {
+  color: #d4af37;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #8b7355;
+  padding-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+.anima .characteristics-table-container {
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+.anima .characteristics-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+.anima .characteristics-table thead {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+}
+.anima .characteristics-table thead th {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #5a4a32;
+}
+.anima .characteristics-table tbody tr {
+  transition: background-color 0.2s;
+}
+.anima .characteristics-table tbody tr:hover {
+  background-color: rgba(212, 175, 55, 0.05);
+}
+.anima .characteristics-table tbody tr:nth-child(even) {
+  background: rgba(40, 40, 40, 0.5);
+}
+.anima .characteristics-table tbody td {
+  padding: 0.5rem;
+  text-align: center;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+.anima .characteristics-table tbody td:last-child {
+  border-right: none;
+}
+.anima .characteristics-table tbody td.characteristic-name {
+  text-align: left;
+  font-weight: 600;
+  color: #e6d7b3;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+.anima .characteristics-table tbody td.characteristic-final {
+  font-weight: 700;
+  color: #d4af37;
+  font-size: 1rem;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+.anima .characteristics-table tbody td.characteristic-mod {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.anima .characteristics-table tbody td.characteristic-opposed {
+  color: #8b7355;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.anima .characteristic-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  min-width: 50px;
+  transition: all 0.2s ease;
+}
+.anima .characteristic-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .resistances-section,
+.anima .movement-section,
+.anima .vitals-section,
+.anima .regeneration-section,
+.anima .combat-section {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .resistances-section h4,
+.anima .movement-section h4,
+.anima .vitals-section h4,
+.anima .regeneration-section h4,
+.anima .combat-section h4 {
+  color: #d4af37;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.25rem;
+}
+.anima .resistances-grid,
+.anima .movement-grid,
+.anima .vitals-grid,
+.anima .regeneration-grid,
+.anima .combat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+.anima .resistance-item,
+.anima .movement-item,
+.anima .vital-item,
+.anima .regen-item,
+.anima .combat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .resistance-item:hover,
+.anima .movement-item:hover,
+.anima .vital-item:hover,
+.anima .regen-item:hover,
+.anima .combat-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .resistance-item label,
+.anima .movement-item label,
+.anima .vital-item label,
+.anima .regen-item label,
+.anima .combat-item label {
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.anima .resistance-input,
+.anima .movement-input,
+.anima .vital-input,
+.anima .regen-input,
+.anima .combat-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.anima .resistance-input:focus,
+.anima .movement-input:focus,
+.anima .vital-input:focus,
+.anima .regen-input:focus,
+.anima .combat-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .movement-final,
+.anima .vital-final,
+.anima .regen-final,
+.anima .combat-final {
+  font-weight: 700;
+  color: #d4af37;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.25rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 3px;
+  border: 1px solid #8b7355;
+}
+.anima .combat-values {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.anima .combat-values .combat-input {
+  flex: 1;
+}
+.anima .combat-values .combat-final {
+  flex: 0 0 60px;
+}
+.anima .ability,
+.anima .characteristic {
+  margin-bottom: 2px;
+}
+.anima .ability label,
+.anima .characteristic label {
+  flex: 1;
+  font-weight: 500;
+  color: #ddd;
+  font-size: 0.85rem;
+}
+.anima .ability input,
+.anima .characteristic input {
+  flex: 0 0 55px;
+  text-align: center;
+  border: 1px solid #444;
+  border-radius: 3px;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 0.2rem;
+  color: #e6d7b3;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.anima .ability input:focus,
+.anima .characteristic input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .ability .characteristic-mod,
+.anima .characteristic .characteristic-mod {
+  flex: 0 0 35px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  font-weight: 500;
+}
+.anima .combat-values {
+  margin-bottom: 0.75rem;
+}
+.anima .combat-values h4 {
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.25rem;
+}
+.anima .combat-values .combat-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(40, 40, 40, 0.9) 100%);
+  margin-bottom: 0.25rem;
+  transition: all 0.2s ease;
+}
+.anima .combat-values .combat-stat:hover {
+  border-color: #8b7355;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(40, 40, 40, 0.9) 100%);
+  box-shadow: 0 1px 4px rgba(139, 115, 85, 0.2);
+}
+.anima .combat-values .combat-stat label {
+  font-weight: 500;
+  color: #ddd;
+  font-size: 0.85rem;
+}
+.anima .combat-values .combat-stat .combat-value {
+  font-weight: 600;
+  color: #e6d7b3;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid #8b7355;
+  transition: all 0.2s ease;
+}
+.anima .combat-values .combat-stat .combat-value:hover {
+  background: rgba(212, 175, 55, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 0 8px rgba(139, 115, 85, 0.3);
+}
+.anima .scrollable-container {
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+}
+.anima .scrollable-container::-webkit-scrollbar {
+  width: 6px;
+}
+.anima .scrollable-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+.anima .scrollable-container::-webkit-scrollbar-thumb {
+  background: #c9c7b8;
+  border-radius: 3px;
+}
+.anima .scrollable-container::-webkit-scrollbar-thumb:hover {
+  background: #a9a7a0;
+}
+.anima .tabs {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  padding: 0.25rem;
+}
+.anima .tabs .item {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 4px;
+  margin: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 0.8rem;
+  position: relative;
+}
+.anima .tabs .item:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  border-color: #8b7355;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.2);
+}
+.anima .tabs .item.active {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border-color: #8b7355;
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.3);
+  font-weight: 600;
+}
+.anima .tabs .item.active:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.4);
+}
+.anima .tabs .item.active::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0.3;
+}
+.anima .main {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  color: #ddd;
+}
+.anima .sidebar-left {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .skill-category {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .category-header {
+  color: #d4af37;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.anima .category-header .base-char {
+  color: #8b7355;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(139, 115, 85, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid #8b7355;
+}
+.anima .skill-table-container {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+.anima .skill-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.anima .skill-table thead {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+}
+.anima .skill-table thead th {
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #5a4a32;
+}
+.anima .skill-table tbody tr {
+  transition: background-color 0.2s;
+}
+.anima .skill-table tbody tr:hover {
+  background-color: rgba(212, 175, 55, 0.05);
+}
+.anima .skill-table tbody tr:nth-child(even) {
+  background: rgba(40, 40, 40, 0.5);
+}
+.anima .skill-table tbody td {
+  padding: 0.3rem 0.25rem;
+  text-align: center;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  font-size: 0.75rem;
+}
+.anima .skill-table tbody td:last-child {
+  border-right: none;
+}
+.anima .skill-table tbody td.skill-name {
+  text-align: left;
+  font-weight: 500;
+  color: #e6d7b3;
+  padding-left: 0.5rem;
+  font-size: 0.8rem;
+}
+.anima .skill-table tbody td.skill-final {
+  font-weight: 700;
+  color: #d4af37;
+  font-size: 0.9rem;
+}
+.anima .skill-table tbody td.skill-char {
+  color: #8b7355;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.anima .skill-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 2px;
+  color: #e6d7b3;
+  padding: 0.15rem;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 100%;
+  min-width: 40px;
+  transition: all 0.2s ease;
+}
+.anima .skill-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+}
+.anima .skill-roll-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(139, 115, 85, 0.3);
+}
+.anima .skill-roll-btn:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(139, 115, 85, 0.4);
+}
+.anima .skill-roll-btn:active {
+  transform: scale(0.95);
+}
+.anima .ability,
+.anima .characteristic {
+  margin-bottom: 2px;
+}
+.anima .ability label,
+.anima .characteristic label {
+  flex: 1;
+  font-weight: 500;
+  color: #ddd;
+  font-size: 0.85rem;
+}
+.anima .ability input,
+.anima .characteristic input {
+  flex: 0 0 55px;
+  text-align: center;
+  border: 1px solid #444;
+  border-radius: 3px;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 0.2rem;
+  color: #e6d7b3;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.anima .ability input:focus,
+.anima .characteristic input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .ability .characteristic-mod,
+.anima .characteristic .characteristic-mod {
+  flex: 0 0 35px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  font-weight: 500;
+}
 .anima .items-header {
   height: 28px;
   margin: 2px 0;
@@ -227,19 +1219,16 @@
   border: 2px groove var(--anima-c-groove);
   font-weight: bold;
 }
-
 .anima .items-header > * {
   font-size: 14px;
   text-align: center;
 }
-
 .anima .items-header .item-name {
   font-weight: bold;
   padding-left: 5px;
   text-align: left;
   display: flex;
 }
-
 .anima .items-list {
   list-style: none;
   margin: 0;
@@ -248,13 +1237,11 @@
   scrollbar-width: thin;
   color: var(--anima-c-tan);
 }
-
 .anima .items-list .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 .anima .items-list .item-name {
   flex: 2;
   margin: 0;
@@ -264,39 +1251,32 @@
   align-items: center;
   display: flex;
 }
-
 .anima .items-list .item-name h3, .anima .items-list .item-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
 }
-
 .anima .items-list .item-controls {
   display: flex;
   flex: 0 0 100px;
   justify-content: flex-end;
 }
-
 .anima .items-list .item-controls a {
   font-size: 12px;
   text-align: center;
   margin: 0 6px;
 }
-
 .anima .items-list .item {
   align-items: center;
   padding: 0 2px;
   border-bottom: 1px solid var(--anima-c-faint);
 }
-
 .anima .items-list .item:last-child {
   border-bottom: none;
 }
-
 .anima .items-list .item .item-name {
   color: var(--anima-c-dark);
 }
-
 .anima .items-list .item .item-name .item-image {
   flex: 0 0 30px;
   height: 30px;
@@ -304,14 +1284,12 @@
   border: none;
   margin-right: 5px;
 }
-
 .anima .items-list .item-prop {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-
 .anima .items-list .items-header {
   height: 28px;
   margin: 2px 0;
@@ -321,64 +1299,18 @@
   border: 2px groove var(--anima-c-groove);
   font-weight: bold;
 }
-
 .anima .items-list .items-header > * {
   font-size: 12px;
   text-align: center;
 }
-
 .anima .items-list .items-header .item-name {
   padding-left: 5px;
   text-align: left;
 }
-
 .anima .item-formula {
   flex: 0 0 200px;
   padding: 0 8px;
 }
-
-/* Scrollable container */
-.scrollable-container {
-  max-height: 100vh; /* Ajustez cette valeur selon vos besoins */
-  overflow-y: auto;
-  padding: 10px;
-  border: 1px solid var(--anima-c-groove); /* Optionnel : ajouter une bordure pour distinguer la boîte défilable */
-}
-
-.anima .features-list .items-list .item-name {
-  font-size: 9px; /* Réduit la taille du texte des fonctionnalités */
-}
-
-.anima .features-list .items-list .item-controls a {
-  font-size: 8px; /* Réduit la taille du texte des contrôles */
-}
-
-.anima .placeholder h3 {
-  font-size: 12px; /* Taille normale pour le titre du placeholder */
-  color: var(--anima-c-dark);
-  margin-bottom: 10px;
-}
-
-.anima .placeholder p {
-  font-size: 10px;
-  color: var(--anima-c-tan);
-}
-
-.anima .placeholder h4 {
-  font-size: 10px; /* Taille normale pour les intertitres */
-  color: var(--anima-c-dark);
-  margin-top: 10px;
-  margin-bottom: 5px;
-  line-height: 1.5; /* Ajoute des interlignes */
-  text-align: right; /* Aligne les intertitres à droite */
-}
-
-.anima .skill-section hr {
-  border: none;
-  border-top: 1px solid var(--anima-c-groove);
-  margin: 10px 0;
-}
-
 .anima .effects-header {
   height: 28px;
   margin: 2px 0;
@@ -388,19 +1320,16 @@
   border: 2px groove var(--anima-c-groove);
   font-weight: bold;
 }
-
 .anima .effects-header > * {
   font-size: 14px;
   text-align: center;
 }
-
 .anima .effects-header .effect-name {
   font-weight: bold;
   padding-left: 5px;
   text-align: left;
   display: flex;
 }
-
 .anima .effects-list {
   list-style: none;
   margin: 5;
@@ -409,13 +1338,11 @@
   scrollbar-width: thin;
   color: var(--anima-c-tan);
 }
-
 .anima .effects-list .effect-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 .anima .effects-list .effect-name {
   flex: 2;
   margin: 0;
@@ -425,39 +1352,32 @@
   align-items: center;
   display: flex;
 }
-
 .anima .effects-list .effect-name h3, .anima .effects-list .effect-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
 }
-
 .anima .effects-list .effect-controls {
   display: flex;
   flex: 0 0 100px;
   justify-content: flex-end;
 }
-
 .anima .effects-list .effect-controls a {
   font-size: 12px;
   text-align: center;
   margin: 0 6px;
 }
-
 .anima .effects-list .effect {
   align-items: center;
   padding: 0 2px;
   border-bottom: 1px solid var(--anima-c-faint);
 }
-
 .anima .effects-list .effect:last-child {
   border-bottom: none;
 }
-
 .anima .effects-list .effect .effect-name {
   color: var(--anima-c-dark);
 }
-
 .anima .effects-list .effect .effect-name .effect-image {
   flex: 0 0 30px;
   height: 30px;
@@ -465,14 +1385,12 @@
   border: none;
   margin-right: 5px;
 }
-
 .anima .effects-list .effect-prop {
   text-align: center;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-
 .anima .effects-list .effects-header {
   height: 28px;
   margin: 2px 0;
@@ -482,22 +1400,18 @@
   border: 2px groove var(--anima-c-groove);
   font-weight: bold;
 }
-
 .anima .effects-list .effects-header > * {
   font-size: 12px;
   text-align: center;
 }
-
 .anima .effects-list .effects-header .effect-name {
   padding-left: 5px;
   text-align: left;
 }
-
 .anima .effect-formula {
   flex: 0 0 200px;
   padding: 0 8px;
 }
-
 .anima .effects .item .effect-source,
 .anima .effects .item .effect-duration,
 .anima .effects .item .effect-controls {
@@ -506,7 +1420,6 @@
   border-right: 1px solid #c9c7b8;
   font-size: 12px;
 }
-
 .anima .effects .item .effect-controls {
   border: none;
 }

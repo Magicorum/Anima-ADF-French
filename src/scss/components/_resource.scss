@@ -1,12 +1,1059 @@
-.resource-label {
-  font-weight: bold;
+/* Dark Fantasy Header Styles */
+.sheet-header {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
-.ability {
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(90deg, rgba(13, 13, 13, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.character-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-hexagon {
+  position: relative;
+  width: 50px;
+  height: 43px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+    border: 2px solid #8b7355;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    &::before {
+      border-color: #d4af37;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+    }
+  }
+}
+
+.profile-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.identity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.character-name {
+  margin: 0;
+}
+
+.character-name-input {
+  background: transparent;
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-width: 180px;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: #888;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+  }
+}
+
+.character-meta {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.meta-input {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #ddd;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  min-width: 70px;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: #777;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+    color: #e6d7b3;
+  }
+}
+
+.vital-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 100px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.stat-values {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.stat-input {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.8rem;
+  text-align: center;
+  min-width: 45px;
+  transition: all 0.2s ease;
+
+  &.current {
+    min-width: 40px;
+  }
+
+  &.max {
+    min-width: 40px;
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+  }
+}
+
+.stat-separator {
+  color: #666;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.combat-stats {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.combat-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+  min-width: 80px;
+}
+
+.combat-input {
+  background: rgba(40, 40, 40, 0.6);
+  border: 1px solid #555;
+  color: #ccc;
+  cursor: not-allowed;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.8rem;
+
+  &:hover {
+    border-color: #666;
+  }
+}
+
+.header-secondary {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border-top: 1px solid #2a2a2a;
+}
+
+.secondary-fields {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 90px;
+  flex: 1;
+}
+
+.field-label {
+  font-size: 0.65rem;
+  color: #888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.field-input {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #ddd;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: #777;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+    color: #e6d7b3;
+  }
+}
+
+/* Legacy support */
+.ability,
+.characteristic {
   margin-bottom: 2px;
 }
 
 .ability-score,
-.ability-mod {
+.ability-mod,
+.characteristic-score,
+.characteristic-mod {
   flex: 0 0 44px;
+}
+
+/* Characteristic Roll Tables - Dark Fantasy Theme */
+.characteristic-roll-table,
+.combat-roll-table {
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  h4 {
+    color: #d4af37;
+    margin: 0 0 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid #8b7355;
+    padding-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.roll-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.1);
+
+  thead {
+    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+    border-bottom: 1px solid #8b7355;
+
+    th {
+      padding: 0.5rem 0.25rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s;
+      border-bottom: 1px solid #333;
+
+      &:hover {
+        background-color: rgba(212, 175, 55, 0.05);
+        border-bottom-color: #8b7355;
+      }
+
+      &:nth-child(even) {
+        background: rgba(40, 40, 40, 0.5);
+      }
+
+      &:hover:nth-child(even) {
+        background-color: rgba(212, 175, 55, 0.08);
+      }
+    }
+
+    td {
+      padding: 0.4rem 0.25rem;
+      text-align: center;
+      border-right: 1px solid #333;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.characteristic-name {
+        text-align: left;
+        font-weight: 500;
+        color: #ddd;
+        padding-left: 0.5rem;
+      }
+
+      &.characteristic-value {
+        font-weight: 600;
+        color: #e6d7b3;
+        font-size: 0.9rem;
+      }
+
+      &.characteristic-mod {
+        color: #aaa;
+        font-size: 0.8rem;
+      }
+
+      &.roll-name {
+        text-align: left;
+        font-weight: 500;
+        color: #ddd;
+        padding-left: 0.5rem;
+      }
+
+      &.roll-value {
+        font-weight: 600;
+        color: #e6d7b3;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.roll-button {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(139, 115, 85, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(139, 115, 85, 0.4);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* New Anima Structure Styles - Dark Fantasy Theme */
+
+/* Main Sections */
+.attributes-section,
+.skills-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  color: #d4af37;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #8b7355;
+  padding-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Characteristics Table */
+.characteristics-table-container {
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.characteristics-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+
+  thead {
+    background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+    color: #1a1a1a;
+
+    th {
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid #5a4a32;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(212, 175, 55, 0.05);
+      }
+
+      &:nth-child(even) {
+        background: rgba(40, 40, 40, 0.5);
+      }
+    }
+
+    td {
+      padding: 0.5rem;
+      text-align: center;
+      border-right: 1px solid #333;
+      border-bottom: 1px solid #333;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.characteristic-name {
+        text-align: left;
+        font-weight: 600;
+        color: #e6d7b3;
+        padding-left: 1rem;
+        font-size: 0.9rem;
+      }
+
+      &.characteristic-final {
+        font-weight: 700;
+        color: #d4af37;
+        font-size: 1rem;
+        text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+      }
+
+      &.characteristic-mod {
+        color: #aaa;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      &.characteristic-opposed {
+        color: #8b7355;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.characteristic-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  min-width: 50px;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Subsections */
+.resistances-section,
+.movement-section,
+.vitals-section,
+.regeneration-section,
+.combat-section {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  h4 {
+    color: #d4af37;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #8b7355;
+    padding-bottom: 0.25rem;
+  }
+}
+
+/* Grid Layouts */
+.resistances-grid,
+.movement-grid,
+.vitals-grid,
+.regeneration-grid,
+.combat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.resistance-item,
+.movement-item,
+.vital-item,
+.regen-item,
+.combat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #8b7355;
+    background: rgba(139, 115, 85, 0.1);
+  }
+
+  label {
+    font-size: 0.75rem;
+    color: #aaa;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* Input Styles */
+.resistance-input,
+.movement-input,
+.vital-input,
+.regen-input,
+.combat-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Final Values */
+.movement-final,
+.vital-final,
+.regen-final,
+.combat-final {
+  font-weight: 700;
+  color: #d4af37;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.25rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 3px;
+  border: 1px solid #8b7355;
+}
+
+/* Combat Values */
+.combat-values {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .combat-input {
+    flex: 1;
+  }
+
+  .combat-final {
+    flex: 0 0 60px;
+  }
+}
+
+/* Legacy support */
+.ability,
+.characteristic {
+  margin-bottom: 2px;
+
+  label {
+    flex: 1;
+    font-weight: 500;
+    color: #ddd;
+    font-size: 0.85rem;
+  }
+
+  input {
+    flex: 0 0 55px;
+    text-align: center;
+    border: 1px solid #444;
+    border-radius: 3px;
+    background: rgba(20, 20, 20, 0.8);
+    padding: 0.2rem;
+    color: #e6d7b3;
+    font-weight: 600;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #d4af37;
+      background: rgba(212, 175, 55, 0.05);
+      box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+    }
+  }
+
+  .characteristic-mod {
+    flex: 0 0 35px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+    font-weight: 500;
+  }
+}
+
+.combat-values {
+  margin-bottom: 0.75rem;
+
+  h4 {
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    border-bottom: 2px solid #8b7355;
+    padding-bottom: 0.25rem;
+  }
+
+  .combat-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(40, 40, 40, 0.9) 100%);
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #8b7355;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(40, 40, 40, 0.9) 100%);
+      box-shadow: 0 1px 4px rgba(139, 115, 85, 0.2);
+    }
+
+    label {
+      font-weight: 500;
+      color: #ddd;
+      font-size: 0.85rem;
+    }
+
+    .combat-value {
+      font-weight: 600;
+      color: #e6d7b3;
+      cursor: pointer;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid #8b7355;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(212, 175, 55, 0.15);
+        transform: scale(1.02);
+        box-shadow: 0 0 8px rgba(139, 115, 85, 0.3);
+      }
+    }
+  }
+}
+
+/* Scrollable Containers */
+.scrollable-container {
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c9c7b8;
+    border-radius: 3px;
+
+    &:hover {
+      background: #a9a7a0;
+    }
+  }
+}
+
+/* Dark Fantasy Tab Navigation */
+.tabs {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  padding: 0.25rem;
+
+  .item {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-size: 0.8rem;
+    position: relative;
+
+    &:hover {
+      background: rgba(212, 175, 55, 0.1);
+      color: #d4af37;
+      border-color: #8b7355;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(139, 115, 85, 0.2);
+    }
+
+    &.active {
+      background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+      color: #1a1a1a;
+      border-color: #8b7355;
+      box-shadow: 0 2px 8px rgba(139, 115, 85, 0.3);
+      font-weight: 600;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(139, 115, 85, 0.4);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+        border-radius: 4px;
+        z-index: -1;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+/* Main Content Areas - Dark Fantasy Theme */
+.main {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  color: #ddd;
+}
+
+.sidebar-left {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Skills Section Styles */
+.skill-category {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.category-header {
+  color: #d4af37;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .base-char {
+    color: #8b7355;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(139, 115, 85, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    border: 1px solid #8b7355;
+  }
+}
+
+.skill-table-container {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+
+.skill-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  thead {
+    background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+    color: #1a1a1a;
+
+    th {
+      padding: 0.5rem 0.25rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid #5a4a32;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(212, 175, 55, 0.05);
+      }
+
+      &:nth-child(even) {
+        background: rgba(40, 40, 40, 0.5);
+      }
+    }
+
+    td {
+      padding: 0.3rem 0.25rem;
+      text-align: center;
+      border-right: 1px solid #333;
+      border-bottom: 1px solid #333;
+      font-size: 0.75rem;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.skill-name {
+        text-align: left;
+        font-weight: 500;
+        color: #e6d7b3;
+        padding-left: 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      &.skill-final {
+        font-weight: 700;
+        color: #d4af37;
+        font-size: 0.9rem;
+      }
+
+      &.skill-char {
+        color: #8b7355;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.skill-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 2px;
+  color: #e6d7b3;
+  padding: 0.15rem;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 100%;
+  min-width: 40px;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+  }
+}
+
+.skill-roll-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(139, 115, 85, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(139, 115, 85, 0.4);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Legacy support */
+.ability,
+.characteristic {
+  margin-bottom: 2px;
+
+  label {
+    flex: 1;
+    font-weight: 500;
+    color: #ddd;
+    font-size: 0.85rem;
+  }
+
+  input {
+    flex: 0 0 55px;
+    text-align: center;
+    border: 1px solid #444;
+    border-radius: 3px;
+    background: rgba(20, 20, 20, 0.8);
+    padding: 0.2rem;
+    color: #e6d7b3;
+    font-weight: 600;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #d4af37;
+      background: rgba(212, 175, 55, 0.05);
+      box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+    }
+  }
+
+  .characteristic-mod {
+    flex: 0 0 35px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+    font-weight: 500;
+  }
 }

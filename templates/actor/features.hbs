@@ -1,154 +1,493 @@
-{{! Features Tab }}
+{{! Features Tab - Attributs & capacités }}
 <section
   class='tab features {{tab.cssClass}}'
   data-group='primary'
   data-tab='features'
 >
-  <section class='grid grid-3col'>
-    <aside class='sidebar grid-span-1'>
-      <div class="scrollable-container">
-        {{! The grid classes are defined in scss/global/_grid.scss. To use,
-            use both the "grid" and "grid-Ncol" class where "N" can be any number
-            from 1 to 12 and will create that number of columns.  }}
-        <div class='abilities flexcol'>
-          {{#each system.abilities as |ability key|}}
-            <div class='ability flexrow flex-group-center'>
-              <label
-                class='resource-label rollable flexlarge align-left'
-                data-action='roll'
-                data-roll='d20+@abilities.{{key}}.mod'
-                data-label='{{localize (lookup @root.config.abilities key)}}'
-              >{{localize (lookup @root.config.abilities key)}}</label>
-              <input
-                type='text'
-                name='system.abilities.{{key}}.value'
-                value='{{ability.value}}'
-                class="ability-score"
-                data-dtype='Number'
-              />
-              <span
-                class='ability-mod rollable'
-                data-action='roll'
-                data-roll='d20+@abilities.{{key}}.mod'
-                data-label='{{localize (lookup @root.config.abilities key)}}'
-              >{{numberFormat ability.mod decimals=0 sign=true}}</span>
-            </div>
-          {{/each}}
-        </div>
+  <div class="scrollable-container">
+    <!-- Section Caractéristiques Principales -->
+    <div class='attributes-section'>
+      <h3 class='section-title'>Caractéristiques</h3>
 
-        {{! Move the features block here }}
-        <section class='features-list'>
-          <ol class='items-list'>
-            <li class='item flexrow items-header'>
-              <div class='item-name'>{{localize 'Name'}}</div>
-              <div class='item-controls'>
-                {{#if @root.editable}}
-                  <a
-                    class='item-control item-create'
-                    title='Create item'
-                    data-action='createDoc'
-                    data-document-class='Item'
-                    data-type='feature'
-                  >
-                    <i class='fas fa-plus'></i>
-                    {{localize 'DOCUMENT.New' type='feature'}}
-                  </a>
-                {{/if}}
-              </div>
-            </li>
-            {{#each features as |item id|}}
-              <li
-                class='item flexrow'
-                data-item-id='{{item._id}}'
-                data-drag='true'
-                data-document-class='Item'
-              >
-                <div class='item-name'>
-                  <div class='item-image'>
-                    <a class='rollable' data-roll-type='item' data-action='roll'>
-                      <img
-                        src='{{item.img}}'
-                        title='{{item.name}}'
-                        width='24'
-                        height='24'
-                      />
-                    </a>
-                  </div>
-                  <div>{{item.name}}</div>
-                </div>
-                <div class='item-controls'>
-                  <a
-                    class='item-control item-edit'
-                    title='{{localize "DOCUMENT.Edit" type='feature'}}'
-                    data-action='viewDoc'
-                  >
-                    <i class='fas fa-edit'></i>
-                  </a>
-                  {{#if @root.editable}}
-                    <a
-                      class='item-control item-delete'
-                      title='{{localize "DOCUMENT.Delete" type='feature'}}'
-                      data-action='deleteDoc'
-                    >
-                      <i class='fas fa-trash'></i>
-                    </a>
-                  {{/if}}
-                </div>
-              </li>
+      <!-- Table des Caractéristiques -->
+      <div class='characteristics-table-container'>
+        <table class='characteristics-table'>
+          <thead>
+            <tr>
+              <th rowspan="2">Caractéristique</th>
+              <th colspan="3">Base</th>
+              <th rowspan="2">Final</th>
+              <th rowspan="2">Mod.</th>
+              <th rowspan="2">Final Opp.</th>
+            </tr>
+            <tr>
+              <th>Base</th>
+              <th>Spéc.</th>
+              <th>Temp.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each system.characteristics as |characteristic key|}}
+            <tr>
+              <td class='characteristic-name'>{{localize (lookup @root.config.characteristics key)}}</td>
+              <td><input type='number' name='system.characteristics.{{key}}.base' value='{{characteristic.base}}' min='1' max='20' class='characteristic-input' /></td>
+              <td><input type='number' name='system.characteristics.{{key}}.special' value='{{characteristic.special}}' min='0' max='20' class='characteristic-input' /></td>
+              <td><input type='number' name='system.characteristics.{{key}}.temp' value='{{characteristic.temp}}' min='-20' max='20' class='characteristic-input' /></td>
+              <td class='characteristic-final'>{{characteristic.value}}</td>
+              <td class='characteristic-mod'>{{characteristic.mod}}</td>
+              <td class='characteristic-opposed'>{{characteristic.opposed}}</td>
+            </tr>
             {{/each}}
-          </ol>
-        </section>
+          </tbody>
+        </table>
       </div>
-    </aside>
 
-    <section class='main center-box grid-span-1'>
-      <div class="scrollable-container">
-        <h3>Informations Capitales</h3>
-        <p>Ajoutez ici des informations importantes.</p>
-        <!-- Contenu supplémentaire peut être ajouté ici -->
-      </div>
-    </section>
-
-    <section class='main right-box grid-span-1'>
-      <div class="scrollable-container">
-        <div class='placeholder'>
-          <h3>Compétence Secondaire</h3> <!-- Changed placeholder title -->
-          <p>This is a placeholder text. More content can be added here.</p>
-          {{! Secondary Skills Titles }}
-          <div class="skill-section">
-            <h4>Athlétiques</h4>
-            <hr>
+      <!-- Résistances -->
+      <div class='resistances-section'>
+        <h4>Résistances</h4>
+        <div class='resistances-grid'>
+          <div class='resistance-item'>
+            <label>Physique:</label>
+            <input type='number' name='system.resistances.physical' value='{{system.resistances.physical}}' class='resistance-input' />
           </div>
-          <div class="skill-section">
-            <h4>Sociales</h4>
-            <hr>
+          <div class='resistance-item'>
+            <label>Maladie:</label>
+            <input type='number' name='system.resistances.disease' value='{{system.resistances.disease}}' class='resistance-input' />
           </div>
-          <div class="skill-section">
-            <h4>Sensorielles</h4>
-            <hr>
+          <div class='resistance-item'>
+            <label>Poison:</label>
+            <input type='number' name='system.resistances.poison' value='{{system.resistances.poison}}' class='resistance-input' />
           </div>
-          <div class="skill-section">
-            <h4>Intellectuelles</h4>
-            <hr>
+          <div class='resistance-item'>
+            <label>Magie:</label>
+            <input type='number' name='system.resistances.magic' value='{{system.resistances.magic}}' class='resistance-input' />
           </div>
-          <div class="skill-section">
-            <h4>Vitales</h4>
-            <hr>
-          </div>
-          <div class="skill-section">
-            <h4>Clandestines</h4>
-            <hr>
-          </div>
-          <div class="skill-section">
-            <h4>Créatives</h4>
-            <hr>
-          </div>
-          <div class="skill-section">
-            <h4>Autres</h4>
-            <hr>
+          <div class='resistance-item'>
+            <label>Psychique:</label>
+            <input type='number' name='system.resistances.psychic' value='{{system.resistances.psychic}}' class='resistance-input' />
           </div>
         </div>
       </div>
-    </section>
-  </section>
+
+      <!-- Mouvement -->
+      <div class='movement-section'>
+        <h4>Mouvement</h4>
+        <div class='movement-grid'>
+          <div class='movement-item'>
+            <label>Base:</label>
+            <input type='number' name='system.movement.base' value='{{system.movement.base}}' class='movement-input' />
+          </div>
+          <div class='movement-item'>
+            <label>Pénalité:</label>
+            <input type='number' name='system.movement.penalty' value='{{system.movement.penalty}}' class='movement-input' />
+          </div>
+          <div class='movement-item'>
+            <label>Spécial:</label>
+            <input type='number' name='system.movement.special' value='{{system.movement.special}}' class='movement-input' />
+          </div>
+          <div class='movement-item'>
+            <label>Temp:</label>
+            <input type='number' name='system.movement.temp' value='{{system.movement.temp}}' class='movement-input' />
+          </div>
+          <div class='movement-item'>
+            <label>Final:</label>
+            <span class='movement-final'>{{system.movement.final}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Points de Vie et Fatigue -->
+      <div class='vitals-section'>
+        <h4>Points de Vie</h4>
+        <div class='vitals-grid'>
+          <div class='vital-item'>
+            <label>Temp:</label>
+            <input type='number' name='system.health.temp' value='{{system.health.temp}}' class='vital-input' />
+          </div>
+          <div class='vital-item'>
+            <label>Final:</label>
+            <span class='vital-final'>{{system.health.max}}</span>
+          </div>
+          <div class='vital-item'>
+            <label>Actuel:</label>
+            <input type='number' name='system.health.value' value='{{system.health.value}}' class='vital-input' />
+          </div>
+        </div>
+
+        <h4>Fatigue</h4>
+        <div class='vitals-grid'>
+          <div class='vital-item'>
+            <label>Temp:</label>
+            <input type='number' name='system.fatigue.temp' value='{{system.fatigue.temp}}' class='vital-input' />
+          </div>
+          <div class='vital-item'>
+            <label>Final:</label>
+            <span class='vital-final'>{{system.fatigue.max}}</span>
+          </div>
+          <div class='vital-item'>
+            <label>Actuel:</label>
+            <input type='number' name='system.fatigue.value' value='{{system.fatigue.value}}' class='vital-input' />
+          </div>
+        </div>
+
+        <div class='regeneration-section'>
+          <h4>Régénération</h4>
+          <div class='regeneration-grid'>
+            <div class='regen-item'>
+              <label>Base:</label>
+              <input type='number' name='system.regeneration.base' value='{{system.regeneration.base}}' class='regen-input' />
+            </div>
+            <div class='regen-item'>
+              <label>Spéc:</label>
+              <input type='number' name='system.regeneration.special' value='{{system.regeneration.special}}' class='regen-input' />
+            </div>
+            <div class='regen-item'>
+              <label>Temp:</label>
+              <input type='number' name='system.regeneration.temp' value='{{system.regeneration.temp}}' class='regen-input' />
+            </div>
+            <div class='regen-item'>
+              <label>Final:</label>
+              <span class='regen-final'>{{system.regeneration.final}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Combat Stats -->
+      <div class='combat-section'>
+        <h4>Combat</h4>
+        <div class='combat-grid'>
+          <div class='combat-item'>
+            <label>Attaque:</label>
+            <div class='combat-values'>
+              <input type='number' name='system.combat.attack.temp' value='{{system.combat.attack.temp}}' class='combat-input' placeholder='Temp' />
+              <span class='combat-final'>{{system.combat.attack.value}}</span>
+            </div>
+          </div>
+          <div class='combat-item'>
+            <label>Parade:</label>
+            <div class='combat-values'>
+              <input type='number' name='system.combat.defense.temp' value='{{system.combat.defense.temp}}' class='combat-input' placeholder='Temp' />
+              <span class='combat-final'>{{system.combat.defense.value}}</span>
+            </div>
+          </div>
+          <div class='combat-item'>
+            <label>Esquive:</label>
+            <div class='combat-values'>
+              <input type='number' name='system.combat.dodge.temp' value='{{system.combat.dodge.temp}}' class='combat-input' placeholder='Temp' />
+              <span class='combat-final'>{{system.combat.dodge.value}}</span>
+            </div>
+          </div>
+          <div class='combat-item'>
+            <label>Initiative:</label>
+            <div class='combat-values'>
+              <input type='number' name='system.combat.initiative.temp' value='{{system.combat.initiative.temp}}' class='combat-input' placeholder='Temp' />
+              <span class='combat-final'>{{system.combat.initiative.value}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Compétences Secondaires -->
+    <div class='skills-section'>
+      <h3 class='section-title'>Compétences Secondaires</h3>
+
+      <!-- Athlétiques -->
+      <div class='skill-category'>
+        <h4 class='category-header'>Athlétiques <span class='base-char'>AGI</span></h4>
+        <div class='skill-table-container'>
+          <table class='skill-table'>
+            <thead>
+              <tr>
+                <th>Compétence</th>
+                <th>Final</th>
+                <th>Temp.</th>
+                <th>Spéc.</th>
+                <th>Classe</th>
+                <th>Base</th>
+                <th>Car.</th>
+                <th>Jet</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.secondaryAbilities.athletics as |skill key|}}
+              <tr>
+                <td class='skill-name'>{{skill.name}}</td>
+                <td class='skill-final'>{{skill.value}}</td>
+                <td><input type='number' name='system.secondaryAbilities.athletics.{{key}}.temp' value='{{skill.temp}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.athletics.{{key}}.special' value='{{skill.special}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.athletics.{{key}}.class' value='{{skill.class}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.athletics.{{key}}.base' value='{{skill.base}}' class='skill-input' /></td>
+                <td class='skill-char'>{{skill.baseChar}}</td>
+                <td class='skill-roll'>
+                  <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='Jeter {{skill.name}}'>🎲</button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Sociales -->
+      <div class='skill-category'>
+        <h4 class='category-header'>Sociales <span class='base-char'>POU</span></h4>
+        <div class='skill-table-container'>
+          <table class='skill-table'>
+            <thead>
+              <tr>
+                <th>Compétence</th>
+                <th>Final</th>
+                <th>Temp.</th>
+                <th>Spéc.</th>
+                <th>Classe</th>
+                <th>Base</th>
+                <th>Car.</th>
+                <th>Jet</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.secondaryAbilities.social as |skill key|}}
+              <tr>
+                <td class='skill-name'>{{skill.name}}</td>
+                <td class='skill-final'>{{skill.value}}</td>
+                <td><input type='number' name='system.secondaryAbilities.social.{{key}}.temp' value='{{skill.temp}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.social.{{key}}.special' value='{{skill.special}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.social.{{key}}.class' value='{{skill.class}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.social.{{key}}.base' value='{{skill.base}}' class='skill-input' /></td>
+                <td class='skill-char'>{{skill.baseChar}}</td>
+                <td class='skill-roll'>
+                  <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='Jeter {{skill.name}}'>🎲</button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Sensorielles -->
+      <div class='skill-category'>
+        <h4 class='category-header'>Sensorielles <span class='base-char'>PER</span></h4>
+        <div class='skill-table-container'>
+          <table class='skill-table'>
+            <thead>
+              <tr>
+                <th>Compétence</th>
+                <th>Final</th>
+                <th>Temp.</th>
+                <th>Spéc.</th>
+                <th>Classe</th>
+                <th>Base</th>
+                <th>Car.</th>
+                <th>Jet</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.secondaryAbilities.perceptive as |skill key|}}
+              <tr>
+                <td class='skill-name'>{{skill.name}}</td>
+                <td class='skill-final'>{{skill.value}}</td>
+                <td><input type='number' name='system.secondaryAbilities.perceptive.{{key}}.temp' value='{{skill.temp}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.perceptive.{{key}}.special' value='{{skill.special}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.perceptive.{{key}}.class' value='{{skill.class}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.perceptive.{{key}}.base' value='{{skill.base}}' class='skill-input' /></td>
+                <td class='skill-char'>{{skill.baseChar}}</td>
+                <td class='skill-roll'>
+                  <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='Jeter {{skill.name}}'>🎲</button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Intellectuelles -->
+      <div class='skill-category'>
+        <h4 class='category-header'>Intellectuelles <span class='base-char'>INT</span></h4>
+        <div class='skill-table-container'>
+          <table class='skill-table'>
+            <thead>
+              <tr>
+                <th>Compétence</th>
+                <th>Final</th>
+                <th>Temp.</th>
+                <th>Spéc.</th>
+                <th>Classe</th>
+                <th>Base</th>
+                <th>Car.</th>
+                <th>Jet</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.secondaryAbilities.intellectual as |skill key|}}
+              <tr>
+                <td class='skill-name'>{{skill.name}}</td>
+                <td class='skill-final'>{{skill.value}}</td>
+                <td><input type='number' name='system.secondaryAbilities.intellectual.{{key}}.temp' value='{{skill.temp}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.intellectual.{{key}}.special' value='{{skill.special}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.intellectual.{{key}}.class' value='{{skill.class}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.intellectual.{{key}}.base' value='{{skill.base}}' class='skill-input' /></td>
+                <td class='skill-char'>{{skill.baseChar}}</td>
+                <td class='skill-roll'>
+                  <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='Jeter {{skill.name}}'>🎲</button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Vitales -->
+      <div class='skill-category'>
+        <h4 class='category-header'>Vitales <span class='base-char'>VOL</span></h4>
+        <div class='skill-table-container'>
+          <table class='skill-table'>
+            <thead>
+              <tr>
+                <th>Compétence</th>
+                <th>Final</th>
+                <th>Temp.</th>
+                <th>Spéc.</th>
+                <th>Classe</th>
+                <th>Base</th>
+                <th>Car.</th>
+                <th>Jet</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.secondaryAbilities.vitality as |skill key|}}
+              <tr>
+                <td class='skill-name'>{{skill.name}}</td>
+                <td class='skill-final'>{{skill.value}}</td>
+                <td><input type='number' name='system.secondaryAbilities.vitality.{{key}}.temp' value='{{skill.temp}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.vitality.{{key}}.special' value='{{skill.special}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.vitality.{{key}}.class' value='{{skill.class}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.vitality.{{key}}.base' value='{{skill.base}}' class='skill-input' /></td>
+                <td class='skill-char'>{{skill.baseChar}}</td>
+                <td class='skill-roll'>
+                  <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='Jeter {{skill.name}}'>🎲</button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Clandestines -->
+      <div class='skill-category'>
+        <h4 class='category-header'>Clandestines <span class='base-char'>DEX</span></h4>
+        <div class='skill-table-container'>
+          <table class='skill-table'>
+            <thead>
+              <tr>
+                <th>Compétence</th>
+                <th>Final</th>
+                <th>Temp.</th>
+                <th>Spéc.</th>
+                <th>Classe</th>
+                <th>Base</th>
+                <th>Car.</th>
+                <th>Jet</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.secondaryAbilities.subterfuge as |skill key|}}
+              <tr>
+                <td class='skill-name'>{{skill.name}}</td>
+                <td class='skill-final'>{{skill.value}}</td>
+                <td><input type='number' name='system.secondaryAbilities.subterfuge.{{key}}.temp' value='{{skill.temp}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.subterfuge.{{key}}.special' value='{{skill.special}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.subterfuge.{{key}}.class' value='{{skill.class}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.subterfuge.{{key}}.base' value='{{skill.base}}' class='skill-input' /></td>
+                <td class='skill-char'>{{skill.baseChar}}</td>
+                <td class='skill-roll'>
+                  <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='Jeter {{skill.name}}'>🎲</button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Créatives -->
+      <div class='skill-category'>
+        <h4 class='category-header'>Créatives <span class='base-char'>INT</span></h4>
+        <div class='skill-table-container'>
+          <table class='skill-table'>
+            <thead>
+              <tr>
+                <th>Compétence</th>
+                <th>Final</th>
+                <th>Temp.</th>
+                <th>Spéc.</th>
+                <th>Classe</th>
+                <th>Base</th>
+                <th>Car.</th>
+                <th>Jet</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.secondaryAbilities.creative as |skill key|}}
+              <tr>
+                <td class='skill-name'>{{skill.name}}</td>
+                <td class='skill-final'>{{skill.value}}</td>
+                <td><input type='number' name='system.secondaryAbilities.creative.{{key}}.temp' value='{{skill.temp}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.creative.{{key}}.special' value='{{skill.special}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.creative.{{key}}.class' value='{{skill.class}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.creative.{{key}}.base' value='{{skill.base}}' class='skill-input' /></td>
+                <td class='skill-char'>{{skill.baseChar}}</td>
+                <td class='skill-roll'>
+                  <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='Jeter {{skill.name}}'>🎲</button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Autres -->
+      <div class='skill-category'>
+        <h4 class='category-header'>Autres</h4>
+        <div class='skill-table-container'>
+          <table class='skill-table'>
+            <thead>
+              <tr>
+                <th>Compétence</th>
+                <th>Final</th>
+                <th>Temp.</th>
+                <th>Spéc.</th>
+                <th>Classe</th>
+                <th>Base</th>
+                <th>Car.</th>
+                <th>Jet</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.secondaryAbilities.other as |skill key|}}
+              <tr>
+                <td class='skill-name'>{{skill.name}}</td>
+                <td class='skill-final'>{{skill.value}}</td>
+                <td><input type='number' name='system.secondaryAbilities.other.{{key}}.temp' value='{{skill.temp}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.other.{{key}}.special' value='{{skill.special}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.other.{{key}}.class' value='{{skill.class}}' class='skill-input' /></td>
+                <td><input type='number' name='system.secondaryAbilities.other.{{key}}.base' value='{{skill.base}}' class='skill-input' /></td>
+                <td class='skill-char'>{{skill.baseChar}}</td>
+                <td class='skill-roll'>
+                  <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{skill.value}}' title='Jeter {{skill.name}}'>🎲</button>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

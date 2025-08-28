@@ -1,12 +1,45 @@
 {
   "ANIMA": {
-    "Ability": {
-      "Str": { "long": "Strength", "abbr": "str" },
-      "Con": { "long": "Constitution", "abbr": "con" },
-      "Dex": { "long": "Dexterity", "abbr": "dex" },
-      "Int": { "long": "Intelligence", "abbr": "int" },
-      "Wis": { "long": "Wisdom", "abbr": "wis" },
-      "Cha": { "long": "Charisma", "abbr": "cha" }
+    "Characteristic": {
+      "Agility": { "long": "Agilité", "abbr": "AGI" },
+      "Constitution": { "long": "Constitution", "abbr": "CON" },
+      "Dexterity": { "long": "Dextérité", "abbr": "DEX" },
+      "Strength": { "long": "Force", "abbr": "FOR" },
+      "Intelligence": { "long": "Intelligence", "abbr": "INT" },
+      "Perception": { "long": "Perception", "abbr": "PER" },
+      "Power": { "long": "Pouvoir", "abbr": "POU" },
+      "Willpower": { "long": "Volonté", "abbr": "VOL" }
+    },
+    "Primary": {
+      "Attack": "Attaque",
+      "Defense": "Défense",
+      "MagicProjection": "Projection Magique",
+      "MagicLevel": "Niveau Magique",
+      "PsychicPotential": "Potentiel Psychique"
+    },
+    "Combat": {
+      "Attack": "Attaque",
+      "Defense": "Défense",
+      "WearArmor": "Port d'Armure"
+    },
+    "Magic": {
+      "Zeon": "Zeon",
+      "MagicAccumulation": "Accumulation Magique",
+      "MagicProjection": "Projection Magique",
+      "Summon": "Invocation",
+      "Control": "Contrôle",
+      "Bind": "Lien",
+      "Banish": "Bannissement"
+    },
+    "Secondary": {
+      "Athletics": "Athlétiques",
+      "Social": "Sociales",
+      "Perceptive": "Perceptives",
+      "Intellectual": "Intellectuelles",
+      "Vitality": "Vitales",
+      "Subterfuge": "Clandestines",
+      "Creative": "Créatives",
+      "Other": "Autres"
     },
     "SheetLabels": {
       "Actor": "Anima Actor Sheet",
@@ -15,29 +48,31 @@
     "Actor": {
       "Tabs": {
         "Biographie": "Biographie",
-        "Features": "Features",
-        "Gear": "Gear",
-        "Spells": "Spells",
-        "Effects": "Effects"
+        "Features": "Caractéristiques",
+        "Gear": "Équipement",
+        "Spells": "Sorts",
+        "Effects": "Effets"
       },
       "base": {
         "FIELDS": {
           "Biographie": {"label": "Biographie"},
-          "health": {"label": "Health"},
-          "power": {"label": "Power"}
+          "health": {"label": "Santé"},
+          "fatigue": {"label": "Fatigue"},
+          "zeon": {"label": "Zeon"},
+          "ki": {"label": "Ki"}
         }
       },
       "Character": {
         "FIELDS": {
-          "level": {"label": "Level"},
+          "level": {"label": "Niveau"},
           "race": {"label": "Race"},
           "class": {"label": "Classe"},
           "gender": {"label": "Genre"},
           "height": {"label": "Taille"},
           "weight": {"label": "Poids"},
           "appearance": {"label": "Apparence"},
-          "xp": {"label": "PX"},
-          "pf": {"label": "PF"},
+          "experiencePoints": {"label": "Points d'Expérience"},
+          "developmentPoints": {"label": "Points de Développement"},
           "presence": {"label": "Présence"}
         }
       },
@@ -91,13 +126,17 @@
   },
   "TYPES": {
     "Actor": {
-      "character": "Character",
-      "npc": "NPC"
+      "character": "Personnage",
+      "npc": "PNJ"
     },
     "Item": {
-      "gear": "Gear",
-      "feature": "Feature",
-      "spell": "Spell"
+      "weapon": "Arme",
+      "armor": "Armure",
+      "shield": "Bouclier",
+      "accessory": "Accessoire",
+      "spell": "Sort",
+      "technique": "Technique",
+      "secondaryAbility": "Compétence Secondaire"
     }
   }
 }

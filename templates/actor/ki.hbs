@@ -1,0 +1,198 @@
+{{! Ki Tab - Pouvoirs du Ki }}
+<section class='tab ki {{tab.cssClass}}' data-group='primary' data-tab='ki'>
+  <div class="scrollable-container">
+    <!-- Pouvoirs du Ki et du Nemesis -->
+    <div class='ki-nemesis-section'>
+      <h3 class='section-title'>Pouvoirs du Ki et du Nemesis</h3>
+      <div class='ki-nemesis'>
+        <div class='ki-abilities-list'>
+          {{#each kiAbilities as |ability id|}}
+          <div class='ki-ability-item'>
+            <div class='ability-name'>{{ability.name}}</div>
+            <div class='ability-description'>{{ability.system.description}}</div>
+            <div class='ability-controls'>
+              <button class='ability-use-btn rollable' data-action='roll' data-roll='1d100+{{system.characteristics.power.value}}' title='Utiliser {{ability.name}}'>💪</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Réserves de Ki -->
+    <div class='ki-pool-section'>
+      <h3 class='section-title'>Réserves de Ki</h3>
+      <div class='ki-pool'>
+        <div class='ki-pool-header'>
+          <span>Nom</span>
+          <span>Actuel</span>
+          <span>Maximum</span>
+          <span>Multiplicateur</span>
+        </div>
+        <div class='ki-pool-list'>
+          {{#each kiPools as |pool id|}}
+          <div class='ki-pool-item'>
+            <div class='pool-name'>{{pool.name}}</div>
+            <div class='pool-current'>{{pool.system.current}}</div>
+            <div class='pool-max'>{{pool.system.max}}</div>
+            <div class='pool-multiplier'>{{pool.system.multiplier}}</div>
+            <div class='pool-controls'>
+              <button class='pool-spend-btn' data-action='spend' data-pool-id='{{pool._id}}'>Dépenser</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Développement Intérieur -->
+    <div class='ki-martial-knowledge-section'>
+      <h3 class='section-title'>Développement Intérieur</h3>
+      <div class='ki-martial-knowledge'>
+        <div class='martial-knowledge-base'>
+          <label>Base:</label>
+          <input type='number' name='system.ki.martialKnowledge.base' value='{{system.ki.martialKnowledge.base}}' class='martial-input' />
+        </div>
+        <div class='martial-knowledge-special'>
+          <label>Spécial:</label>
+          <input type='number' name='system.ki.martialKnowledge.special' value='{{system.ki.martialKnowledge.special}}' class='martial-input' />
+        </div>
+        <div class='martial-knowledge-final'>
+          <label>Final:</label>
+          <span class='martial-knowledge-value'>{{system.ki.martialKnowledge.value}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sceau de Ki -->
+    <div class='ki-seals-section'>
+      <h3 class='section-title'>Sceau de Ki</h3>
+      <div class='ki-seals'>
+        <div class='seals-list'>
+          {{#each kiSeals as |seal id|}}
+          <div class='seal-item'>
+            <div class='seal-name'>{{seal.name}}</div>
+            <div class='seal-level'>Niveau {{seal.system.level}}</div>
+            <div class='seal-description'>{{seal.system.description}}</div>
+            <div class='seal-controls'>
+              <button class='seal-activate-btn' data-action='activate' data-seal-id='{{seal._id}}'>Activer</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Ars Magnus -->
+    <div class='ki-ars-magnus-section'>
+      <h3 class='section-title'>Ars Magnus</h3>
+      <div class='ki-ars-magnus'>
+        <div class='ars-magnus-list'>
+          {{#each arsMagnus as |technique id|}}
+          <div class='ars-magnus-item'>
+            <div class='technique-name'>{{technique.name}}</div>
+            <div class='technique-level'>Niveau {{technique.system.level}}</div>
+            <div class='technique-ki-cost'>Ki: {{technique.system.kiCost}}</div>
+            <div class='technique-description'>{{technique.system.description}}</div>
+            <div class='technique-controls'>
+              <button class='technique-use-btn rollable' data-action='roll' data-roll='1d100+{{system.characteristics.power.value}}' title='Utiliser {{technique.name}}'>🔥</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Limite de Ki -->
+    <div class='ki-limit-section'>
+      <h3 class='section-title'>Limite de Ki</h3>
+      <div class='ki-limit'>
+        <div class='limit-base'>
+          <label>Base:</label>
+          <input type='number' name='system.ki.limit.base' value='{{system.ki.limit.base}}' class='limit-input' />
+        </div>
+        <div class='limit-special'>
+          <label>Spécial:</label>
+          <input type='number' name='system.ki.limit.special' value='{{system.ki.limit.special}}' class='limit-input' />
+        </div>
+        <div class='limit-final'>
+          <label>Final:</label>
+          <span class='limit-value'>{{system.ki.limit.value}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arts Martiaux -->
+    <div class='ki-martial-arts-section'>
+      <h3 class='section-title'>Arts Martiaux</h3>
+      <div class='ki-martial-arts'>
+        <div class='martial-arts-header'>
+          <span>Nom</span>
+          <span>Type</span>
+          <span>Niveau</span>
+          <span>Ki Requis</span>
+        </div>
+        <div class='martial-arts-list'>
+          {{#each martialArts as |art id|}}
+          <div class='martial-art-item'>
+            <div class='art-name'>{{art.name}}</div>
+            <div class='art-type'>{{art.system.type}}</div>
+            <div class='art-level'>{{art.system.level}}</div>
+            <div class='art-ki-required'>{{art.system.kiRequired}}</div>
+            <div class='art-description'>{{art.system.description}}</div>
+            <div class='art-controls'>
+              <button class='art-use-btn rollable' data-action='roll' data-roll='1d100+{{system.characteristics.power.value}}' title='Utiliser {{art.name}}'>🥋</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Créatures Connues -->
+    <div class='ki-creatures-known-section'>
+      <h3 class='section-title'>Créatures Connues</h3>
+      <div class='ki-creatures-known'>
+        <div class='creatures-header'>
+          <span>Nom</span>
+          <span>Type</span>
+          <span>Domaine</span>
+        </div>
+        <div class='creatures-list'>
+          {{#each knownCreatures as |creature id|}}
+          <div class='creature-item'>
+            <div class='creature-name'>{{creature.name}}</div>
+            <div class='creature-type'>{{creature.system.type}}</div>
+            <div class='creature-domain'>{{creature.system.domain}}</div>
+            <div class='creature-description'>{{creature.system.description}}</div>
+            <div class='creature-controls'>
+              <button class='creature-summon-btn rollable' data-action='roll' data-roll='1d100+{{system.characteristics.power.value}}' title='Invoquer {{creature.name}}'>👹</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Techniques de Ki -->
+    <div class='ki-techniques-section'>
+      <h3 class='section-title'>Techniques de Ki</h3>
+      <div class='ki-techniques'>
+        <div class='techniques-list'>
+          {{#each kiTechniques as |technique id|}}
+          <div class='technique-item'>
+            <div class='technique-name'>{{technique.name}}</div>
+            <div class='technique-level'>Niveau {{technique.system.level}}</div>
+            <div class='technique-ki-cost'>Ki: {{technique.system.kiCost}}</div>
+            <div class='technique-maintenance'>Maintenance: {{technique.system.maintenance}}</div>
+            <div class='technique-description'>{{technique.system.description}}</div>
+            <div class='technique-controls'>
+              <button class='technique-use-btn rollable' data-action='roll' data-roll='1d100+{{system.characteristics.power.value}}' title='Utiliser {{technique.name}}'>⚡</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

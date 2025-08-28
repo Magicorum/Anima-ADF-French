@@ -47,6 +47,9 @@ export class Anima extends Actor {
     // Initialize secondary abilities if they don't exist
     this._initializeSecondaryAbilities(systemData);
 
+    // Calculate final values for secondary abilities
+    this._calculateSecondaryAbilities(systemData);
+
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
     this._prepareCharacterData(actorData);
@@ -163,6 +166,10 @@ export class Anima extends Actor {
         if (!systemData.secondaryAbilities[category][key]) {
           systemData.secondaryAbilities[category][key] = {
             name: abilityData.name,
+            base: 0,
+            class: 0,
+            special: 0,
+            temp: 0,
             value: 0,
             baseChar: abilityData.baseChar
           };
@@ -170,6 +177,53 @@ export class Anima extends Actor {
           // Ensure name and baseChar are set
           systemData.secondaryAbilities[category][key].name = abilityData.name;
           systemData.secondaryAbilities[category][key].baseChar = abilityData.baseChar;
+
+          // Ensure all numeric fields exist
+          if (systemData.secondaryAbilities[category][key].base === undefined) {
+            systemData.secondaryAbilities[category][key].base = 0;
+          }
+          if (systemData.secondaryAbilities[category][key].class === undefined) {
+            systemData.secondaryAbilities[category][key].class = 0;
+          }
+          if (systemData.secondaryAbilities[category][key].special === undefined) {
+            systemData.secondaryAbilities[category][key].special = 0;
+          }
+          if (systemData.secondaryAbilities[category][key].temp === undefined) {
+            systemData.secondaryAbilities[category][key].temp = 0;
+          }
+          if (systemData.secondaryAbilities[category][key].value === undefined) {
+            systemData.secondaryAbilities[category][key].value = 0;
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * Calculate final values for secondary abilities
+   */
+  _calculateSecondaryAbilities(systemData) {
+    if (!systemData.secondaryAbilities || !systemData.characteristics) return;
+
+    const char = systemData.characteristics;
+
+    // Calculate each category of secondary abilities
+    for (const [category, abilities] of Object.entries(systemData.secondaryAbilities)) {
+      for (const [key, ability] of Object.entries(abilities)) {
+        if (ability && ability.baseChar && char[ability.baseChar]) {
+          // Calculate final value: base + class + special + temp + characteristic modifier
+          const baseValue = ability.base || 0;
+          const classValue = ability.class || 0;
+          const specialValue = ability.special || 0;
+          const tempValue = ability.temp || 0;
+          const charModifier = Math.floor((char[ability.baseChar].value - 5) / 2); // Standard D&D style modifier
+
+          ability.value = baseValue + classValue + specialValue + tempValue + charModifier;
+
+          // Ensure minimum value of 0
+          if (ability.value < 0) {
+            ability.value = 0;
+          }
         }
       }
     }

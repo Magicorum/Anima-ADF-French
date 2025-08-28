@@ -1,65 +1,149 @@
-{{! Gear Tab }}
+{{! Équipement Tab - Equipement Complet }}
 <section class='tab gear {{tab.cssClass}}' data-group='primary' data-tab='gear'>
-  <ol class='items-list'>
-    <li class='item flexrow items-header'>
-      <div class='item-name'>{{localize 'Name'}}</div>
-      <div class='item-formula'>{{localize 'ANIMA.Item.Gear.FIELDS.rollFormula.label'}}</div>
-      <div class='item-controls'>
-        {{#if @root.editable}}
-          <a
-            class='item-control item-create'
-            title='{{localize "DOCUMENT.Create" type='Item'}}'
-            data-action='createDoc'
-            data-document-class='Item'
-            data-type='gear'
-          >
-            <i class='fas fa-plus'></i>
-            {{localize 'DOCUMENT.New' type='item'}}
-          </a>
-        {{/if}}
+  <div class="scrollable-container">
+    <!-- Port d'Armure -->
+    <div class='armory-wear-section'>
+      <h3 class='section-title'>Port d'Armure</h3>
+      <div class='armory-wear'>
+        <label>Port d'Armure:</label>
+        <input type='number' name='system.combat.wearArmor.value' value='{{system.combat.wearArmor.value}}' class='wear-armor-input' />
       </div>
-    </li>
-    {{#each gear as |item id|}}
-      <li
-        class='item flexrow'
-        data-item-id='{{item._id}}'
-        data-drag='true'
-        data-document-class='Item'
-      >
-        <div class='item-name'>
-          <div class='item-image'>
-            <a class='rollable' data-roll-type='item' data-action='roll'>
-              <img
-                src='{{item.img}}'
-                title='{{item.name}}'
-                width='24'
-                height='24'
-              />
-            </a>
-          </div>
-          <div>{{item.name}}</div>
-        </div>
-        <div class='item-formula item-prop'>{{item.system.formula}}</div>
-        <div class='item-controls'>
-          <a
-            class='item-control item-edit'
-            title='{{localize "DOCUMENT.Update" type='Gear'}}'
-            data-action='viewDoc'
-          >
-            <i class='fas fa-edit'></i>
-          </a>
-          {{#if @root.editable}}
-            <a
-              class='item-control item-delete'
-              title='{{localize "DOCUMENT.Delete" type='Gear'}}'
-              data-action='deleteDoc'
-            >
-              <i class='fas fa-trash'></i>
-            </a>
-          {{/if}}
-        </div>
-      </li>
-    {{/each}}
-  </ol>
+    </div>
 
+    <!-- Armures -->
+    <div class='armory-armor-section'>
+      <h3 class='section-title'>Armures</h3>
+      <div class='armory-armor'>
+        <div class='armor-header'>
+          <span>Nom</span>
+          <span>AT</span>
+          <span>FOR</span>
+          <span>AGI</span>
+          <span>Mouv</span>
+          <span>Magie</span>
+          <span>Physique</span>
+        </div>
+        <div class='armor-list'>
+          {{#each armor as |item id|}}
+          <div class='armor-item'>
+            <div class='armor-name'>{{item.name}}</div>
+            <div class='armor-at'>{{item.system.at}}</div>
+            <div class='armor-for'>{{item.system.fortitude}}</div>
+            <div class='armor-agi'>{{item.system.agility}}</div>
+            <div class='armor-mouv'>{{item.system.movement}}</div>
+            <div class='armor-magic'>{{item.system.magic}}</div>
+            <div class='armor-physical'>{{item.system.physical}}</div>
+            <div class='armor-controls'>
+              <button class='armor-equip-btn' data-action='equip' data-item-id='{{item._id}}'>Équiper</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Modules d'Armes -->
+    <div class='armory-proficiencies-section'>
+      <h3 class='section-title'>Modules d'Armes</h3>
+      <div class='armory-proficiencies'>
+        <div class='proficiency-header'>
+          <span>Nom</span>
+          <span>Type</span>
+          <span>Bonus</span>
+        </div>
+        <div class='proficiency-list'>
+          {{#each weaponProficiencies as |item id|}}
+          <div class='proficiency-item'>
+            <div class='proficiency-name'>{{item.name}}</div>
+            <div class='proficiency-type'>{{item.system.type}}</div>
+            <div class='proficiency-bonus'>{{item.system.bonus}}</div>
+            <div class='proficiency-controls'>
+              <button class='proficiency-equip-btn' data-action='equip' data-item-id='{{item._id}}'>Activer</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Armes -->
+    <div class='armory-weapon-section'>
+      <h3 class='section-title'>Armes</h3>
+      <div class='armory-weapon'>
+        <div class='weapon-list'>
+          {{#each weapons as |item id|}}
+          <div class='weapon-item'>
+            <div class='weapon-image'>
+              <img src='{{item.img}}' title='{{item.name}}' width='32' height='32' />
+            </div>
+            <div class='weapon-details'>
+              <div class='weapon-name'>{{item.name}}</div>
+              <div class='weapon-stats'>
+                <span>Dégâts: {{item.system.damage}}</span>
+                <span>Portée: {{item.system.range}}</span>
+                <span>Type: {{item.system.type}}</span>
+              </div>
+              <div class='weapon-description'>{{item.system.description}}</div>
+            </div>
+            <div class='weapon-controls'>
+              <button class='weapon-attack-btn rollable' data-action='roll' data-roll='1d100+@combat.attack.value' title='Attaquer avec {{item.name}}'>⚔️</button>
+              <button class='weapon-edit-btn' data-action='edit' data-item-id='{{item._id}}'>✏️</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Objets Précieux -->
+    <div class='armory-valuables-section'>
+      <h3 class='section-title'>Objets Précieux</h3>
+      <div class='armory-valuables'>
+        <div class='valuables-header'>
+          <span>Nom</span>
+          <span>Valeur</span>
+          <span>Description</span>
+        </div>
+        <div class='valuables-list'>
+          {{#each valuables as |item id|}}
+          <div class='valuable-item'>
+            <div class='valuable-name'>{{item.name}}</div>
+            <div class='valuable-value'>{{item.system.value}} PO</div>
+            <div class='valuable-description'>{{item.system.description}}</div>
+            <div class='valuable-controls'>
+              <button class='valuable-use-btn' data-action='use' data-item-id='{{item._id}}'>Utiliser</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Inventaire -->
+    <div class='armory-inventory-section'>
+      <h3 class='section-title'>Inventaire</h3>
+      <div class='armory-inventory'>
+        <div class='inventory-header'>
+          <span>Nom</span>
+          <span>Quantité</span>
+          <span>Poids</span>
+          <span>Description</span>
+        </div>
+        <div class='inventory-list'>
+          {{#each inventory as |item id|}}
+          <div class='inventory-item'>
+            <div class='inventory-name'>{{item.name}}</div>
+            <div class='inventory-quantity'>{{item.system.quantity}}</div>
+            <div class='inventory-weight'>{{item.system.weight}}</div>
+            <div class='inventory-description'>{{item.system.description}}</div>
+            <div class='inventory-controls'>
+              <button class='inventory-use-btn' data-action='use' data-item-id='{{item._id}}'>Utiliser</button>
+              <button class='inventory-edit-btn' data-action='edit' data-item-id='{{item._id}}'>✏️</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

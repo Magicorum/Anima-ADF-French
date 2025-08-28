@@ -113,14 +113,248 @@
         }
       },
       "secondaryAbilities": {
-        "athletics": {},
-        "social": {},
-        "perceptive": {},
-        "intellectual": {},
-        "vitality": {},
-        "subterfuge": {},
-        "creative": {},
-        "other": {}
+        "athletics": {
+          "acrobatics": {
+            "name": "Acrobaties",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "athletics": {
+            "name": "Athlétisme",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "climb": {
+            "name": "Escalade",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "jump": {
+            "name": "Saut",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "ride": {
+            "name": "Équitation",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "swim": {
+            "name": "Natation",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          }
+        },
+        "social": {
+          "style": {
+            "name": "Style",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "intimidate": {
+            "name": "Intimidation",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "leadership": {
+            "name": "Commandement",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "persuasion": {
+            "name": "Persuasion",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "trading": {
+            "name": "Commerce",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "etiquette": {
+            "name": "Étiquette",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          }
+        },
+        "perceptive": {
+          "notice": {
+            "name": "Perception",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "search": {
+            "name": "Fouille",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "track": {
+            "name": "Pistage",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          }
+        },
+        "intellectual": {
+          "animals": {
+            "name": "Animaux",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "science": {
+            "name": "Science",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "law": {
+            "name": "Droit",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "herbs": {
+            "name": "Herboristerie",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "history": {
+            "name": "Histoire",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "tactics": {
+            "name": "Tactique",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "arcane": {
+            "name": "Arcanes",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          }
+        },
+        "other": {
+          "sleightOfHand": {
+            "name": "Escamotage",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "disguise": {
+            "name": "Déguisement",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "hide": {
+            "name": "Dissimulation",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "theft": {
+            "name": "Vol",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "trapLore": {
+            "name": "Connaissance des Pièges",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "poisons": {
+            "name": "Poisons",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          },
+          "lockpicking": {
+            "name": "Crochetage",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+            "value": 0
+          }
+        }
       }
     },
     "character": {

@@ -49,13 +49,25 @@ export class AnimaSheet extends api.HandlebarsApplicationMixin(
       template: 'systems/FrenchAnimaCooler/templates/actor/features.hbs',
     },
     Biographie: {
-      template: 'systems/FrenchAnimaCooler/templates/actor/Biographie.hbs',
+      template: 'systems/FrenchAnimaCooler/templates/actor/biographie.hbs',
     },
     gear: {
       template: 'systems/FrenchAnimaCooler/templates/actor/gear.hbs',
     },
     spells: {
       template: 'systems/FrenchAnimaCooler/templates/actor/spells.hbs',
+    },
+    ki: {
+      template: 'systems/FrenchAnimaCooler/templates/actor/ki.hbs',
+    },
+    psychic: {
+      template: 'systems/FrenchAnimaCooler/templates/actor/psychic.hbs',
+    },
+    history: {
+      template: 'systems/FrenchAnimaCooler/templates/actor/history.hbs',
+    },
+    options: {
+      template: 'systems/FrenchAnimaCooler/templates/actor/options.hbs',
     },
     effects: {
       template: 'systems/FrenchAnimaCooler/templates/actor/effects.hbs',
@@ -72,10 +84,10 @@ export class AnimaSheet extends api.HandlebarsApplicationMixin(
     // Control which parts show based on document subtype
     switch (this.document.type) {
       case 'character':
-        options.parts.push('features', 'gear', 'spells', 'effects');
+        options.parts.push('features', 'gear', 'spells', 'ki', 'psychic', 'history', 'options', 'effects');
         break;
       case 'npc':
-        options.parts.push('gear', 'effects');
+        options.parts.push('features', 'gear', 'spells', 'ki', 'psychic', 'history', 'effects');
         break;
     }
   }
@@ -175,19 +187,35 @@ export class AnimaSheet extends api.HandlebarsApplicationMixin(
           break;
         case 'features':
           tab.id = 'features';
-          tab.label += 'Features';
+          tab.label += 'AttributsCapacites';
           break;
         case 'gear':
           tab.id = 'gear';
-          tab.label += 'Gear';
+          tab.label += 'Equipement';
           break;
         case 'spells':
           tab.id = 'spells';
-          tab.label += 'Spells';
+          tab.label += 'Sorts';
+          break;
+        case 'ki':
+          tab.id = 'ki';
+          tab.label += 'Ki';
+          break;
+        case 'psychic':
+          tab.id = 'psychic';
+          tab.label += 'Psychique';
+          break;
+        case 'history':
+          tab.id = 'history';
+          tab.label += 'Historique';
+          break;
+        case 'options':
+          tab.id = 'options';
+          tab.label += 'Options';
           break;
         case 'effects':
           tab.id = 'effects';
-          tab.label += 'Effects';
+          tab.label += 'Effets';
           break;
       }
       if (this.tabGroups[tabGroup] === tab.id) tab.cssClass = 'active';

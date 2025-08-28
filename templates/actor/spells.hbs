@@ -1,72 +1,139 @@
-{{! Spells Tab }}
-<section
-  class='tab spells {{tab.cssClass}}'
-  data-group='primary'
-  data-tab='spells'
->
-  <ol class='items-list'>
-    {{#each spells as |spells spellLevel|}}
-      <li class='item flexrow items-header'>
-        <div class='item-name'>
-          {{localize 'ANIMA.Item.Spell.SpellLVL' level=spellLevel}}
+{{! Sorts Tab - Magie Complète }}
+<section class='tab spells {{tab.cssClass}}' data-group='primary' data-tab='spells'>
+  <div class="scrollable-container">
+    <!-- Projection Magique -->
+    <div class='magic-projection-section'>
+      <h3 class='section-title'>Projection Magique</h3>
+      <div class='magic-projection'>
+        <div class='projection-base'>
+          <label>Base:</label>
+          <input type='number' name='system.magic.magicProjection.base' value='{{system.magic.magicProjection.base}}' class='projection-input' />
         </div>
-        <div class='item-controls'>
+        <div class='projection-special'>
+          <label>Spécial:</label>
+          <input type='number' name='system.magic.magicProjection.special' value='{{system.magic.magicProjection.special}}' class='projection-input' />
+        </div>
+        <div class='projection-final'>
+          <label>Final:</label>
+          <span class='projection-value'>{{system.magic.magicProjection.value}}</span>
+        </div>
+        <div class='projection-controls'>
+          <button class='projection-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.magic.magicProjection.value}}' title='Jeter Projection Magique'>🔮</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accumulation Magique -->
+    <div class='magic-accumulation-section'>
+      <h3 class='section-title'>Accumulation Magique</h3>
+      <div class='magic-accumulation'>
+        <div class='accumulation-base'>
+          <label>Base:</label>
+          <input type='number' name='system.magic.magicAccumulation.base' value='{{system.magic.magicAccumulation.base}}' class='accumulation-input' />
+        </div>
+        <div class='accumulation-special'>
+          <label>Spécial:</label>
+          <input type='number' name='system.magic.magicAccumulation.special' value='{{system.magic.magicAccumulation.special}}' class='accumulation-input' />
+        </div>
+        <div class='accumulation-final'>
+          <label>Final:</label>
+          <span class='accumulation-value'>{{system.magic.magicAccumulation.value}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zeon -->
+    <div class='magic-zeon-section'>
+      <h3 class='section-title'>Zeon</h3>
+      <div class='magic-zeon'>
+        <div class='zeon-current'>
+          <label>Actuel:</label>
+          <input type='number' name='system.zeon.value' value='{{system.zeon.value}}' class='zeon-input' />
+        </div>
+        <div class='zeon-max'>
+          <label>Maximum:</label>
+          <span class='zeon-max-value'>{{system.zeon.max}}</span>
+        </div>
+        <div class='zeon-regen'>
+          <label>Régénération:</label>
+          <input type='number' name='system.zeon.regeneration' value='{{system.zeon.regeneration}}' class='zeon-input' />
+        </div>
+      </div>
+    </div>
+
+    <!-- Détails Magiques -->
+    <div class='magic-details-section'>
+      <h3 class='section-title'>Détails Magiques</h3>
+      <div class='magic-details'>
+        <div class='magic-paths'>
+          <h4>Voies de Magie</h4>
+          <div class='magic-paths-list'>
+            {{#each magicPaths as |path id|}}
+            <div class='magic-path-item'>
+              <div class='path-name'>{{path.name}}</div>
+              <div class='path-level'>Niveau {{path.system.level}}</div>
+              <div class='path-description'>{{path.system.description}}</div>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+
+        <div class='innate-magic'>
+          <h4>Magie Innée</h4>
+          <div class='innate-magic-list'>
+            {{#each innateSpells as |spell id|}}
+            <div class='innate-spell-item'>
+              <div class='innate-spell-name'>{{spell.name}}</div>
+              <div class='innate-spell-level'>Niveau {{spell.system.level}}</div>
+              <div class='innate-spell-zeon'>Zeon: {{spell.system.zeonCost}}</div>
+              <button class='innate-spell-cast-btn rollable' data-action='roll' data-roll='1d100+{{system.magic.magicProjection.value}}' title='Lancer {{spell.name}}'>✨</button>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sorts par Niveau -->
+    <div class='magic-spells-section'>
+      <h3 class='section-title'>Sorts</h3>
+      <div class='magic-spells'>
+        {{#each spells as |spells spellLevel|}}
+        <div class='spell-level-section'>
+          <h4>Niveau {{spellLevel}}</h4>
+          <div class='spell-list'>
+            {{#each spells as |item id|}}
+            <div class='spell-item'>
+              <div class='spell-image'>
+                <img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+              </div>
+              <div class='spell-details'>
+                <div class='spell-name'>{{item.name}}</div>
+                <div class='spell-info'>
+                  <span>Zeon: {{item.system.zeonCost}}</span>
+                  <span>Type: {{item.system.type}}</span>
+                  <span>Actions: {{item.system.actionCost}}</span>
+                </div>
+                <div class='spell-description'>{{item.system.description}}</div>
+              </div>
+              <div class='spell-controls'>
+                <button class='spell-cast-btn rollable' data-action='roll' data-roll='1d100+{{system.magic.magicProjection.value}}' title='Lancer {{item.name}}'>🔮</button>
+                <button class='spell-edit-btn' data-action='edit' data-item-id='{{item._id}}'>✏️</button>
+                {{#if @root.editable}}
+                <button class='spell-delete-btn' data-action='delete' data-item-id='{{item._id}}'>🗑️</button>
+                {{/if}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
           {{#if @root.editable}}
-            <a
-              class='item-control item-create'
-              title='{{localize "DOCUMENT.Create" type='Spell'}}'
-              data-action='createDoc'
-              data-document-class='Item'
-              data-type='spell'
-              data-system.spell-level='{{spellLevel}}'
-            >
-              <i class='fas fa-plus'></i>
-              {{localize 'ANIMA.Item.Spell.AddLVL' level=spellLevel}}
-            </a>
+          <div class='spell-level-controls'>
+            <button class='add-spell-btn' data-action='create' data-type='spell' data-level='{{spellLevel}}'>Ajouter Sort Niveau {{spellLevel}}</button>
+          </div>
           {{/if}}
         </div>
-      </li>
-      {{#each spells as |item id|}}
-        <li
-          class='item flexrow'
-          data-item-id='{{item._id}}'
-          data-drag='true'
-          data-document-class='Item'
-        >
-          <div class='item-name flexrow'>
-            <div class='item-image'>
-              <a class='rollable' data-roll-type='item' data-action='roll'>
-                <img
-                  src='{{item.img}}'
-                  title='{{item.name}}'
-                  width='24'
-                  height='24'
-                />
-              </a>
-            </div>
-            <div>{{item.name}}</div>
-          </div>
-          <div class='item-controls'>
-            <a
-              class='item-control item-edit'
-              title='{{localize "DOCUMENT.Edit" type='spell'}}'
-              data-action='viewDoc'
-            >
-              <i class='fas fa-edit'></i>
-            </a>
-            {{#if @root.editable}}
-              <a
-                class='item-control item-delete'
-                title='{{localize "DOCUMENT.Delete" type='spell'}}'
-                data-action='deleteDoc'
-              >
-                <i class='fas fa-trash'></i>
-              </a>
-            {{/if}}
-          </div>
-        </li>
-      {{/each}}
-    {{/each}}
-  </ol>
-
+        {{/each}}
+      </div>
+    </div>
+  </div>
 </section>

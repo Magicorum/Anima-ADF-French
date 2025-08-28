@@ -1,0 +1,216 @@
+{{! Options Tab - Paramètres du Système }}
+<section class='tab options {{tab.cssClass}}' data-group='primary' data-tab='options'>
+  <div class="scrollable-container">
+    <!-- Gestion des Jets Ouverts -->
+    <div class='options-open-roll-range'>
+      <h3 class='section-title'>Gestion des Jets Ouverts</h3>
+      <div class='open-roll-settings'>
+        <div class='open-roll-min'>
+          <label>Valeur Minimale:</label>
+          <input type='number' name='system.settings.openRollMin' value='{{system.settings.openRollMin}}' class='setting-input' min='1' max='100' />
+        </div>
+        <div class='open-roll-max'>
+          <label>Valeur Maximale:</label>
+          <input type='number' name='system.settings.openRollMax' value='{{system.settings.openRollMax}}' class='setting-input' min='1' max='100' />
+        </div>
+        <div class='open-roll-test'>
+          <button class='test-open-roll-btn rollable' data-action='roll' data-roll='1d100' title='Tester les jets ouverts'>🎲 Tester</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Options de Personnages -->
+    <div class='options-character-settings'>
+      <h3 class='section-title'>Options de Personnages</h3>
+      <div class='character-options'>
+        <div class='option-item'>
+          <label for='useMagic'>Utiliser la Magie:</label>
+          <input type='checkbox' id='useMagic' name='system.settings.useMagic' {{#if system.settings.useMagic}}checked{{/if}} />
+        </div>
+        <div class='option-item'>
+          <label for='usePsychic'>Utiliser les Pouvoirs Psychiques:</label>
+          <input type='checkbox' id='usePsychic' name='system.settings.usePsychic' {{#if system.settings.usePsychic}}checked{{/if}} />
+        </div>
+        <div class='option-item'>
+          <label for='useKi'>Utiliser le Ki:</label>
+          <input type='checkbox' id='useKi' name='system.settings.useKi' {{#if system.settings.useKi}}checked{{/if}} />
+        </div>
+        <div class='option-item'>
+          <label for='autoCalculate'>Calcul Automatique:</label>
+          <input type='checkbox' id='autoCalculate' name='system.settings.autoCalculate' {{#if system.settings.autoCalculate}}checked{{/if}} />
+        </div>
+        <div class='option-item'>
+          <label for='showTooltips'>Afficher les Info-bulles:</label>
+          <input type='checkbox' id='showTooltips' name='system.settings.showTooltips' {{#if system.settings.showTooltips}}checked{{/if}} />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bonus Innés -->
+    <div class='options-innate-bonuses'>
+      <h3 class='section-title'>Bonus Innés</h3>
+      <div class='innate-bonuses'>
+        <div class='innate-bonuses-list'>
+          {{#each innateBonuses as |bonus id|}}
+          <div class='innate-bonus-item'>
+            <div class='bonus-name'>{{bonus.name}}</div>
+            <div class='bonus-type'>{{bonus.system.type}}</div>
+            <div class='bonus-value'>{{bonus.system.value}}</div>
+            <div class='bonus-description'>{{bonus.system.description}}</div>
+            <div class='bonus-controls'>
+              <button class='bonus-activate-btn' data-action='activate' data-bonus-id='{{bonus._id}}'>Activer</button>
+              <button class='bonus-edit-btn' data-action='edit' data-bonus-id='{{bonus._id}}'>✏️</button>
+              {{#if @root.editable}}
+              <button class='bonus-delete-btn' data-action='delete' data-bonus-id='{{bonus._id}}'>🗑️</button>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        {{#if @root.editable}}
+        <div class='innate-bonuses-controls'>
+          <button class='add-innate-bonus-btn' data-action='create' data-type='innateBonus'>Ajouter un Bonus Innés</button>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <!-- Paramètres d'Affichage -->
+    <div class='options-display-settings'>
+      <h3 class='section-title'>Paramètres d'Affichage</h3>
+      <div class='display-settings'>
+        <div class='setting-item'>
+          <label for='theme'>Thème:</label>
+          <select id='theme' name='system.settings.theme'>
+            <option value='dark-fantasy' {{#if (eq system.settings.theme 'dark-fantasy')}}selected{{/if}}>Dark Fantasy</option>
+            <option value='cyberpunk' {{#if (eq system.settings.theme 'cyberpunk')}}selected{{/if}}>Cyberpunk</option>
+            <option value='classic' {{#if (eq system.settings.theme 'classic')}}selected{{/if}}>Classique</option>
+          </select>
+        </div>
+        <div class='setting-item'>
+          <label for='compactMode'>Mode Compact:</label>
+          <input type='checkbox' id='compactMode' name='system.settings.compactMode' {{#if system.settings.compactMode}}checked{{/if}} />
+        </div>
+        <div class='setting-item'>
+          <label for='showAdvanced'>Afficher les Options Avancées:</label>
+          <input type='checkbox' id='showAdvanced' name='system.settings.showAdvanced' {{#if system.settings.showAdvanced}}checked{{/if}} />
+        </div>
+        <div class='setting-item'>
+          <label for='animationsEnabled'>Animations Activées:</label>
+          <input type='checkbox' id='animationsEnabled' name='system.settings.animationsEnabled' {{#if system.settings.animationsEnabled}}checked{{/if}} />
+        </div>
+      </div>
+    </div>
+
+    <!-- Paramètres de Jeu -->
+    <div class='options-game-settings'>
+      <h3 class='section-title'>Paramètres de Jeu</h3>
+      <div class='game-settings'>
+        <div class='setting-item'>
+          <label for='difficulty'>Difficulté:</label>
+          <select id='difficulty' name='system.settings.difficulty'>
+            <option value='easy' {{#if (eq system.settings.difficulty 'easy')}}selected{{/if}}>Facile</option>
+            <option value='normal' {{#if (eq system.settings.difficulty 'normal')}}selected{{/if}}>Normal</option>
+            <option value='hard' {{#if (eq system.settings.difficulty 'hard')}}selected{{/if}}>Difficile</option>
+            <option value='expert' {{#if (eq system.settings.difficulty 'expert')}}selected{{/if}}>Expert</option>
+          </select>
+        </div>
+        <div class='setting-item'>
+          <label for='autoSuccess'>Succès Automatique:</label>
+          <input type='number' id='autoSuccess' name='system.settings.autoSuccess' value='{{system.settings.autoSuccess}}' min='1' max='20' class='setting-input' />
+        </div>
+        <div class='setting-item'>
+          <label for='autoFailure'>Échec Automatique:</label>
+          <input type='number' id='autoFailure' name='system.settings.autoFailure' value='{{system.settings.autoFailure}}' min='1' max='20' class='setting-input' />
+        </div>
+        <div class='setting-item'>
+          <label for='fumbleRange'>Zone d'Échec Critique:</label>
+          <input type='number' id='fumbleRange' name='system.settings.fumbleRange' value='{{system.settings.fumbleRange}}' min='1' max='10' class='setting-input' />
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions Rapides -->
+    <div class='options-quick-actions'>
+      <h3 class='section-title'>Actions Rapides</h3>
+      <div class='quick-actions'>
+        <div class='action-group'>
+          <h4>Jets de Caractéristiques</h4>
+          <div class='action-buttons'>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.agility.value' title='Agilité'>AGI</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.constitution.value' title='Constitution'>CON</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.dexterity.value' title='Dextérité'>DEX</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.strength.value' title='Force'>FOR</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.intelligence.value' title='Intelligence'>INT</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.perception.value' title='Perception'>PER</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.power.value' title='Pouvoir'>POU</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.willpower.value' title='Volonté'>VOL</button>
+          </div>
+        </div>
+
+        <div class='action-group'>
+          <h4>Jets de Combat</h4>
+          <div class='action-buttons'>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@combat.attack.value' title='Attaque'>⚔️</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@combat.defense.value' title='Parade'>🛡️</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@combat.dodge.value' title='Esquive'>🏃</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@combat.initiative.value' title='Initiative'>🎯</button>
+          </div>
+        </div>
+
+        {{#if system.settings.useMagic}}
+        <div class='action-group'>
+          <h4>Jets Magiques</h4>
+          <div class='action-buttons'>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@magic.magicProjection.value' title='Projection Magique'>🔮</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@magic.magicAccumulation.value' title='Accumulation Magique'>📚</button>
+          </div>
+        </div>
+        {{/if}}
+
+        {{#if system.settings.useKi}}
+        <div class='action-group'>
+          <h4>Jets de Ki</h4>
+          <div class='action-buttons'>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@ki.martialKnowledge.value' title='Développement Intérieur'>💪</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@characteristics.power.value' title='Ki'>⚡</button>
+          </div>
+        </div>
+        {{/if}}
+
+        {{#if system.settings.usePsychic}}
+        <div class='action-group'>
+          <h4>Jets Psychiques</h4>
+          <div class='action-buttons'>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@psychic.potential.value' title='Talent Psychique'>🧠</button>
+            <button class='quick-roll-btn rollable' data-action='roll' data-roll='1d100+@psychic.projection.value' title='Projection Psychique'>👁️</button>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <!-- Informations Système -->
+    <div class='options-system-info'>
+      <h3 class='section-title'>Informations Système</h3>
+      <div class='system-info'>
+        <div class='info-item'>
+          <label>Version du Système:</label>
+          <span>{{system.version}}</span>
+        </div>
+        <div class='info-item'>
+          <label>Version Foundry VTT:</label>
+          <span>{{foundryVersion}}</span>
+        </div>
+        <div class='info-item'>
+          <label>Dernière Mise à Jour:</label>
+          <span>{{system.lastUpdate}}</span>
+        </div>
+        <div class='info-item'>
+          <label>Créateur:</label>
+          <span>Xavier Chouinard</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,171 @@
+{{! Historique Tab - Langues et Réputations }}
+<section class='tab history {{tab.cssClass}}' data-group='primary' data-tab='history'>
+  <div class="scrollable-container">
+    <!-- Langues -->
+    <div class='languages-section'>
+      <h3 class='section-title'>Langues</h3>
+      <div class='languages'>
+        <div class='languages-list'>
+          {{#each languages as |language id|}}
+          <div class='language-item'>
+            <div class='language-name'>{{language.name}}</div>
+            <div class='language-level'>{{language.system.level}}</div>
+            <div class='language-description'>{{language.system.description}}</div>
+            <div class='language-controls'>
+              <button class='language-edit-btn' data-action='edit' data-language-id='{{language._id}}'>✏️</button>
+              {{#if @root.editable}}
+              <button class='language-delete-btn' data-action='delete' data-language-id='{{language._id}}'>🗑️</button>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        {{#if @root.editable}}
+        <div class='languages-controls'>
+          <button class='add-language-btn' data-action='create' data-type='language'>Ajouter une Langue</button>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <!-- Réputations -->
+    <div class='reputations-section'>
+      <h3 class='section-title'>Réputations</h3>
+      <div class='reputations'>
+        <div class='reputation-header'>
+          <span>Nom</span>
+          <span>Valeur</span>
+          <span>Description</span>
+        </div>
+        <div class='reputations-list'>
+          {{#each reputations as |reputation id|}}
+          <div class='reputation-item'>
+            <div class='reputation-name'>{{reputation.name}}</div>
+            <div class='reputation-value'>{{reputation.system.value}}</div>
+            <div class='reputation-description'>{{reputation.system.description}}</div>
+            <div class='reputation-controls'>
+              <button class='reputation-edit-btn' data-action='edit' data-reputation-id='{{reputation._id}}'>✏️</button>
+              {{#if @root.editable}}
+              <button class='reputation-delete-btn' data-action='delete' data-reputation-id='{{reputation._id}}'>🗑️</button>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        {{#if @root.editable}}
+        <div class='reputations-controls'>
+          <button class='add-reputation-btn' data-action='create' data-type='reputation'>Ajouter une Réputation</button>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <!-- Gnose et Natura -->
+    <div class='gnosis-natura-section'>
+      <h3 class='section-title'>Gnose et Natura</h3>
+      <div class='gnosis-natura'>
+        <div class='gnosis'>
+          <h4>Gnose</h4>
+          <div class='gnosis-value'>
+            <label>Valeur:</label>
+            <input type='number' name='system.gnosis.value' value='{{system.gnosis.value}}' class='gnosis-input' />
+          </div>
+          <div class='gnosis-description'>
+            <textarea name='system.gnosis.description' placeholder='Description de la Gnose...'>{{system.gnosis.description}}</textarea>
+          </div>
+        </div>
+
+        <div class='natura'>
+          <h4>Natura</h4>
+          <div class='natura-value'>
+            <label>Valeur:</label>
+            <input type='number' name='system.natura.value' value='{{system.natura.value}}' class='natura-input' />
+          </div>
+          <div class='natura-description'>
+            <textarea name='system.natura.description' placeholder='Description de la Natura...'>{{system.natura.description}}</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Élan -->
+    <div class='elan-section'>
+      <h3 class='section-title'>Élan</h3>
+      <div class='elan'>
+        <div class='elan-current'>
+          <label>Actuel:</label>
+          <input type='number' name='system.elan.value' value='{{system.elan.value}}' class='elan-input' />
+        </div>
+        <div class='elan-max'>
+          <label>Maximum:</label>
+          <span class='elan-max-value'>{{system.elan.max}}</span>
+        </div>
+        <div class='elan-description'>
+          <textarea name='system.elan.description' placeholder='Description de l'Élan...'>{{system.elan.description}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Avantages et Désavantages -->
+    <div class='advantages-disadvantages-section'>
+      <h3 class='section-title'>Avantages et Désavantages</h3>
+      <div class='advantages-disadvantages'>
+        <div class='advantages'>
+          <h4>Avantages</h4>
+          <div class='advantages-list'>
+            {{#each advantages as |advantage id|}}
+            <div class='advantage-item'>
+              <div class='advantage-name'>{{advantage.name}}</div>
+              <div class='advantage-cost'>Coût: {{advantage.system.cost}}</div>
+              <div class='advantage-description'>{{advantage.system.description}}</div>
+              <div class='advantage-controls'>
+                <button class='advantage-edit-btn' data-action='edit' data-advantage-id='{{advantage._id}}'>✏️</button>
+                {{#if @root.editable}}
+                <button class='advantage-delete-btn' data-action='delete' data-advantage-id='{{advantage._id}}'>🗑️</button>
+                {{/if}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          {{#if @root.editable}}
+          <div class='advantages-controls'>
+            <button class='add-advantage-btn' data-action='create' data-type='advantage'>Ajouter un Avantage</button>
+          </div>
+          {{/if}}
+        </div>
+
+        <div class='disadvantages'>
+          <h4>Désavantages</h4>
+          <div class='disadvantages-list'>
+            {{#each disadvantages as |disadvantage id|}}
+            <div class='disadvantage-item'>
+              <div class='disadvantage-name'>{{disadvantage.name}}</div>
+              <div class='disadvantage-benefit'>Bénéfice: {{disadvantage.system.benefit}}</div>
+              <div class='disadvantage-description'>{{disadvantage.system.description}}</div>
+              <div class='disadvantage-controls'>
+                <button class='disadvantage-edit-btn' data-action='edit' data-disadvantage-id='{{disadvantage._id}}'>✏️</button>
+                {{#if @root.editable}}
+                <button class='disadvantage-delete-btn' data-action='delete' data-disadvantage-id='{{disadvantage._id}}'>🗑️</button>
+                {{/if}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          {{#if @root.editable}}
+          <div class='disadvantages-controls'>
+            <button class='add-disadvantage-btn' data-action='create' data-type='disadvantage'>Ajouter un Désavantage</button>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div class='notes-section'>
+      <h3 class='section-title'>Notes</h3>
+      <div class='notes'>
+        <textarea name='system.notes' placeholder='Notes générales sur le personnage...'>{{system.notes}}</textarea>
+      </div>
+    </div>
+  </div>
+</section>

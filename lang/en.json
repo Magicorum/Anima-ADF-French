@@ -48,10 +48,14 @@
     "Actor": {
       "Tabs": {
         "Biographie": "Biographie",
-        "Features": "Caractéristiques",
-        "Gear": "Équipement",
-        "Spells": "Sorts",
-        "Effects": "Effets"
+        "AttributsCapacites": "Attributs & Capacités",
+        "Equipement": "Équipement",
+        "Sorts": "Sorts",
+        "Ki": "Ki",
+        "Psychique": "Psychique",
+        "Historique": "Historique",
+        "Options": "Options",
+        "Effets": "Effets"
       },
       "base": {
         "FIELDS": {
@@ -94,26 +98,50 @@
     },
     "Item": {
       "Tabs": {
-        "Attributes": "Attributes",
+        "Attributes": "Attributs",
         "Description": "Description",
-        "Effects": "Effects"
+        "Effects": "Effets"
       },
       "Gear": {
         "FIELDS": {
-          "rollFormula": {"label": "Roll Formula"},
-          "numDice": {"label": "Number of Dice"},
-          "dieSize": {"label": "Die Size"},
-          "rollMod": {"label": "Roll Modifier"},
-          "quantity": {"label": "Quantity"},
-          "weight": {"label": "Weight"}
+          "rollFormula": {"label": "Formule de Jet"},
+          "numDice": {"label": "Nombre de Dés"},
+          "dieSize": {"label": "Taille de Dés"},
+          "rollMod": {"label": "Modificateur de Jet"},
+          "quantity": {"label": "Quantité"},
+          "weight": {"label": "Poids"},
+          "description": {"label": "Description"},
+          "value": {"label": "Valeur"},
+          "damage": {"label": "Dégâts"},
+          "range": {"label": "Portée"},
+          "type": {"label": "Type"},
+          "at": {"label": "AT"},
+          "fortitude": {"label": "FOR"},
+          "agility": {"label": "AGI"},
+          "movement": {"label": "Mouv"},
+          "magic": {"label": "Magie"},
+          "physical": {"label": "Physique"},
+          "bonus": {"label": "Bonus"},
+          "level": {"label": "Niveau"},
+          "kiCost": {"label": "Coût en Ki"},
+          "maintenance": {"label": "Maintenance"},
+          "actionCost": {"label": "Coût en Actions"},
+          "fatigueCost": {"label": "Coût en Fatigue"},
+          "cost": {"label": "Coût"},
+          "discipline": {"label": "Discipline"},
+          "zeonCost": {"label": "Coût en Zeon"}
         }
       },
       "Spell": {
         "FIELDS": {
-          "level": {"label": "Spell Level"}
+          "level": {"label": "Niveau de Sort"},
+          "zeonCost": {"label": "Coût en Zeon"},
+          "actionCost": {"label": "Coût en Actions"},
+          "type": {"label": "Type de Sort"},
+          "description": {"label": "Description"}
         },
-        "SpellLVL": "Level {level} Spells",
-        "AddLVL": "Add LVL {level}"
+        "SpellLVL": "Sorts de Niveau {level}",
+        "AddLVL": "Ajouter Niveau {level}"
       }
     },
     "Effect": {
@@ -136,7 +164,23 @@
       "accessory": "Accessoire",
       "spell": "Sort",
       "technique": "Technique",
-      "secondaryAbility": "Compétence Secondaire"
+      "secondaryAbility": "Compétence Secondaire",
+      "magicPath": "Voie Magique",
+      "innateSpell": "Sort Innée",
+      "kiAbility": "Capacité Ki",
+      "kiPool": "Réserve Ki",
+      "kiSeal": "Sceau Ki",
+      "kiTechnique": "Technique Ki",
+      "psychicDiscipline": "Discipline Psychique",
+      "mentalPattern": "Modèle Mental",
+      "psychicPower": "Pouvoir Psychique",
+      "metamagic": "Métamagie",
+      "language": "Langue",
+      "reputation": "Réputation",
+      "advantage": "Avantage",
+      "disadvantage": "Désavantage",
+      "weaponProficiency": "Maîtrise d'Arme",
+      "valuable": "Objet Précieux"
     }
   }
 }

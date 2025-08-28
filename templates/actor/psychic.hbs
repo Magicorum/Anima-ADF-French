@@ -1,0 +1,184 @@
+{{! Psychique Tab - Pouvoirs Psychiques }}
+<section class='tab psychic {{tab.cssClass}}' data-group='primary' data-tab='psychic'>
+  <div class="scrollable-container">
+    <!-- Points de Pouvoirs Psychiques -->
+    <div class='psychic-points-section'>
+      <h3 class='section-title'>Points de Pouvoirs Psychiques</h3>
+      <div class='psychic-points'>
+        <div class='psychic-points-current'>
+          <label>Actuel:</label>
+          <input type='number' name='system.psychic.points.value' value='{{system.psychic.points.value}}' class='psychic-input' />
+        </div>
+        <div class='psychic-points-max'>
+          <label>Maximum:</label>
+          <span class='psychic-max-value'>{{system.psychic.points.max}}</span>
+        </div>
+        <div class='psychic-points-regen'>
+          <label>Régénération:</label>
+          <input type='number' name='system.psychic.points.regeneration' value='{{system.psychic.points.regeneration}}' class='psychic-input' />
+        </div>
+      </div>
+    </div>
+
+    <!-- Talent Psychique -->
+    <div class='psychic-potential-section'>
+      <h3 class='section-title'>Talent Psychique</h3>
+      <div class='psychic-potential'>
+        <div class='potential-base'>
+          <label>Base:</label>
+          <input type='number' name='system.psychic.potential.base' value='{{system.psychic.potential.base}}' class='potential-input' />
+        </div>
+        <div class='potential-special'>
+          <label>Spécial:</label>
+          <input type='number' name='system.psychic.potential.special' value='{{system.psychic.potential.special}}' class='potential-input' />
+        </div>
+        <div class='potential-final'>
+          <label>Final:</label>
+          <span class='potential-value'>{{system.psychic.potential.value}}</span>
+        </div>
+        <div class='potential-controls'>
+          <button class='potential-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.psychic.potential.value}}' title='Jeter Talent Psychique'>🧠</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projection Psychique -->
+    <div class='psychic-projection-section'>
+      <h3 class='section-title'>Projection Psychique</h3>
+      <div class='psychic-projection'>
+        <div class='projection-base'>
+          <label>Base:</label>
+          <input type='number' name='system.psychic.projection.base' value='{{system.psychic.projection.base}}' class='projection-input' />
+        </div>
+        <div class='projection-special'>
+          <label>Spécial:</label>
+          <input type='number' name='system.psychic.projection.special' value='{{system.psychic.projection.special}}' class='projection-input' />
+        </div>
+        <div class='projection-final'>
+          <label>Final:</label>
+          <span class='projection-value'>{{system.psychic.projection.value}}</span>
+        </div>
+        <div class='projection-controls'>
+          <button class='projection-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.psychic.projection.value}}' title='Jeter Projection Psychique'>👁️</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disciplines Psychiques -->
+    <div class='psychic-disciplines-section'>
+      <h3 class='section-title'>Disciplines Psychiques</h3>
+      <div class='psychic-disciplines'>
+        <div class='disciplines-list'>
+          {{#each psychicDisciplines as |discipline id|}}
+          <div class='discipline-item'>
+            <div class='discipline-name'>{{discipline.name}}</div>
+            <div class='discipline-level'>Niveau {{discipline.system.level}}</div>
+            <div class='discipline-description'>{{discipline.system.description}}</div>
+            <div class='discipline-controls'>
+              <button class='discipline-use-btn' data-action='use' data-discipline-id='{{discipline._id}}'>Utiliser</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Modèles Mentaux -->
+    <div class='psychic-mental-patterns-section'>
+      <h3 class='section-title'>Modèles Mentaux</h3>
+      <div class='psychic-mental-patterns'>
+        <div class='mental-patterns-header'>
+          <span>Nom</span>
+          <span>Niveau</span>
+          <span>Actions</span>
+          <span>Maintenance</span>
+        </div>
+        <div class='mental-patterns-list'>
+          {{#each mentalPatterns as |pattern id|}}
+          <div class='mental-pattern-item'>
+            <div class='pattern-name'>{{pattern.name}}</div>
+            <div class='pattern-level'>{{pattern.system.level}}</div>
+            <div class='pattern-actions'>{{pattern.system.actionCost}}</div>
+            <div class='pattern-maintenance'>{{pattern.system.maintenance}}</div>
+            <div class='pattern-description'>{{pattern.system.description}}</div>
+            <div class='pattern-controls'>
+              <button class='pattern-use-btn rollable' data-action='roll' data-roll='1d100+{{system.psychic.projection.value}}' title='Utiliser {{pattern.name}}'>🧘</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Pouvoirs Maintenus -->
+    <div class='psychic-maintained-powers-section'>
+      <h3 class='section-title'>Pouvoirs Maintenus</h3>
+      <div class='psychic-maintained-powers'>
+        <div class='maintained-powers-header'>
+          <span>Nom</span>
+          <span>Niveau</span>
+          <span>Actions</span>
+          <span>Maintenance</span>
+        </div>
+        <div class='maintained-powers-list'>
+          {{#each maintainedPowers as |power id|}}
+          <div class='maintained-power-item'>
+            <div class='power-name'>{{power.name}}</div>
+            <div class='power-level'>{{power.system.level}}</div>
+            <div class='power-actions'>{{power.system.actionCost}}</div>
+            <div class='power-maintenance'>{{power.system.maintenance}}</div>
+            <div class='power-description'>{{power.system.description}}</div>
+            <div class='power-controls'>
+              <button class='power-maintain-btn' data-action='maintain' data-power-id='{{power._id}}'>Maintenir</button>
+              <button class='power-cancel-btn' data-action='cancel' data-power-id='{{power._id}}'>Annuler</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Pouvoirs Connus -->
+    <div class='psychic-known-powers-section'>
+      <h3 class='section-title'>Pouvoirs Connus</h3>
+      <div class='psychic-known-powers'>
+        <div class='known-powers-list'>
+          {{#each knownPowers as |power id|}}
+          <div class='known-power-item'>
+            <div class='power-name'>{{power.name}}</div>
+            <div class='power-level'>Niveau {{power.system.level}}</div>
+            <div class='power-discipline'>{{power.system.discipline}}</div>
+            <div class='power-action-cost'>Actions: {{power.system.actionCost}}</div>
+            <div class='power-fatigue-cost'>Fatigue: {{power.system.fatigueCost}}</div>
+            <div class='power-description'>{{power.system.description}}</div>
+            <div class='power-controls'>
+              <button class='power-use-btn rollable' data-action='roll' data-roll='1d100+{{system.psychic.projection.value}}' title='Utiliser {{power.name}}'>🔮</button>
+              <button class='power-edit-btn' data-action='edit' data-power-id='{{power._id}}'>✏️</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Métamagies -->
+    <div class='psychic-metamagic-section'>
+      <h3 class='section-title'>Métamagies</h3>
+      <div class='psychic-metamagic'>
+        <div class='metamagic-list'>
+          {{#each metamagics as |metamagic id|}}
+          <div class='metamagic-item'>
+            <div class='metamagic-name'>{{metamagic.name}}</div>
+            <div class='metamagic-level'>Niveau {{metamagic.system.level}}</div>
+            <div class='metamagic-cost'>Coût: {{metamagic.system.cost}}</div>
+            <div class='metamagic-description'>{{metamagic.system.description}}</div>
+            <div class='metamagic-controls'>
+              <button class='metamagic-apply-btn' data-action='apply' data-metamagic-id='{{metamagic._id}}'>Appliquer</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

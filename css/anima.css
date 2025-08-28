@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 :root {
   --anima-c-dark: #f0f0f0;
@@ -225,7 +226,34 @@
 
 /* Styles limited to anima sheets */
 .anima {
-  /* Dark Fantasy Header Styles */
+  /* ===============================
+     PARAMETRAGE DE BASE - Anima Beyond Fantasy
+     =============================== */
+  /* ===============================
+     ZONES AUTOEXPANSIBLES
+     =============================== */
+  /* ===============================
+     COULEURS PHYSIQUES ET MENTALES
+     =============================== */
+  /* ===============================
+     LOGO ET OPTIONS TITRE
+     =============================== */
+  /* ===============================
+     OPTIONS MAITRISE ET AUTRES
+     =============================== */
+  /* ===============================
+     ZONE D'INFO D'EN-TÊTE
+     =============================== */
+  /* ===============================
+     MENU DE NAVIGATION
+     =============================== */
+  /* ===============================
+     CORPS DE LA ZONE
+     =============================== */
+  /* Onglets actifs */
+  /* ===============================
+     Anima-specific styles - Dark Fantasy Theme
+     =============================== */
   /* Legacy support */
   /* Characteristic Roll Tables - Dark Fantasy Theme */
   /* New Anima Structure Styles - Dark Fantasy Theme */
@@ -242,6 +270,54 @@
   /* Main Content Areas - Dark Fantasy Theme */
   /* Skills Section Styles */
   /* Legacy support */
+  /* ===============================
+     TEMPLATES DE JETS - ROLL TEMPLATES
+     =============================== */
+  /* ===============================
+     STYLES DES RÉSULTATS DE JETS
+     =============================== */
+  /* ===============================
+     STYLES ÉQUIPEMENT
+     =============================== */
+  /* ===============================
+     STYLES MAGIE
+     =============================== */
+  /* ===============================
+     STYLES KI
+     =============================== */
+  /* ===============================
+     STYLES PSYCHIQUE
+     =============================== */
+  /* ===============================
+     STYLES HISTORIQUE
+     =============================== */
+  /* ===============================
+     STYLES OPTIONS
+     =============================== */
+  /* ===============================
+     BOUTONS D'ACTION GÉNÉRIQUES
+     =============================== */
+  /* ===============================
+     STYLES NOUVELLE MISE EN PAGE FEATURES
+     =============================== */
+  /* ===============================
+     STYLES CARACTÉRISTIQUES GROUPEES
+     =============================== */
+  /* Items de caractéristiques individuels */
+  /* Boutons de jets avec couleurs spécifiques */
+  /* Couleurs spécifiques pour les jets */
+  /* ===============================
+     STYLES SECTIONS COMPACTES
+     =============================== */
+  /* Groupes vitaux spécifiques */
+  /* Section régénération compacte */
+  /* Combat compact */
+  /* ===============================
+     STYLES COMPÉTENCES MINIATURISÉES
+     =============================== */
+  /* ===============================
+     RESPONSIVE DESIGN
+     =============================== */
 }
 .anima .item-form {
   font-family: "Roboto", sans-serif;
@@ -286,6 +362,392 @@
 }
 .anima .tox .tox-edit-area {
   padding: 0 8px;
+}
+.anima .charsheet {
+  background-color: #0d0d0d;
+  font-family: "Segoe UI", Arial;
+  color: #e6d7b3;
+  min-width: 852px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+.anima .repcontrol {
+  width: 100% !important;
+  display: block !important;
+  border-radius: 0px;
+}
+.anima .repcontrol_edit {
+  border-radius: 0px;
+}
+.anima .repcontrol_add {
+  border-radius: 0px;
+}
+.anima .repcontainer {
+  width: 100% !important;
+  display: block !important;
+}
+.anima .itemcontrol {
+  z-index: 2;
+}
+.anima select {
+  margin-bottom: 0px;
+  border-radius: 0px;
+  color: #e6d7b3;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+}
+.anima input[type=number]::-webkit-outer-spin-button,
+.anima input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.anima input[type=number],
+.anima input[type=text] {
+  -moz-appearance: textfield;
+  border-radius: 0px;
+  color: #e6d7b3;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+}
+.anima input[disabled] {
+  background-color: rgba(40, 40, 40, 0.8);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.anima textarea {
+  border: none;
+  width: 100%;
+  padding: 0px;
+  text-align: justify;
+  border-radius: 0px;
+  color: #e6d7b3;
+  margin: 0px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+}
+.anima label {
+  margin: 0px;
+  padding: 0px;
+}
+.anima div.sheet-autoex {
+  line-height: 1.4em;
+  min-height: 1.4em;
+  cursor: text;
+  text-align: left;
+  position: relative;
+  width: 100%;
+}
+.anima div.sheet-autoex > span {
+  visibility: hidden;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre-wrap;
+  text-align: inherit;
+  min-height: inherit;
+  height: 100%;
+  word-wrap: anywhere;
+  padding-left: 2px;
+}
+.anima div.sheet-autoex > textarea {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 1px);
+  width: calc(100% - 2px);
+  overflow: hidden;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre-wrap;
+  text-align: inherit;
+  min-height: inherit;
+  resize: none;
+}
+.anima div.sheet-autoex > textarea::placeholder {
+  font-family: "Contrail One";
+  color: rgba(230, 215, 179, 0.6);
+  text-transform: capitalize;
+  font-style: italic;
+  text-align: center;
+  font-size: 95%;
+  font-weight: normal;
+}
+.anima div.sheet-autoex22 {
+  min-height: 22px;
+}
+.anima div.sheet-autoex28 {
+  min-height: 28px;
+}
+.anima div.sheet-autoex40 {
+  min-height: 40px;
+}
+.anima div.sheet-autoex100 {
+  min-height: 100px;
+}
+.anima .sheet-physical {
+  text-shadow: 1px 1px 1px #00CC00;
+  color: #00CC00;
+}
+.anima .sheet-mental {
+  text-shadow: 1px 1px 1px #0000CC;
+  color: #0000CC;
+}
+.anima img.sheet-logo {
+  display: flex;
+  width: 150px;
+  height: 82px;
+  float: left;
+}
+.anima div.sheet-extend,
+.anima label.sheet-extend {
+  display: none;
+}
+.anima h2 + label.sheet-opt-titre {
+  width: 18px;
+  height: 18px;
+  margin-left: calc(100% - 18px);
+  margin-top: -40px;
+  z-index: 2;
+}
+.anima h3 + label.sheet-opt-titre {
+  width: 18px !important;
+  height: 18px !important;
+  z-index: 2;
+  position: absolute;
+}
+.anima label.sheet-opt-titre > input[type=checkbox] {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  opacity: 0;
+}
+.anima label.sheet-opt-titre > input[type=checkbox] + span {
+  width: 100%;
+  height: 18px;
+  display: block;
+  margin-top: -2px;
+  margin-left: -1px;
+}
+.anima label.sheet-opt-titre > input[type=checkbox] + span::before {
+  width: 100%;
+  height: 18px;
+  font-family: "pictos";
+  content: "y";
+  opacity: 0;
+  text-shadow: 2px 2px 2px #FF0000;
+  color: black;
+  font-size: 18px;
+}
+.anima div:hover > label.sheet-opt-titre > input[type=checkbox] + span::before {
+  opacity: 1;
+}
+.anima label.sheet-opt-titre > input[type=checkbox]:checked + span::before {
+  color: red;
+  text-shadow: 2px 2px 2px #555555;
+  opacity: 1;
+}
+.anima label.sheet-btn-mastery {
+  display: flex;
+  width: 65px;
+}
+.anima label.sheet-btn-mastery > span {
+  display: block;
+  width: 100%;
+}
+.anima label.sheet-btn-mastery > span::before {
+  display: block;
+  content: attr(title);
+  width: calc(100% - 4px);
+  line-height: 18px;
+  font-size: 11px;
+  text-align: center;
+  background-color: black;
+  border: 2px solid black;
+  text-shadow: 2px 2px 2px #555555;
+  color: white;
+}
+.anima label.sheet-btn-mastery > input[type=checkbox],
+.anima label.sheet-btn-mastery > input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 65px;
+  height: 22px;
+}
+.anima label.sheet-btn-mastery > input[type=checkbox]:checked + span::before,
+.anima label.sheet-btn-mastery > input[type=radio]:checked + span::before {
+  background-color: red;
+}
+.anima label.sheet-btn-rollas {
+  display: flex;
+  width: 120px;
+}
+.anima label.sheet-btn-rollas > span {
+  display: block;
+  width: 120px !important;
+  padding-top: 0px !important;
+  padding-left: 0px !important;
+  height: 18px !important;
+}
+.anima label.sheet-btn-rollas > span::before {
+  display: block;
+  content: attr(title);
+  width: calc(100% - 4px);
+  line-height: 14px;
+  font-size: 11px;
+  text-align: center;
+  background-color: black;
+  border: 2px solid black;
+  text-shadow: 2px 2px 2px #555555;
+  color: white;
+}
+.anima label.sheet-btn-rollas > input[type=checkbox],
+.anima label.sheet-btn-rollas > input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 120px;
+  height: 18px;
+}
+.anima label.sheet-btn-rollas > input[type=checkbox]:checked + span::before,
+.anima label.sheet-btn-rollas > input[type=radio]:checked + span::before {
+  background-color: red;
+}
+.anima div.sheet-char-info {
+  display: flex;
+  width: calc(100% - 155px);
+  justify-content: space-between;
+  margin-left: 5px;
+  flex-wrap: wrap;
+}
+.anima div.sheet-char-info > label {
+  display: flex;
+  justify-content: space-between;
+  width: calc(33.33% - 10px);
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+  min-width: 130px;
+}
+.anima div.sheet-char-info > label > span {
+  display: flex;
+  align-items: flex-end;
+  font-size: 13px;
+  font-weight: normal;
+  white-space: nowrap;
+  width: 40px;
+}
+.anima div.sheet-char-info > label > input[type=text],
+.anima div.sheet-char-info > label > input[type=number] {
+  display: flex;
+  border: 0px;
+  border-bottom: 1px solid #8b7355;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  width: calc(100% - 40px);
+  background: transparent;
+  color: #e6d7b3;
+}
+.anima div.sheet-char-info > label > input[type=number] {
+  text-align: center;
+}
+.anima div.sheet-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #8b7355;
+  margin-bottom: 5px;
+}
+.anima div.sheet-menu > input[type=hidden][value="0"]:nth-of-type(1) ~ label.sheet-magic,
+.anima div.sheet-menu > input[type=hidden][value="0"]:nth-of-type(2) ~ label.sheet-psychic,
+.anima div.sheet-menu > input[type=hidden][value="0"]:nth-of-type(3) ~ label.sheet-ki {
+  display: none;
+}
+.anima div.sheet-menu > label {
+  display: flex;
+  width: 130px;
+}
+.anima div.sheet-menu > label > input[type=radio] {
+  position: absolute;
+  width: 130px;
+  height: 27px;
+  opacity: 0;
+  border-radius: 10px;
+}
+.anima div.sheet-menu > label > input[type=radio] + span {
+  display: inline-block;
+  width: 100%;
+}
+.anima div.sheet-menu > label > input[type=radio] + span::before {
+  content: attr(title);
+  display: inline-block;
+  width: calc(100% - 4px);
+  height: 23px;
+  text-align: center;
+  background-color: #2a2a2a;
+  color: #e6d7b3;
+  text-shadow: 2px 2px 2px #555555;
+  font-size: 15px;
+  line-height: 23px;
+  border: 2px solid #8b7355;
+  border-radius: 10px;
+}
+.anima div.sheet-menu > label > input[type=radio]:checked + span::before {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+}
+.anima div.sheet-menu > label:last-of-type {
+  width: 30px;
+}
+.anima div.sheet-menu > label:last-of-type > input[type=radio] {
+  position: absolute;
+  width: 30px;
+  height: 27px;
+  opacity: 0;
+  border-radius: 10px;
+}
+.anima div.sheet-menu > label:last-of-type > input[type=radio] + span {
+  display: inline-block;
+  width: 100%;
+}
+.anima div.sheet-menu > label:last-of-type > input[type=radio] + span::before {
+  content: attr(title);
+  display: inline-block;
+  width: calc(100% - 4px);
+  height: 23px;
+  text-align: center;
+  background-color: #2a2a2a;
+  color: #e6d7b3;
+  text-shadow: 2px 2px 2px #555555;
+  font-size: 20px;
+  line-height: 23px;
+  border: 2px solid #8b7355;
+  border-radius: 10px;
+  font-family: "pictos";
+}
+.anima div.sheet-menu > label:last-of-type > input[type=radio]:checked + span::before {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+}
+.anima div.sheet-body {
+  width: 100%;
+  display: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.anima input[type=hidden].sheet-tabExtend[value="1"] ~ div.sheet-tab1,
+.anima input[type=hidden].sheet-tabExtend[value="2"] ~ div.sheet-tab2,
+.anima input[type=hidden].sheet-tabExtend[value="3"] ~ div.sheet-tab3,
+.anima input[type=hidden].sheet-tabExtend[value="4"] ~ div.sheet-tab4,
+.anima input[type=hidden].sheet-tabExtend[value="5"] ~ div.sheet-tab5,
+.anima input[type=hidden].sheet-tabExtend[value="6"] ~ div.sheet-tab6,
+.anima input[type=hidden].sheet-tabExtend[value="7"] ~ div.sheet-tab7 {
+  display: flex;
 }
 .anima .sheet-header {
   background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
@@ -1209,6 +1671,1422 @@
   font-size: 0.8rem;
   color: #aaa;
   font-weight: 500;
+}
+.anima .sheet-rolltemplate-ABFCharac,
+.anima .sheet-rolltemplate-ABFBase,
+.anima .sheet-rolltemplate-ABFSpell,
+.anima .sheet-rolltemplate-ABFSpellCast,
+.anima .sheet-rolltemplate-ABFPsi,
+.anima .sheet-rolltemplate-ABFKi,
+.anima .sheet-rolltemplate-ABFWeapon,
+.anima .sheet-rolltemplate-APICompare,
+.anima .sheet-rolltemplate-APIList {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  border: 2px solid #8b7355;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+.anima .sheet-rolltemplate-ABFCharac h3,
+.anima .sheet-rolltemplate-ABFBase h3,
+.anima .sheet-rolltemplate-ABFSpell h3,
+.anima .sheet-rolltemplate-ABFSpellCast h3,
+.anima .sheet-rolltemplate-ABFPsi h3,
+.anima .sheet-rolltemplate-ABFKi h3,
+.anima .sheet-rolltemplate-ABFWeapon h3,
+.anima .sheet-rolltemplate-APICompare h3 {
+  display: flex;
+  width: 100%;
+  font-size: 13pt;
+  color: #d4af37;
+  justify-content: center;
+  text-shadow: 2px 2px 2px #555555;
+  font-weight: normal;
+  border-bottom: 5px solid #8b7355;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.anima .sheet-rolltemplate-ABFBase h4,
+.anima .sheet-rolltemplate-ABFSpell h4,
+.anima .sheet-rolltemplate-ABFSpellCast h4,
+.anima .sheet-rolltemplate-ABFPsi h4,
+.anima .sheet-rolltemplate-ABFKi h4,
+.anima .sheet-rolltemplate-ABFWeapon h4,
+.anima .sheet-rolltemplate-APICompare h4 {
+  display: flex;
+  width: 100%;
+  font-size: 11px;
+  color: #e6d7b3;
+  justify-content: center;
+  font-weight: normal;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+.anima .sheet-rolltemplate-ABFKi > div:first-of-type {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-bottom: 5px solid #8b7355;
+  padding: 5px;
+}
+.anima .sheet-rolltemplate-ABFKi > div:last-of-type {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  word-wrap: anywhere;
+  border-top: 5px solid #8b7355;
+  font-size: 11px;
+  padding: 5px;
+}
+.anima .sheet-rolltemplate-ABFKi > div:not(:first-of-type):not(:last-of-type) {
+  display: flex;
+  width: calc(16.66% - 2.5px);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.anima .sheet-rolltemplate-ABFKi > div:not(:first-of-type):not(:last-of-type) > span {
+  display: flex;
+  width: 100%;
+  font-size: 11px;
+  justify-content: center;
+}
+.anima .sheet-rolltemplate-ABFKi > div:not(:first-of-type):not(:last-of-type) > span:first-of-type {
+  font-weight: bold;
+}
+.anima .sheet-rolltemplate-ABFKi > div:not(:first-of-type):not(:last-of-type) > span:nth-of-type(3) {
+  font-size: 9px;
+}
+.anima .sheet-rolltemplate-ABFCharac .inlinerollresult,
+.anima .sheet-rolltemplate-ABFBase .inlinerollresult,
+.anima .sheet-rolltemplate-ABFSpellCast .inlinerollresult,
+.anima .sheet-rolltemplate-ABFKi .inlinerollresult,
+.anima .sheet-rolltemplate-ABFSpellCast .inlinerollresult {
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  color: #d4af37;
+}
+.anima .sheet-rolltemplate-ABFWeapon .inlinerollresult {
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-weight: normal;
+  font-size: 11px;
+  padding: 0px;
+}
+.anima .sheet-rolltemplate-ABFBase .inlinerollresult.fullcrit,
+.anima .sheet-rolltemplate-ABFCharac label > span.sheet-crit,
+.anima .sheet-rolltemplate-ABFSpellCast .inlinerollresult.fullcrit {
+  border: none;
+  color: #00FF00;
+  text-shadow: 0 0 10px #00FF00;
+}
+.anima .sheet-rolltemplate-ABFCharac .inlinerollresult.fullfail,
+.anima .sheet-rolltemplate-ABFBase .inlinerollresult.fullfail,
+.anima .sheet-rolltemplate-ABFSpellCast .inlinerollresult.fullfail {
+  border: none;
+  color: #FF0000;
+  text-shadow: 0 0 10px #FF0000;
+}
+.anima .sheet-rolltemplate-ABFCharac .inlinerollresult.importantroll,
+.anima .sheet-rolltemplate-ABFBase .inlinerollresult.importantroll,
+.anima .sheet-rolltemplate-ABFSpellCast .inlinerollresult.importantroll {
+  border: none;
+  font-size: 1.2em;
+}
+.anima .armory-wear-section,
+.anima .armory-armor-section,
+.anima .armory-proficiencies-section,
+.anima .armory-weapon-section,
+.anima .armory-valuables-section,
+.anima .armory-inventory-section {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .armory-wear {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.anima .wear-armor-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 80px;
+}
+.anima .armor-header,
+.anima .proficiency-header,
+.anima .weapon-list,
+.anima .valuables-header,
+.anima .inventory-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.anima .armor-item,
+.anima .proficiency-item,
+.anima .weapon-item,
+.anima .valuable-item,
+.anima .inventory-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 100px;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+  transition: all 0.2s ease;
+}
+.anima .armor-item:hover,
+.anima .proficiency-item:hover,
+.anima .weapon-item:hover,
+.anima .valuable-item:hover,
+.anima .inventory-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .weapon-item {
+  grid-template-columns: 80px 1fr 200px;
+  gap: 1rem;
+}
+.anima .weapon-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.anima .weapon-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.anima .weapon-stats {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+.anima .weapon-description {
+  font-size: 0.75rem;
+  color: #888;
+  font-style: italic;
+}
+.anima .weapon-controls,
+.anima .armor-controls,
+.anima .proficiency-controls,
+.anima .valuable-controls,
+.anima .inventory-controls {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+.anima .weapon-attack-btn,
+.anima .armor-equip-btn,
+.anima .proficiency-equip-btn,
+.anima .valuable-use-btn,
+.anima .inventory-use-btn,
+.anima .weapon-edit-btn,
+.anima .valuable-edit-btn,
+.anima .inventory-edit-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.anima .weapon-attack-btn:hover,
+.anima .armor-equip-btn:hover,
+.anima .proficiency-equip-btn:hover,
+.anima .valuable-use-btn:hover,
+.anima .inventory-use-btn:hover,
+.anima .weapon-edit-btn:hover,
+.anima .valuable-edit-btn:hover,
+.anima .inventory-edit-btn:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.05);
+}
+.anima .weapon-attack-btn:active,
+.anima .armor-equip-btn:active,
+.anima .proficiency-equip-btn:active,
+.anima .valuable-use-btn:active,
+.anima .inventory-use-btn:active,
+.anima .weapon-edit-btn:active,
+.anima .valuable-edit-btn:active,
+.anima .inventory-edit-btn:active {
+  transform: scale(0.95);
+}
+.anima .magic-projection-section,
+.anima .magic-accumulation-section,
+.anima .magic-zeon-section,
+.anima .magic-details-section,
+.anima .magic-spells-section {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .magic-projection,
+.anima .magic-accumulation,
+.anima .magic-zeon,
+.anima .psychic-points,
+.anima .psychic-potential,
+.anima .psychic-projection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+.anima .projection-input,
+.anima .accumulation-input,
+.anima .zeon-input,
+.anima .psychic-input,
+.anima .potential-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.anima .projection-input:focus,
+.anima .accumulation-input:focus,
+.anima .zeon-input:focus,
+.anima .psychic-input:focus,
+.anima .potential-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .projection-value,
+.anima .accumulation-value,
+.anima .zeon-max-value,
+.anima .psychic-max-value,
+.anima .potential-value,
+.anima .projection-value {
+  font-weight: 700;
+  color: #d4af37;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.25rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 3px;
+  border: 1px solid #8b7355;
+}
+.anima .projection-roll-btn,
+.anima .accumulation-roll-btn,
+.anima .zeon-roll-btn,
+.anima .potential-roll-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(139, 115, 85, 0.3);
+}
+.anima .projection-roll-btn:hover,
+.anima .accumulation-roll-btn:hover,
+.anima .zeon-roll-btn:hover,
+.anima .potential-roll-btn:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.4);
+}
+.anima .projection-roll-btn:active,
+.anima .accumulation-roll-btn:active,
+.anima .zeon-roll-btn:active,
+.anima .potential-roll-btn:active {
+  transform: scale(0.9);
+}
+.anima .magic-paths,
+.anima .innate-magic {
+  margin-bottom: 1rem;
+}
+.anima .magic-paths-list,
+.anima .innate-magic-list,
+.anima .spell-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .magic-path-item,
+.anima .innate-spell-item,
+.anima .spell-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .magic-path-item:hover,
+.anima .innate-spell-item:hover,
+.anima .spell-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .spell-item {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.anima .spell-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+.anima .spell-details {
+  flex: 1;
+  min-width: 200px;
+}
+.anima .spell-info {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 0.25rem;
+}
+.anima .spell-description {
+  font-size: 0.7rem;
+  color: #888;
+  font-style: italic;
+}
+.anima .spell-controls {
+  display: flex;
+  gap: 0.25rem;
+}
+.anima .spell-cast-btn,
+.anima .spell-edit-btn,
+.anima .innate-spell-cast-btn,
+.anima .path-edit-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.anima .spell-cast-btn:hover,
+.anima .spell-edit-btn:hover,
+.anima .innate-spell-cast-btn:hover,
+.anima .path-edit-btn:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.05);
+}
+.anima .spell-cast-btn:active,
+.anima .spell-edit-btn:active,
+.anima .innate-spell-cast-btn:active,
+.anima .path-edit-btn:active {
+  transform: scale(0.95);
+}
+.anima .ki-nemesis-section,
+.anima .ki-pool-section,
+.anima .ki-martial-knowledge-section,
+.anima .ki-seals-section,
+.anima .ki-ars-magnus-section,
+.anima .ki-limit-section,
+.anima .ki-martial-arts-section,
+.anima .ki-creatures-known-section,
+.anima .ki-techniques-section {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .ki-abilities-list,
+.anima .ki-pool-list,
+.anima .ki-seals-list,
+.anima .ki-ars-magnus-list,
+.anima .ki-martial-arts-list,
+.anima .ki-creatures-list,
+.anima .ki-techniques-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .ki-ability-item,
+.anima .ki-pool-item,
+.anima .ki-seal-item,
+.anima .ki-ars-magnus-item,
+.anima .ki-martial-art-item,
+.anima .ki-creature-item,
+.anima .ki-technique-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .ki-ability-item:hover,
+.anima .ki-pool-item:hover,
+.anima .ki-seal-item:hover,
+.anima .ki-ars-magnus-item:hover,
+.anima .ki-martial-art-item:hover,
+.anima .ki-creature-item:hover,
+.anima .ki-technique-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .ki-pool {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 100px;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.anima .ki-pool-header {
+  display: contents;
+  font-weight: 700;
+  color: #d4af37;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.anima .martial-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.anima .martial-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .martial-knowledge-value,
+.anima .limit-value {
+  font-weight: 700;
+  color: #d4af37;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.25rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 3px;
+  border: 1px solid #8b7355;
+}
+.anima .psychic-points-section,
+.anima .psychic-potential-section,
+.anima .psychic-projection-section,
+.anima .psychic-disciplines-section,
+.anima .psychic-mental-patterns-section,
+.anima .psychic-maintained-powers-section,
+.anima .psychic-known-powers-section,
+.anima .psychic-metamagic-section {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .psychic-disciplines-list,
+.anima .psychic-mental-patterns-list,
+.anima .psychic-maintained-powers-list,
+.anima .psychic-known-powers-list,
+.anima .psychic-metamagic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .discipline-item,
+.anima .mental-pattern-item,
+.anima .maintained-power-item,
+.anima .known-power-item,
+.anima .metamagic-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .discipline-item:hover,
+.anima .mental-pattern-item:hover,
+.anima .maintained-power-item:hover,
+.anima .known-power-item:hover,
+.anima .metamagic-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .languages-section,
+.anima .reputations-section,
+.anima .gnosis-natura-section,
+.anima .elan-section,
+.anima .advantages-disadvantages-section,
+.anima .notes-section {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .languages-list,
+.anima .reputations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .language-item,
+.anima .reputation-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .language-item:hover,
+.anima .reputation-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .gnosis-natura,
+.anima .elan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.anima .gnosis,
+.anima .natura {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .gnosis-input,
+.anima .natura-input,
+.anima .elan-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.anima .gnosis-input:focus,
+.anima .natura-input:focus,
+.anima .elan-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .elan-max-value {
+  font-weight: 700;
+  color: #d4af37;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.25rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 3px;
+  border: 1px solid #8b7355;
+}
+.anima .advantages-list,
+.anima .disadvantages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .advantage-item,
+.anima .disadvantage-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .advantage-item:hover,
+.anima .disadvantage-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .options-open-roll-range,
+.anima .options-character-settings,
+.anima .options-innate-bonuses,
+.anima .options-display-settings,
+.anima .options-game-settings,
+.anima .options-quick-actions,
+.anima .options-system-info {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .open-roll-settings,
+.anima .character-options,
+.anima .display-settings,
+.anima .game-settings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+.anima .setting-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.anima .setting-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+}
+.anima .option-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .option-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .option-item label {
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.anima .option-item input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  accent-color: #d4af37;
+}
+.anima .innate-bonuses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .innate-bonus-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .innate-bonus-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.anima .action-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .action-group h4 {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.25rem;
+}
+.anima .action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.anima .quick-roll-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(139, 115, 85, 0.3);
+}
+.anima .quick-roll-btn:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.4);
+}
+.anima .quick-roll-btn:active {
+  transform: scale(0.95);
+}
+.anima .system-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+.anima .info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+.anima .info-item label {
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.anima .info-item span {
+  color: #e6d7b3;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.anima .ability-use-btn,
+.anima .pool-spend-btn,
+.anima .seal-activate-btn,
+.anima .technique-use-btn,
+.anima .creature-summon-btn,
+.anima .discipline-use-btn,
+.anima .pattern-use-btn,
+.anima .power-use-btn,
+.anima .power-maintain-btn,
+.anima .power-cancel-btn,
+.anima .metamagic-apply-btn,
+.anima .language-edit-btn,
+.anima .reputation-edit-btn,
+.anima .advantage-edit-btn,
+.anima .disadvantage-edit-btn,
+.anima .bonus-activate-btn,
+.anima .bonus-edit-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.anima .ability-use-btn:hover,
+.anima .pool-spend-btn:hover,
+.anima .seal-activate-btn:hover,
+.anima .technique-use-btn:hover,
+.anima .creature-summon-btn:hover,
+.anima .discipline-use-btn:hover,
+.anima .pattern-use-btn:hover,
+.anima .power-use-btn:hover,
+.anima .power-maintain-btn:hover,
+.anima .power-cancel-btn:hover,
+.anima .metamagic-apply-btn:hover,
+.anima .language-edit-btn:hover,
+.anima .reputation-edit-btn:hover,
+.anima .advantage-edit-btn:hover,
+.anima .disadvantage-edit-btn:hover,
+.anima .bonus-activate-btn:hover,
+.anima .bonus-edit-btn:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.05);
+}
+.anima .ability-use-btn:active,
+.anima .pool-spend-btn:active,
+.anima .seal-activate-btn:active,
+.anima .technique-use-btn:active,
+.anima .creature-summon-btn:active,
+.anima .discipline-use-btn:active,
+.anima .pattern-use-btn:active,
+.anima .power-use-btn:active,
+.anima .power-maintain-btn:active,
+.anima .power-cancel-btn:active,
+.anima .metamagic-apply-btn:active,
+.anima .language-edit-btn:active,
+.anima .reputation-edit-btn:active,
+.anima .advantage-edit-btn:active,
+.anima .disadvantage-edit-btn:active,
+.anima .bonus-activate-btn:active,
+.anima .bonus-edit-btn:active {
+  transform: scale(0.95);
+}
+.anima .add-language-btn,
+.anima .add-reputation-btn,
+.anima .add-advantage-btn,
+.anima .add-disadvantage-btn,
+.anima .add-innate-bonus-btn,
+.anima .add-spell-btn,
+.anima .add-ki-ability-btn {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+  color: #e6d7b3;
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+.anima .add-language-btn:hover,
+.anima .add-reputation-btn:hover,
+.anima .add-advantage-btn:hover,
+.anima .add-disadvantage-btn:hover,
+.anima .add-innate-bonus-btn:hover,
+.anima .add-spell-btn:hover,
+.anima .add-ki-ability-btn:hover {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
+}
+.anima .test-open-roll-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.anima .test-open-roll-btn:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.05);
+}
+.anima .test-open-roll-btn:active {
+  transform: scale(0.95);
+}
+.anima .main-content-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
+  width: 100%;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+.anima .left-column,
+.anima .right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.anima .left-column {
+  padding-right: 0.5rem;
+  border-right: 1px solid #2a2a2a;
+}
+.anima .right-column {
+  padding-left: 0.5rem;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #8b7355 #1a1a1a;
+}
+.anima .right-column::-webkit-scrollbar {
+  width: 6px;
+}
+.anima .right-column::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+.anima .right-column::-webkit-scrollbar-thumb {
+  background: #8b7355;
+  border-radius: 3px;
+}
+.anima .right-column::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+.anima .characteristics-group {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.anima .group-title {
+  color: #d4af37;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.25rem;
+}
+.anima .characteristics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.anima .characteristic-item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 0.4rem;
+  transition: all 0.2s ease;
+}
+.anima .characteristic-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .char-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+.anima .char-name {
+  font-weight: 600;
+  color: #e6d7b3;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.anima .char-values {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.anima .char-final,
+.anima .char-opposed {
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+.anima .char-final {
+  color: #e6d7b3;
+  background: rgba(230, 215, 179, 0.1);
+  border-color: #8b7355;
+}
+.anima .char-opposed {
+  color: #aaa;
+  background: rgba(170, 170, 170, 0.1);
+  border-color: #555;
+}
+.anima .char-inputs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.15rem;
+}
+.anima .char-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #e6d7b3;
+  padding: 0.1rem;
+  font-size: 0.6rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.anima .char-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+}
+.anima .char-input::placeholder {
+  color: #888;
+  font-size: 0.55rem;
+}
+.anima .base-input {
+  background: rgba(40, 40, 40, 0.9);
+}
+.anima .special-input {
+  background: rgba(50, 50, 50, 0.9);
+}
+.anima .temp-input {
+  background: rgba(60, 60, 60, 0.9);
+}
+.anima .char-roll-btn {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-size: 0.65rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(139, 115, 85, 0.3);
+}
+.anima .char-roll-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px rgba(139, 115, 85, 0.4);
+}
+.anima .char-roll-btn:active {
+  transform: scale(0.9);
+}
+.anima .physical-roll {
+  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  border-color: #4CAF50;
+  color: #fff;
+}
+.anima .physical-roll:hover {
+  background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.4);
+}
+.anima .mental-roll {
+  background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%);
+  border-color: #2196F3;
+  color: #fff;
+}
+.anima .mental-roll:hover {
+  background: linear-gradient(135deg, #42A5F5 0%, #2196F3 100%);
+  box-shadow: 0 2px 6px rgba(33, 150, 243, 0.4);
+}
+.anima .resistances-compact-grid,
+.anima .movement-compact-grid,
+.anima .vitals-compact-grid,
+.anima .regeneration-compact-grid,
+.anima .combat-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 0.3rem;
+}
+.anima .resistance-compact-item,
+.anima .movement-compact-item,
+.anima .vital-compact-item,
+.anima .regen-compact-item,
+.anima .combat-compact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.2rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+.anima .resistance-compact-item:hover,
+.anima .movement-compact-item:hover,
+.anima .vital-compact-item:hover,
+.anima .regen-compact-item:hover,
+.anima .combat-compact-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .resistance-compact-input,
+.anima .movement-compact-input,
+.anima .vital-compact-input,
+.anima .regen-compact-input,
+.anima .combat-compact-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 2px;
+  color: #e6d7b3;
+  padding: 0.05rem;
+  font-size: 0.55rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.anima .resistance-compact-input:focus,
+.anima .movement-compact-input:focus,
+.anima .vital-compact-input:focus,
+.anima .regen-compact-input:focus,
+.anima .combat-compact-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 3px rgba(212, 175, 55, 0.2);
+}
+.anima .resistance-compact-final,
+.anima .movement-compact-final,
+.anima .vital-compact-final,
+.anima .regen-compact-final,
+.anima .combat-compact-final {
+  font-weight: 600;
+  color: #d4af37;
+  font-size: 0.65rem;
+  text-align: center;
+  padding: 0.05rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 2px;
+  border: 1px solid #8b7355;
+}
+.anima .vital-compact-group {
+  grid-column: 1/-1;
+  background: rgba(25, 25, 25, 0.9);
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 0.4rem;
+}
+.anima .vital-compact-group h5 {
+  color: #d4af37;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid #8b7355;
+  padding-bottom: 0.2rem;
+}
+.anima .vital-compact-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem;
+}
+.anima .regeneration-compact-section {
+  grid-column: 1/-1;
+  background: rgba(25, 25, 25, 0.9);
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 0.4rem;
+}
+.anima .regeneration-compact-section h5 {
+  color: #d4af37;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid #8b7355;
+  padding-bottom: 0.2rem;
+}
+.anima .regeneration-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.2rem;
+}
+.anima .combat-compact-values {
+  display: flex;
+  gap: 0.15rem;
+  align-items: center;
+}
+.anima .combat-compact-input {
+  width: 30px;
+}
+.anima .skill-category-compact {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.anima .category-header-compact {
+  color: #d4af37;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid #8b7355;
+  padding-bottom: 0.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.anima .base-char-compact {
+  color: #aaa;
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+.anima .skill-items-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.anima .skill-compact-item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 0.2rem;
+  transition: all 0.2s ease;
+}
+.anima .skill-compact-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .skill-compact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+.anima .skill-compact-name {
+  font-weight: 500;
+  color: #e6d7b3;
+  font-size: 0.65rem;
+  flex: 1;
+}
+.anima .skill-compact-values {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.anima .skill-compact-final {
+  font-weight: 600;
+  color: #d4af37;
+  font-size: 0.7rem;
+  padding: 0.03rem 0.15rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 2px;
+  border: 1px solid #8b7355;
+}
+.anima .skill-compact-roll {
+  background: linear-gradient(135deg, #8b7355 0%, #d4af37 100%);
+  color: #1a1a1a;
+  border: 1px solid #8b7355;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  font-size: 0.55rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.anima .skill-compact-roll:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #8b7355 100%);
+  transform: scale(1.1);
+}
+.anima .skill-compact-roll:active {
+  transform: scale(0.9);
+}
+.anima .skill-compact-inputs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.08rem;
+}
+.anima .skill-compact-input {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #444;
+  border-radius: 2px;
+  color: #e6d7b3;
+  padding: 0.03rem;
+  font-size: 0.55rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.anima .skill-compact-input:focus {
+  outline: none;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 2px rgba(212, 175, 55, 0.2);
+}
+.anima .skill-compact-input::placeholder {
+  color: #888;
+  font-size: 0.5rem;
+}
+@media (max-width: 1400px) {
+  .anima .main-content-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .anima .left-column {
+    border-right: none;
+    padding-right: 0;
+  }
+  .anima .right-column {
+    border-top: 1px solid #2a2a2a;
+    padding-top: 0.5rem;
+    padding-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .anima .characteristics-list {
+    gap: 0.25rem;
+  }
+  .anima .characteristic-item {
+    padding: 0.25rem;
+  }
+  .anima .char-inputs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.15rem;
+  }
+  .anima .skill-compact-inputs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1rem;
+  }
+  .anima .resistances-compact-grid,
+  .anima .combat-compact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .anima .regeneration-compact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .anima .vital-compact-items {
+    grid-template-columns: 1fr;
+  }
 }
 .anima .items-header {
   height: 28px;

@@ -443,7 +443,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.ride.value}}' data-label='Équitation' title='Jet d&apos;Équitation'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.ride.value}}' title='Équitation'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.athletics.ride.value' value='{{system.secondaryAbilities.athletics.ride.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -466,7 +466,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.swim.value}}' data-label='Natation' title='Jet d&apos;Natation'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.athletics.swim.value}}' title='Natation'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.athletics.swim.value' value='{{system.secondaryAbilities.athletics.swim.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -497,7 +497,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.style.value}}' data-label='Style' title='Jet d&apos;Style'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.style.value}}' title='Style'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.social.style.value' value='{{system.secondaryAbilities.social.style.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -520,7 +520,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.intimidate.value}}' data-label='Intimidation' title='Jet d&apos;Intimidation'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.intimidate.value}}' title='Intimidation'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.social.intimidate.value' value='{{system.secondaryAbilities.social.intimidate.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -543,7 +543,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.leadership.value}}' data-label='Commandement' title='Jet d&apos;Commandement'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.leadership.value}}' title='Commandement'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.social.leadership.value' value='{{system.secondaryAbilities.social.leadership.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -566,7 +566,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.persuasion.value}}' data-label='Persuasion' title='Jet d&apos;Persuasion'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.persuasion.value}}' title='Persuasion'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.social.persuasion.value' value='{{system.secondaryAbilities.social.persuasion.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -589,7 +589,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.trading.value}}' data-label='Commerce' title='Jet d&apos;Commerce'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.trading.value}}' title='Commerce'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.social.trading.value' value='{{system.secondaryAbilities.social.trading.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -612,7 +612,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.etiquette.value}}' data-label='Étiquette' title='Jet d&apos;Étiquette'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.social.etiquette.value}}' title='Étiquette'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.social.etiquette.value' value='{{system.secondaryAbilities.social.etiquette.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -643,7 +643,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.notice.value}}' data-label='Perception' title='Jet d&apos;Perception'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.notice.value}}' title='Perception'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.perceptive.notice.value' value='{{system.secondaryAbilities.perceptive.notice.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -666,7 +666,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.search.value}}' data-label='Fouille' title='Jet d&apos;Fouille'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.search.value}}' title='Fouille'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.perceptive.search.value' value='{{system.secondaryAbilities.perceptive.search.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -689,7 +689,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.track.value}}' data-label='Pistage' title='Jet d&apos;Pistage'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.perceptive.track.value}}' title='Pistage'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.perceptive.track.value' value='{{system.secondaryAbilities.perceptive.track.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -720,7 +720,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.animals.value}}' data-label='Animaux' title='Jet d&apos;Animaux'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.animals.value}}' title='Animaux'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.animals.value' value='{{system.secondaryAbilities.intellectual.animals.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -743,7 +743,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.sciences.value}}' data-label='Science' title='Jet d&apos;Science'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.sciences.value}}' title='Science'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.sciences.value' value='{{system.secondaryAbilities.intellectual.sciences.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -766,7 +766,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.law.value}}' data-label='Droit' title='Jet d&apos;Droit'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.law.value}}' title='Droit'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.law.value' value='{{system.secondaryAbilities.intellectual.law.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -789,7 +789,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.herbalLore.value}}' data-label='Herboristerie' title='Jet d&apos;Herboristerie'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.herbalLore.value}}' title='Herboristerie'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.herbalLore.value' value='{{system.secondaryAbilities.intellectual.herbalLore.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -812,7 +812,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.history.value}}' data-label='Histoire' title='Jet d&apos;Histoire'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.history.value}}' title='Histoire'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.history.value' value='{{system.secondaryAbilities.intellectual.history.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -835,7 +835,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.memorize.value}}' data-label='Mémorisation' title='Jet d&apos;Mémorisation'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.memorize.value}}' title='Mémorisation'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.memorize.value' value='{{system.secondaryAbilities.intellectual.memorize.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -867,7 +867,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.medicine.value}}' data-label='Médecine' title='Jet d&apos;Médecine'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.medicine.value}}' title='Médecine'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.medicine.value' value='{{system.secondaryAbilities.intellectual.medicine.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -899,7 +899,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.navigation.value}}' data-label='Navigation' title='Jet d&apos;Navigation'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.navigation.value}}' title='Navigation'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.navigation.value' value='{{system.secondaryAbilities.intellectual.navigation.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -931,7 +931,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.tactics.value}}' data-label='Tactique' title='Jet d&apos;Tactique'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.tactics.value}}' title='Tactique'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.tactics.value' value='{{system.secondaryAbilities.intellectual.tactics.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -954,7 +954,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.magicAppraisal.value}}' data-label='Arcanes' title='Jet d&apos;Arcanes'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.intellectual.magicAppraisal.value}}' title='Arcanes'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.intellectual.magicAppraisal.value' value='{{system.secondaryAbilities.intellectual.magicAppraisal.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -985,7 +985,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.vigor.composure.value}}' data-label='Impassibilité' title='Jet d&apos;Impassibilité'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.vigor.composure.value}}' title='Impassibilité'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.vigor.composure.value' value='{{system.secondaryAbilities.vigor.composure.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1008,7 +1008,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.vigor.featsOfStrength.value}}' data-label='P. Force' title='Jet d&apos;P. Force'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.vigor.featsOfStrength.value}}' title='P. Force'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.vigor.featsOfStrength.value' value='{{system.secondaryAbilities.vigor.featsOfStrength.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1031,7 +1031,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.vigor.withstandPain.value}}' data-label='Res. Douleur' title='Jet d&apos;Res. Douleur'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.vigor.withstandPain.value}}' title='Res. Douleur'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.vigor.withstandPain.value' value='{{system.secondaryAbilities.vigor.withstandPain.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1062,7 +1062,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.disguise.value}}' data-label='Déguisement' title='Jet d&apos;Déguisement'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.disguise.value}}' title='Déguisement'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.subterfuge.disguise.value' value='{{system.secondaryAbilities.subterfuge.disguise.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1085,7 +1085,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.hide.value}}' data-label='Camouflage' title='Jet d&apos;Camouflage'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.hide.value}}' title='Camouflage'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.subterfuge.hide.value' value='{{system.secondaryAbilities.subterfuge.hide.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1108,7 +1108,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.lockpicking.value}}' data-label='Crochetage' title='Jet d&apos;Crochetage'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.lockpicking.value}}' title='Crochetage'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.subterfuge.lockpicking.value' value='{{system.secondaryAbilities.subterfuge.lockpicking.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1131,7 +1131,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.poisons.value}}' data-label='Poisons' title='Jet d&apos;Poisons'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.poisons.value}}' title='Poisons'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.subterfuge.poisons.value' value='{{system.secondaryAbilities.subterfuge.poisons.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1154,7 +1154,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.sleightOfHand.value}}' data-label='Hab. Manuelle' title='Jet d&apos;Hab. Manuelle'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.sleightOfHand.value}}' title='Hab. Manuelle'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.subterfuge.sleightOfHand.value' value='{{system.secondaryAbilities.subterfuge.sleightOfHand.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1177,7 +1177,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.stealth.value}}' data-label='Discrétion' title='Jet d&apos;Discrétion'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.stealth.value}}' title='Discrétion'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.subterfuge.stealth.value' value='{{system.secondaryAbilities.subterfuge.stealth.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1200,7 +1200,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.theft.value}}' data-label='Larcin' title='Jet d&apos;Larcin'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.theft.value}}' title='Larcin'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.subterfuge.theft.value' value='{{system.secondaryAbilities.subterfuge.theft.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1223,7 +1223,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.trapLore.value}}' data-label='Piège' title='Jet d&apos;Piège'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.subterfuge.trapLore.value}}' title='Piège'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.subterfuge.trapLore.value' value='{{system.secondaryAbilities.subterfuge.trapLore.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1254,7 +1254,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.alchemy.value}}' data-label='Alchimie' title='Jet d&apos;Alchimie'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.alchemy.value}}' title='Alchimie'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.alchemy.value' value='{{system.secondaryAbilities.creative.alchemy.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1277,7 +1277,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.animism.value}}' data-label='Animisme' title='Jet d&apos;Animisme'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.animism.value}}' title='Animisme'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.animism.value' value='{{system.secondaryAbilities.creative.animism.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1300,7 +1300,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.art.value}}' data-label='Art' title='Jet d&apos;Art'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.art.value}}' title='Art'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.art.value' value='{{system.secondaryAbilities.creative.art.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1323,7 +1323,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.dance.value}}' data-label='Danse' title='Jet d&apos;Danse'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.dance.value}}' title='Danse'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.dance.value' value='{{system.secondaryAbilities.creative.dance.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1346,7 +1346,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.forging.value}}' data-label='Forge' title='Jet d&apos;Forge'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.forging.value}}' title='Forge'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.forging.value' value='{{system.secondaryAbilities.creative.forging.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1369,7 +1369,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.jewelry.value}}' data-label='Orfévrerie' title='Jet d&apos;Orfévrerie'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.jewelry.value}}' title='Orfévrerie'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.jewelry.value' value='{{system.secondaryAbilities.creative.jewelry.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1392,7 +1392,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.music.value}}' data-label='Musique' title='Jet d&apos;Musique'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.music.value}}' title='Musique'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.music.value' value='{{system.secondaryAbilities.creative.music.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1415,7 +1415,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.ritualCalligraphy.value}}' data-label='Calligraphie rituelle' title='Jet d&apos;Calligraphie rituelle'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.ritualCalligraphy.value}}' title='Calligraphie rituelle'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.ritualCalligraphy.value' value='{{system.secondaryAbilities.creative.ritualCalligraphy.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1438,7 +1438,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.rune.value}}' data-label='Runes' title='Jet d&apos;Runes'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.rune.value}}' title='Runes'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.rune.value' value='{{system.secondaryAbilities.creative.rune.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1461,7 +1461,7 @@
             </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
-                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.tailoring.value}}' data-label='Confection' title='Jet d&apos;Confection'>🎲</button>
+                <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.creative.tailoring.value}}' title='Confection'>🎲</button>
               </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.creative.tailoring.value' value='{{system.secondaryAbilities.creative.tailoring.value}}' placeholder='Final' class='skill-final-input' readonly />
@@ -1488,7 +1488,7 @@
               <span class='skill-compact-name'>{{system.secondaryAbilities.other.sleightOfHand.name}}</span>
               <div class='skill-compact-values'>
                 <span class='skill-compact-final'>{{system.secondaryAbilities.other.sleightOfHand.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.sleightOfHand.value}}' data-label='{{system.secondaryAbilities.other.sleightOfHand.name}}' title='Jet d&apos;{{system.secondaryAbilities.other.sleightOfHand.name}}'>🎲</button>
+                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.sleightOfHand.value}}' title='{{system.secondaryAbilities.other.sleightOfHand.name}}'>🎲</button>
               </div>
             </div>
             <div class='skill-compact-inputs'>
@@ -1506,7 +1506,7 @@
               <span class='skill-compact-name'>{{system.secondaryAbilities.other.disguise.name}}</span>
               <div class='skill-compact-values'>
                 <span class='skill-compact-final'>{{system.secondaryAbilities.other.disguise.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.disguise.value}}' data-label='{{system.secondaryAbilities.other.disguise.name}}' title='Jet d&apos;{{system.secondaryAbilities.other.disguise.name}}'>🎲</button>
+                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.disguise.value}}' title='{{system.secondaryAbilities.other.disguise.name}}'>🎲</button>
               </div>
             </div>
             <div class='skill-compact-inputs'>
@@ -1524,7 +1524,7 @@
               <span class='skill-compact-name'>{{system.secondaryAbilities.other.hide.name}}</span>
               <div class='skill-compact-values'>
                 <span class='skill-compact-final'>{{system.secondaryAbilities.other.hide.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.hide.value}}' data-label='{{system.secondaryAbilities.other.hide.name}}' title='Jet d&apos;{{system.secondaryAbilities.other.hide.name}}'>🎲</button>
+                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.hide.value}}' title='{{system.secondaryAbilities.other.hide.name}}'>🎲</button>
               </div>
             </div>
             <div class='skill-compact-inputs'>
@@ -1542,7 +1542,7 @@
               <span class='skill-compact-name'>{{system.secondaryAbilities.other.theft.name}}</span>
               <div class='skill-compact-values'>
                 <span class='skill-compact-final'>{{system.secondaryAbilities.other.theft.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.theft.value}}' data-label='{{system.secondaryAbilities.other.theft.name}}' title='Jet d&apos;{{system.secondaryAbilities.other.theft.name}}'>🎲</button>
+                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.theft.value}}' title='{{system.secondaryAbilities.other.theft.name}}'>🎲</button>
               </div>
             </div>
             <div class='skill-compact-inputs'>
@@ -1560,7 +1560,7 @@
               <span class='skill-compact-name'>{{system.secondaryAbilities.other.trapLore.name}}</span>
               <div class='skill-compact-values'>
                 <span class='skill-compact-final'>{{system.secondaryAbilities.other.trapLore.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.trapLore.value}}' data-label='{{system.secondaryAbilities.other.trapLore.name}}' title='Jet d&apos;{{system.secondaryAbilities.other.trapLore.name}}'>🎲</button>
+                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.trapLore.value}}' title='{{system.secondaryAbilities.other.trapLore.name}}'>🎲</button>
               </div>
             </div>
             <div class='skill-compact-inputs'>
@@ -1578,7 +1578,7 @@
               <span class='skill-compact-name'>{{system.secondaryAbilities.other.poisons.name}}</span>
               <div class='skill-compact-values'>
                 <span class='skill-compact-final'>{{system.secondaryAbilities.other.poisons.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.poisons.value}}' data-label='{{system.secondaryAbilities.other.poisons.name}}' title='Jet d&apos;{{system.secondaryAbilities.other.poisons.name}}'>🎲</button>
+                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.poisons.value}}' title='{{system.secondaryAbilities.other.poisons.name}}'>🎲</button>
               </div>
             </div>
             <div class='skill-compact-inputs'>
@@ -1596,7 +1596,7 @@
               <span class='skill-compact-name'>{{system.secondaryAbilities.other.lockpicking.name}}</span>
               <div class='skill-compact-values'>
                 <span class='skill-compact-final'>{{system.secondaryAbilities.other.lockpicking.value}}</span>
-                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.lockpicking.value}}' data-label='{{system.secondaryAbilities.other.lockpicking.name}}' title='Jet d&apos;{{system.secondaryAbilities.other.lockpicking.name}}'>🎲</button>
+                <button class='skill-compact-roll rollable' data-action='roll' data-roll='1d100+{{system.secondaryAbilities.other.lockpicking.value}}' title='{{system.secondaryAbilities.other.lockpicking.name}}'>🎲</button>
               </div>
             </div>
             <div class='skill-compact-inputs'>

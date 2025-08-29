@@ -1,7 +1,12 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
-    "htmlFields": ["biographie"],
+    "types": [
+      "character",
+      "npc"
+    ],
+    "htmlFields": [
+      "biographie"
+    ],
     "templates": {
       "base": {
         "health": {
@@ -37,42 +42,106 @@
       },
       "characteristics": {
         "agility": {
-          "value": 5,
+          "base": 5,
+          "special": 0,
+          "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+          "opposed": 0,
+          "final": 5,
+          "mod": 1,
+          "opposed_final": 5,
           "min": 1,
           "max": 20
         },
         "constitution": {
-          "value": 5,
+          "base": 5,
+          "special": 0,
+          "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+          "opposed": 0,
+          "final": 5,
+          "mod": 1,
+          "opposed_final": 5,
           "min": 1,
           "max": 20
         },
         "dexterity": {
-          "value": 5,
+          "base": 5,
+          "special": 0,
+          "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+          "opposed": 0,
+          "final": 5,
+          "mod": 1,
+          "opposed_final": 5,
           "min": 1,
           "max": 20
         },
         "strength": {
-          "value": 5,
+          "base": 5,
+          "special": 0,
+          "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+          "opposed": 0,
+          "final": 5,
+          "mod": 1,
+          "opposed_final": 5,
           "min": 1,
           "max": 20
         },
         "intelligence": {
-          "value": 5,
+          "base": 5,
+          "special": 0,
+          "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+          "opposed": 0,
+          "final": 5,
+          "mod": 1,
+          "opposed_final": 5,
           "min": 1,
           "max": 20
         },
         "perception": {
-          "value": 5,
+          "base": 5,
+          "special": 0,
+          "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+          "opposed": 0,
+          "final": 5,
+          "mod": 1,
+          "opposed_final": 5,
           "min": 1,
           "max": 20
         },
         "power": {
-          "value": 5,
+          "base": 5,
+          "special": 0,
+          "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+          "opposed": 0,
+          "final": 5,
+          "mod": 1,
+          "opposed_final": 5,
           "min": 1,
           "max": 20
         },
         "willpower": {
-          "value": 5,
+          "base": 5,
+          "special": 0,
+          "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+          "opposed": 0,
+          "final": 5,
+          "mod": 1,
+          "opposed_final": 5,
           "min": 1,
           "max": 20
         }
@@ -93,6 +162,48 @@
         "initiative": {
           "value": 0,
           "modifier": 0
+        },
+        "noa": {
+          "value": 1
+        }
+      },
+      "resistances": {
+        "physical": {
+          "final": 0
+        },
+        "disease": {
+          "final": 0
+        },
+        "poison": {
+          "final": 0
+        },
+        "magic": {
+          "final": 0
+        },
+        "psychic": {
+          "final": 0
+        }
+      },
+      "regeneration": {
+        "lp": {
+          "base": 0,
+          "final": 0
+        }
+      },
+      "fame": {
+        "total": 0,
+        "difficulty": 0,
+        "recognition": 0
+      },
+      "classLevels": {
+        "sum": 0
+      },
+      "globalBonuses": {
+        "physical": {
+          "value": 0
+        },
+        "mental": {
+          "value": 0
         }
       },
       "magic": {
@@ -105,29 +216,46 @@
           "multiplier": 1
         },
         "magicProjection": {
-          "value": 0,
+          "base": 0,
+          "offensive": 0,
+          "defensive": 0,
           "modifier": 0
         },
         "innateMagic": {
           "value": 0
+        },
+        "mlFromInt": {
+          "value": 0
+        },
+        "maPow": {
+          "value": 0
+        },
+        "zeonPow": {
+          "value": 0
         }
       },
+      "advantages": [],
+      "disadvantages": [],
       "secondaryAbilities": {
         "athletics": {
           "acrobatics": {
-            "name": "Acrobaties",
+            "name": "Acrobatie",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+            "natural": 0,
+            "naturalbi": 0,
             "value": 0
           },
-          "athletics": {
+          "athleticism": {
             "name": "Athlétisme",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+            "natural": 0,
+            "naturalbi": 0,
             "value": 0
           },
           "climb": {
@@ -136,6 +264,8 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+            "natural": 0,
+            "naturalbi": 0,
             "value": 0
           },
           "jump": {
@@ -144,14 +274,18 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+            "natural": 0,
+            "naturalbi": 0,
             "value": 0
           },
           "ride": {
-            "name": "Équitation",
+            "name": "Equitation",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+            "natural": 0,
+            "naturalbi": 0,
             "value": 0
           },
           "swim": {
@@ -160,16 +294,20 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+            "natural": 0,
+            "naturalbi": 0,
             "value": 0
           }
         },
         "social": {
-          "style": {
-            "name": "Style",
+          "etiquette": {
+            "name": "Étiquette",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "intimidate": {
@@ -178,6 +316,8 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "leadership": {
@@ -186,6 +326,8 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "persuasion": {
@@ -194,6 +336,28 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "streetwise": {
+            "name": "Conn. de la rue",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "style": {
+            "name": "Style",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "trading": {
@@ -202,32 +366,30 @@
             "class": 0,
             "special": 0,
             "temp": 0,
-            "value": 0
-          },
-          "etiquette": {
-            "name": "Étiquette",
-            "base": 0,
-            "class": 0,
-            "special": 0,
-            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           }
         },
         "perceptive": {
           "notice": {
-            "name": "Perception",
+            "name": "Vigilance",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "search": {
-            "name": "Fouille",
+            "name": "Observation",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "track": {
@@ -236,6 +398,8 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           }
         },
@@ -246,30 +410,38 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
-          "science": {
-            "name": "Science",
+          "appraisal": {
+            "name": "Estimation",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
-          "law": {
-            "name": "Droit",
+          "architecture": {
+            "name": "Architecture",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
-          "herbs": {
+          "herbalLore": {
             "name": "Herboristerie",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "history": {
@@ -278,6 +450,78 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "law": {
+            "name": "Loi",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "magicAppraisal": {
+            "name": "E. Magique",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "medicine": {
+            "name": "Médecine",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "memorize": {
+            "name": "Mémorisation",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "navigation": {
+            "name": "Navigation",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "occult": {
+            "name": "Occultisme",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "sciences": {
+            "name": "Sciences",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "tactics": {
@@ -286,64 +530,62 @@
             "class": 0,
             "special": 0,
             "temp": 0,
-            "value": 0
-          },
-          "arcane": {
-            "name": "Arcanes",
-            "base": 0,
-            "class": 0,
-            "special": 0,
-            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           }
         },
-        "other": {
-          "sleightOfHand": {
-            "name": "Escamotage",
+        "vigor": {
+          "composure": {
+            "name": "Impassibilité",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
+          "featsOfStrength": {
+            "name": "P. Force",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "withstandPain": {
+            "name": "Res. Douleur",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          }
+        },
+        "subterfuge": {
           "disguise": {
             "name": "Déguisement",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "hide": {
-            "name": "Dissimulation",
+            "name": "Camouflage",
             "base": 0,
             "class": 0,
             "special": 0,
             "temp": 0,
-            "value": 0
-          },
-          "theft": {
-            "name": "Vol",
-            "base": 0,
-            "class": 0,
-            "special": 0,
-            "temp": 0,
-            "value": 0
-          },
-          "trapLore": {
-            "name": "Connaissance des Pièges",
-            "base": 0,
-            "class": 0,
-            "special": 0,
-            "temp": 0,
-            "value": 0
-          },
-          "poisons": {
-            "name": "Poisons",
-            "base": 0,
-            "class": 0,
-            "special": 0,
-            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           },
           "lockpicking": {
@@ -352,13 +594,173 @@
             "class": 0,
             "special": 0,
             "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "poisons": {
+            "name": "Poisons",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "sleightOfHand": {
+            "name": "Hab. Manuelle",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "stealth": {
+            "name": "Discrétion",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "theft": {
+            "name": "Larcin",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "trapLore": {
+            "name": "Piège",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          }
+        },
+        "creative": {
+          "alchemy": {
+            "name": "Alchimie",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "animism": {
+            "name": "Animisme",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "art": {
+            "name": "Art",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "dance": {
+            "name": "Danse",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "forging": {
+            "name": "Forge",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "jewelry": {
+            "name": "Orfévrerie",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "music": {
+            "name": "Musique",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "ritualCalligraphy": {
+            "name": "Calligraphie rituelle",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "rune": {
+            "name": "Runes",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
+            "value": 0
+          },
+          "tailoring": {
+            "name": "Confection",
+            "base": 0,
+            "class": 0,
+            "special": 0,
+            "temp": 0,
+              "natural": 0,
+              "naturalbi": 0,
             "value": 0
           }
         }
       }
     },
     "character": {
-      "templates": ["base", "characteristics", "combat", "magic", "secondaryAbilities"],
+      "templates": [
+        "base",
+        "characteristics",
+        "combat",
+        "magic",
+        "secondaryAbilities"
+      ],
       "attributes": {
         "level": {
           "value": 1
@@ -366,13 +768,28 @@
       }
     },
     "npc": {
-      "templates": ["base", "characteristics", "combat", "magic"],
+      "templates": [
+        "base",
+        "characteristics",
+        "combat",
+        "magic"
+      ],
       "cr": 0
     }
   },
   "Item": {
-    "types": ["weapon", "armor", "shield", "accessory", "spell", "technique", "secondaryAbility"],
-    "htmlFields": ["description"],
+    "types": [
+      "weapon",
+      "armor",
+      "shield",
+      "accessory",
+      "spell",
+      "technique",
+      "secondaryAbility"
+    ],
+    "htmlFields": [
+      "description"
+    ],
     "templates": {
       "base": {
         "description": "",
@@ -391,7 +808,11 @@
       }
     },
     "weapon": {
-      "templates": ["base", "equipment", "combat"],
+      "templates": [
+        "base",
+        "equipment",
+        "combat"
+      ],
       "weaponType": "melee",
       "damage": "2d6+5",
       "speed": 0,
@@ -401,7 +822,11 @@
       "thrown": false
     },
     "armor": {
-      "templates": ["base", "equipment", "combat"],
+      "templates": [
+        "base",
+        "equipment",
+        "combat"
+      ],
       "armorType": "light",
       "movementRestriction": 0,
       "naturalPenalty": 0,
@@ -409,7 +834,11 @@
       "mysticArmor": 0
     },
     "shield": {
-      "templates": ["base", "equipment", "combat"],
+      "templates": [
+        "base",
+        "equipment",
+        "combat"
+      ],
       "shieldType": "buckler",
       "movementRestriction": 0,
       "naturalPenalty": 0,
@@ -419,12 +848,17 @@
       "defenseBonus": 0
     },
     "accessory": {
-      "templates": ["base", "equipment"],
+      "templates": [
+        "base",
+        "equipment"
+      ],
       "accessoryType": "ring",
       "effect": ""
     },
     "spell": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "spellLevel": 1,
       "zeonCost": 0,
       "maintenanceCost": 0,
@@ -436,7 +870,9 @@
       "duration": "instantaneous"
     },
     "technique": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "techniqueType": "ki",
       "kiCost": 0,
       "maintenanceCost": 0,
@@ -446,7 +882,9 @@
       "duration": "instantaneous"
     },
     "secondaryAbility": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "abilityType": "athletics",
       "developmentCost": 0,
       "specialization": ""

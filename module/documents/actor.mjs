@@ -58,12 +58,57 @@ export class Anima extends Actor {
 
   /**
    * Calculate characteristic modifiers for Anima Beyond Fantasy
+   * Using the official Anima modifier table
    */
   _calculateCharacteristicModifiers(systemData) {
-    // Calculate modifiers for each characteristic
-    // In Anima, the modifier is the characteristic value divided by 5 (rounded down)
+    // Calculate modifiers using the official Anima table
     for (let [key, characteristic] of Object.entries(systemData.characteristics || {})) {
-      characteristic.mod = Math.floor(characteristic.value / 5);
+      const value = characteristic.value || 1;
+
+      // Official Anima modifier table
+      if (value === 1) {
+        characteristic.mod = -30;
+      } else if (value === 2) {
+        characteristic.mod = -20;
+      } else if (value === 3) {
+        characteristic.mod = -10;
+      } else if (value === 4) {
+        characteristic.mod = -5;
+      } else if (value === 5) {
+        characteristic.mod = 0;
+      } else if (value >= 6 && value <= 7) {
+        characteristic.mod = 5;
+      } else if (value >= 8 && value <= 9) {
+        characteristic.mod = 10;
+      } else if (value === 10) {
+        characteristic.mod = 15;
+      } else if (value >= 11 && value <= 12) {
+        characteristic.mod = 20;
+      } else if (value >= 13 && value <= 14) {
+        characteristic.mod = 25;
+      } else if (value === 15) {
+        characteristic.mod = 30;
+      } else if (value >= 16 && value <= 17) {
+        characteristic.mod = 35;
+      } else if (value >= 18 && value <= 19) {
+        characteristic.mod = 40;
+      } else if (value === 20) {
+        characteristic.mod = 45;
+      } else {
+        // For values above 20, continue the pattern
+        if (value === 21) {
+          characteristic.mod = 45; // Same as 20
+        } else if (value >= 22 && value <= 23) {
+          characteristic.mod = 50;
+        } else if (value >= 24 && value <= 25) {
+          characteristic.mod = 55;
+        } else {
+          // For values above 25, continue the pattern
+          characteristic.mod = 55 + Math.floor((value - 26) / 2) * 5 + (value % 2 === 0 ? 0 : 5);
+        }
+      }
+
+      // Keep the modBonus for backward compatibility (though not used in Anima)
       characteristic.modBonus = characteristic.value % 5;
     }
   }
@@ -153,6 +198,14 @@ export class Anima extends Actor {
       systemData.secondaryAbilities = {};
     }
 
+    // Initialize global bonuses if they don't exist
+    if (!systemData.globalBonuses) {
+      systemData.globalBonuses = {
+        physical: { value: 0 },
+        mental: { value: 0 }
+      };
+    }
+
     const { secondaryAbilities } = CONFIG.ANIMA;
 
     // Initialize each category of secondary abilities
@@ -167,6 +220,8 @@ export class Anima extends Actor {
           systemData.secondaryAbilities[category][key] = {
             name: abilityData.name,
             base: 0,
+            natural: 0,
+            naturalbi: 0,
             class: 0,
             special: 0,
             temp: 0,
@@ -181,6 +236,12 @@ export class Anima extends Actor {
           // Ensure all numeric fields exist
           if (systemData.secondaryAbilities[category][key].base === undefined) {
             systemData.secondaryAbilities[category][key].base = 0;
+          }
+          if (systemData.secondaryAbilities[category][key].natural === undefined) {
+            systemData.secondaryAbilities[category][key].natural = 0;
+          }
+          if (systemData.secondaryAbilities[category][key].naturalbi === undefined) {
+            systemData.secondaryAbilities[category][key].naturalbi = 0;
           }
           if (systemData.secondaryAbilities[category][key].class === undefined) {
             systemData.secondaryAbilities[category][key].class = 0;
@@ -200,25 +261,44 @@ export class Anima extends Actor {
   }
 
   /**
-   * Calculate final values for secondary abilities
+   * Calculate final values for secondary abilities using Roll20 formula with physical/mental bonuses
    */
   _calculateSecondaryAbilities(systemData) {
     if (!systemData.secondaryAbilities || !systemData.characteristics) return;
 
     const char = systemData.characteristics;
+    const globalBonuses = systemData.globalBonuses || {};
+
+    // Define physical and mental characteristics
+    const physicalCharacteristics = ['agility', 'constitution', 'dexterity', 'strength'];
+    const mentalCharacteristics = ['intelligence', 'perception', 'power', 'willpower'];
 
     // Calculate each category of secondary abilities
     for (const [category, abilities] of Object.entries(systemData.secondaryAbilities)) {
       for (const [key, ability] of Object.entries(abilities)) {
         if (ability && ability.baseChar && char[ability.baseChar]) {
-          // Calculate final value: base + class + special + temp + characteristic modifier
+          // Get all the components
           const baseValue = ability.base || 0;
+          const naturalValue = ability.natural || 0;
+          const naturalBiValue = ability.naturalbi || 0;
           const classValue = ability.class || 0;
           const specialValue = ability.special || 0;
           const tempValue = ability.temp || 0;
-          const charModifier = Math.floor((char[ability.baseChar].value - 5) / 2); // Standard D&D style modifier
 
-          ability.value = baseValue + classValue + specialValue + tempValue + charModifier;
+          // Get characteristic modifier
+          const charMod = char[ability.baseChar].mod || 0;
+
+          // Add global bonus based on characteristic type
+          let globalBonus = 0;
+          if (physicalCharacteristics.includes(ability.baseChar)) {
+            globalBonus = globalBonuses.physical?.value || 0;
+          } else if (mentalCharacteristics.includes(ability.baseChar)) {
+            globalBonus = globalBonuses.mental?.value || 0;
+          }
+
+          // Calculate final value using Anima formula:
+          // Final = Base + Class + Special + Temp + Natural + NaturalBi + Char Modifier + Global Bonus
+          ability.value = baseValue + classValue + specialValue + tempValue + naturalValue + naturalBiValue + charMod + globalBonus;
 
           // Ensure minimum value of 0
           if (ability.value < 0) {

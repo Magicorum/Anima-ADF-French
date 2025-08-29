@@ -82,43 +82,68 @@ ANIMA.secondaryAbilityCategories = {
  */
 ANIMA.secondaryAbilities = {
   athletics: {
-    acrobatics: { name: "Acrobaties", baseChar: "agility" },
-    athletics: { name: "Athlétisme", baseChar: "strength" },
+    acrobatics: { name: "Acrobatie", baseChar: "agility" },
+    athleticism: { name: "Athlétisme", baseChar: "strength" },
     climb: { name: "Escalade", baseChar: "strength" },
     jump: { name: "Saut", baseChar: "strength" },
-    ride: { name: "Équitation", baseChar: "agility" },
+    ride: { name: "Equitation", baseChar: "agility" },
     swim: { name: "Natation", baseChar: "strength" }
   },
   social: {
-    style: { name: "Style", baseChar: "dexterity" },
+    etiquette: { name: "Étiquette", baseChar: "intelligence" },
     intimidate: { name: "Intimidation", baseChar: "strength" },
     leadership: { name: "Commandement", baseChar: "power" },
     persuasion: { name: "Persuasion", baseChar: "intelligence" },
-    trading: { name: "Commerce", baseChar: "intelligence" },
-    etiquette: { name: "Étiquette", baseChar: "intelligence" }
+    streetwise: { name: "Conn. de la rue", baseChar: "intelligence" },
+    style: { name: "Style", baseChar: "dexterity" },
+    trading: { name: "Commerce", baseChar: "intelligence" }
   },
   perceptive: {
-    notice: { name: "Perception", baseChar: "perception" },
-    search: { name: "Fouille", baseChar: "perception" },
+    notice: { name: "Vigilance", baseChar: "perception" },
+    search: { name: "Observation", baseChar: "perception" },
     track: { name: "Pistage", baseChar: "perception" }
   },
   intellectual: {
     animals: { name: "Animaux", baseChar: "intelligence" },
-    science: { name: "Science", baseChar: "intelligence" },
-    law: { name: "Droit", baseChar: "intelligence" },
-    herbs: { name: "Herboristerie", baseChar: "intelligence" },
+    appraisal: { name: "Estimation", baseChar: "intelligence" },
+    architecture: { name: "Architecture", baseChar: "intelligence" },
+    herbalLore: { name: "Herboristerie", baseChar: "intelligence" },
     history: { name: "Histoire", baseChar: "intelligence" },
-    tactics: { name: "Tactique", baseChar: "intelligence" },
-    arcane: { name: "Arcanes", baseChar: "intelligence" }
+    law: { name: "Loi", baseChar: "intelligence" },
+    magicAppraisal: { name: "E. Magique", baseChar: "intelligence" },
+    medicine: { name: "Médecine", baseChar: "intelligence" },
+    memorize: { name: "Mémorisation", baseChar: "intelligence" },
+    navigation: { name: "Navigation", baseChar: "intelligence" },
+    occult: { name: "Occultisme", baseChar: "intelligence" },
+    sciences: { name: "Sciences", baseChar: "intelligence" },
+    tactics: { name: "Tactique", baseChar: "intelligence" }
   },
-  other: {
-    sleightOfHand: { name: "Escamotage", baseChar: "dexterity" },
+  vigor: {
+    composure: { name: "Impassibilité", baseChar: "willpower" },
+    featsOfStrength: { name: "P. Force", baseChar: "strength" },
+    withstandPain: { name: "Res. Douleur", baseChar: "willpower" }
+  },
+  subterfuge: {
     disguise: { name: "Déguisement", baseChar: "dexterity" },
-    hide: { name: "Dissimulation", baseChar: "perception" },
-    theft: { name: "Vol", baseChar: "dexterity" },
-    trapLore: { name: "Connaissance des Pièges", baseChar: "perception" },
+    hide: { name: "Camouflage", baseChar: "perception" },
+    lockpicking: { name: "Crochetage", baseChar: "dexterity" },
     poisons: { name: "Poisons", baseChar: "intelligence" },
-    lockpicking: { name: "Crochetage", baseChar: "dexterity" }
+    sleightOfHand: { name: "Hab. Manuelle", baseChar: "dexterity" },
+    stealth: { name: "Discrétion", baseChar: "agility" },
+    theft: { name: "Larcin", baseChar: "dexterity" },
+    trapLore: { name: "Piège", baseChar: "perception" }
+  },
+  creative: {
+    alchemy: { name: "Alchimie", baseChar: "intelligence" },
+    animism: { name: "Animisme", baseChar: "power" },
+    art: { name: "Art", baseChar: "power" },
+    dance: { name: "Danse", baseChar: "agility" },
+    forging: { name: "Forge", baseChar: "dexterity" },
+    jewelry: { name: "Orfévrerie", baseChar: "dexterity" },
+    music: { name: "Musique", baseChar: "power" },
+    ritualCalligraphy: { name: "Calligraphie rituelle", baseChar: "dexterity" },
+    rune: { name: "Runes", baseChar: "dexterity" },
+    tailoring: { name: "Confection", baseChar: "dexterity" }
   }
 };
 

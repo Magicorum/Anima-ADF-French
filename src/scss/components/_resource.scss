@@ -2781,9 +2781,15 @@ input[type="hidden"].sheet-tabExtend[value="7"] ~ div.sheet-tab7 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.2rem;
+  min-width: 0; /* Permet la réduction flexible */
 }
 
 .char-name {
+  flex-shrink: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 2rem;
   font-weight: 600;
   color: #e6d7b3;
   font-size: 0.75rem;
@@ -2793,12 +2799,15 @@ input[type="hidden"].sheet-tabExtend[value="7"] ~ div.sheet-tab7 {
 
 .char-values {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.3rem;
   align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .char-final,
-.char-opposed {
+.char-opposed,
+.char-mod {
   font-weight: 700;
   font-size: 0.75rem;
   text-align: center;
@@ -2817,6 +2826,14 @@ input[type="hidden"].sheet-tabExtend[value="7"] ~ div.sheet-tab7 {
   color: #aaa;
   background: rgba(170, 170, 170, 0.1);
   border-color: #555;
+}
+
+.char-mod {
+  color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+  border-color: #8b7355;
+  font-size: 0.65rem;
+  min-width: 1.2rem;
 }
 
 .char-inputs {
@@ -3179,6 +3196,182 @@ input[type="hidden"].sheet-tabExtend[value="7"] ~ div.sheet-tab7 {
   &::placeholder {
     color: #888;
     font-size: 0.5rem;
+  }
+}
+
+/* ===============================
+   GLOBAL BONUSES STYLES
+   =============================== */
+
+.bonus-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.bonus-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid #555;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #8b7355;
+    background: rgba(139, 115, 85, 0.1);
+  }
+}
+
+.bonus-label {
+  font-weight: 600;
+  color: #e6d7b3;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bonus-input {
+  background: rgba(25, 25, 25, 0.9);
+  border: 1px solid #666;
+  color: #e6d7b3;
+  padding: 0.4rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #8b7355;
+    box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.3);
+    background: rgba(30, 30, 30, 0.95);
+  }
+
+  &:hover {
+    border-color: #8b7355;
+  }
+}
+
+.bonus-desc {
+  font-size: 0.65rem;
+  color: #aaa;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+/* ===============================
+   NATURAL SETTINGS STYLES
+   =============================== */
+
+.skill-natural-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #666;
+  color: #fff;
+  padding: 0.15rem 0.25rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-left: 0.15rem;
+  min-width: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(220, 20, 20, 0.15);
+    border-color: #cc3333;
+    color: #ffaaaa;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background: rgba(220, 20, 20, 0.25);
+    transform: scale(0.95);
+  }
+
+  // Style when submenu is open
+  &[data-submenu-open="true"] {
+    background: rgba(139, 115, 85, 0.2);
+    border-color: #8b7355;
+    color: #e6d7b3;
+    box-shadow: 0 0 0 1px rgba(139, 115, 85, 0.3);
+  }
+}
+
+.skill-natural-submenu {
+  margin-top: 0.3rem;
+  margin-left: 1.2rem;
+  padding: 0.4rem;
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  border-left: 3px solid #8b7355;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.2s ease;
+
+  &.menu-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.menu-opening {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  &.menu-closing {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  .natural-inputs-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .natural-input {
+    background: rgba(25, 25, 25, 0.9);
+    border: 1px solid #555;
+    color: #e6d7b3;
+    padding: 0.25rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    text-align: center;
+    width: 100%;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: #aaa;
+      font-size: 0.65rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #8b7355;
+      box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.2);
+      background: rgba(30, 30, 30, 0.95);
+      transform: scale(1.02);
+    }
+
+    &.focused {
+      border-color: #8b7355;
+      background: rgba(35, 35, 35, 0.95);
+    }
   }
 }
 

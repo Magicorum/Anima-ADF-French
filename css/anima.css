@@ -319,6 +319,12 @@
      STYLES COMPÉTENCES MINIATURISÉES
      =============================== */
   /* ===============================
+     GLOBAL BONUSES STYLES
+     =============================== */
+  /* ===============================
+     NATURAL SETTINGS STYLES
+     =============================== */
+  /* ===============================
      RESPONSIVE DESIGN
      =============================== */
 }
@@ -2822,8 +2828,14 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.2rem;
+  min-width: 0; /* Permet la réduction flexible */
 }
 .anima .char-name {
+  flex-shrink: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 2rem;
   font-weight: 600;
   color: #e6d7b3;
   font-size: 0.75rem;
@@ -2832,11 +2844,14 @@
 }
 .anima .char-values {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.3rem;
   align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 .anima .char-final,
-.anima .char-opposed {
+.anima .char-opposed,
+.anima .char-mod {
   font-weight: 700;
   font-size: 0.75rem;
   text-align: center;
@@ -2853,6 +2868,13 @@
   color: #aaa;
   background: rgba(170, 170, 170, 0.1);
   border-color: #555;
+}
+.anima .char-mod {
+  color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+  border-color: #8b7355;
+  font-size: 0.65rem;
+  min-width: 1.2rem;
 }
 .anima .char-inputs {
   display: grid;
@@ -3166,6 +3188,151 @@
 .anima .skill-compact-input::placeholder {
   color: #888;
   font-size: 0.5rem;
+}
+.anima .bonus-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.anima .bonus-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: rgba(40, 40, 40, 0.8);
+  border: 1px solid #555;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.anima .bonus-item:hover {
+  border-color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+}
+.anima .bonus-label {
+  font-weight: 600;
+  color: #e6d7b3;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.anima .bonus-input {
+  background: rgba(25, 25, 25, 0.9);
+  border: 1px solid #666;
+  color: #e6d7b3;
+  padding: 0.4rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+.anima .bonus-input::placeholder {
+  color: #aaa;
+}
+.anima .bonus-input:focus {
+  outline: none;
+  border-color: #8b7355;
+  box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.3);
+  background: rgba(30, 30, 30, 0.95);
+}
+.anima .bonus-input:hover {
+  border-color: #8b7355;
+}
+.anima .bonus-desc {
+  font-size: 0.65rem;
+  color: #aaa;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+.anima .skill-natural-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #666;
+  color: #fff;
+  padding: 0.15rem 0.25rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-left: 0.15rem;
+  min-width: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.anima .skill-natural-toggle:hover {
+  background: rgba(220, 20, 20, 0.15);
+  border-color: #cc3333;
+  color: #ffaaaa;
+  transform: scale(1.05);
+}
+.anima .skill-natural-toggle:active {
+  background: rgba(220, 20, 20, 0.25);
+  transform: scale(0.95);
+}
+.anima .skill-natural-toggle[data-submenu-open=true] {
+  background: rgba(139, 115, 85, 0.2);
+  border-color: #8b7355;
+  color: #e6d7b3;
+  box-shadow: 0 0 0 1px rgba(139, 115, 85, 0.3);
+}
+.anima .skill-natural-submenu {
+  margin-top: 0.3rem;
+  margin-left: 1.2rem;
+  padding: 0.4rem;
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  border-left: 3px solid #8b7355;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.2s ease;
+}
+.anima .skill-natural-submenu.menu-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+.anima .skill-natural-submenu.menu-opening {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+.anima .skill-natural-submenu.menu-closing {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+.anima .skill-natural-submenu .natural-inputs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  align-items: center;
+}
+.anima .skill-natural-submenu .natural-input {
+  background: rgba(25, 25, 25, 0.9);
+  border: 1px solid #555;
+  color: #e6d7b3;
+  padding: 0.25rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+.anima .skill-natural-submenu .natural-input::placeholder {
+  color: #aaa;
+  font-size: 0.65rem;
+}
+.anima .skill-natural-submenu .natural-input:focus {
+  outline: none;
+  border-color: #8b7355;
+  box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.2);
+  background: rgba(30, 30, 30, 0.95);
+  transform: scale(1.02);
+}
+.anima .skill-natural-submenu .natural-input.focused {
+  border-color: #8b7355;
+  background: rgba(35, 35, 35, 0.95);
 }
 @media (max-width: 1400px) {
   .anima .main-content-layout {

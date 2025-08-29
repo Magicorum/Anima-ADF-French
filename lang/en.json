@@ -34,12 +34,78 @@
     "Secondary": {
       "Athletics": "Athlétiques",
       "Social": "Sociales",
-      "Perceptive": "Perceptives",
+      "Perceptive": "Sensorielles",
       "Intellectual": "Intellectuelles",
-      "Vitality": "Vitales",
-      "Subterfuge": "Clandestines",
+      "Vitality": "Vitalité",
+      "Subterfuge": "Subterfuge",
       "Creative": "Créatives",
       "Other": "Autres"
+    },
+    "SecondaryAbilities": {
+      "athletics": {
+        "acrobatics": "Acrobatie",
+        "athleticism": "Athlétisme",
+        "climb": "Escalade",
+        "jump": "Saut",
+        "ride": "Equitation",
+        "swim": "Natation"
+      },
+      "social": {
+        "etiquette": "Étiquette",
+        "intimidate": "Intimidation",
+        "leadership": "Commandement",
+        "persuasion": "Persuasion",
+        "streetwise": "Conn. de la rue",
+        "style": "Style",
+        "trading": "Commerce"
+      },
+      "perceptive": {
+        "notice": "Vigilance",
+        "search": "Observation",
+        "track": "Pistage"
+      },
+      "intellectual": {
+        "animals": "Animaux",
+        "appraisal": "Estimation",
+        "architecture": "Architecture",
+        "herbalLore": "Herboristerie",
+        "history": "Histoire",
+        "law": "Loi",
+        "magicAppraisal": "E. Magique",
+        "medicine": "Médecine",
+        "memorize": "Mémorisation",
+        "navigation": "Navigation",
+        "occult": "Occultisme",
+        "sciences": "Sciences",
+        "tactics": "Tactique"
+      },
+      "vigor": {
+        "composure": "Impassibilité",
+        "featsOfStrength": "P. Force",
+        "withstandPain": "Res. Douleur"
+      },
+      "subterfuge": {
+        "disguise": "Déguisement",
+        "hide": "Camouflage",
+        "lockpicking": "Crochetage",
+        "poisons": "Poisons",
+        "sleightOfHand": "Hab. Manuelle",
+        "stealth": "Discrétion",
+        "theft": "Larcin",
+        "trapLore": "Piège"
+      },
+      "creative": {
+        "alchemy": "Alchimie",
+        "animism": "Animisme",
+        "art": "Art",
+        "dance": "Danse",
+        "forging": "Forge",
+        "jewelry": "Orfévrerie",
+        "music": "Musique",
+        "ritualCalligraphy": "Calligraphie rituelle",
+        "rune": "Runes",
+        "tailoring": "Confection"
+      }
     },
     "SheetLabels": {
       "Actor": "Anima Actor Sheet",

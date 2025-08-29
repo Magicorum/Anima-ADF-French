@@ -3,22 +3,22 @@
   <div class='header-main'>
     <div class='character-identity'>
       <div class='profile-hexagon'>
-        <img
-          class='profile-img'
-          src='{{actor.img}}'
-          data-edit='img'
-          data-action='onEditImage'
-          title='{{actor.name}}'
+  <img
+    class='profile-img'
+    src='{{actor.img}}'
+    data-edit='img'
+    data-action='onEditImage'
+    title='{{actor.name}}'
           height='35'
           width='35'
         />
       </div>
       <div class='identity-info'>
         <div class='character-name'>
-          <input
-            name='name'
-            type='text'
-            value='{{actor.name}}'
+        <input
+          name='name'
+          type='text'
+          value='{{actor.name}}'
             placeholder='NOM DU PERSONNAGE'
             class='character-name-input'
           />
@@ -45,9 +45,9 @@
             placeholder='Niveau'
             class='meta-input level-input'
             min='1'
-          />
-        </div>
+        />
       </div>
+    </div>
     </div>
 
     <div class='vital-stats'>
@@ -55,29 +55,29 @@
         <div class='stat-block'>
           <label class='stat-label'>SANTÉ</label>
           <div class='stat-values'>
-            <input
+          <input
               type='number'
-              name='system.health.value'
-              value='{{system.health.value}}'
+            name='system.health.value'
+            value='{{system.health.value}}'
               class='stat-input current'
               min='0'
               max='{{system.health.max}}'
-            />
+          />
             <span class='stat-separator'>/</span>
-            <input
+          <input
               type='number'
-              name='system.health.max'
-              value='{{system.health.max}}'
+            name='system.health.max'
+            value='{{system.health.max}}'
               class='stat-input max'
               min='1'
-            />
-          </div>
+          />
         </div>
+      </div>
 
         <div class='stat-block'>
           <label class='stat-label'>FATIGUE</label>
           <div class='stat-values'>
-            <input
+          <input
               type='number'
               name='system.fatigue.value'
               value='{{system.fatigue.value}}'
@@ -86,15 +86,15 @@
               max='{{system.fatigue.max}}'
             />
             <span class='stat-separator'>/</span>
-            <input
+          <input
               type='number'
               name='system.fatigue.max'
               value='{{system.fatigue.max}}'
               class='stat-input max'
               min='1'
-            />
-          </div>
+          />
         </div>
+      </div>
 
         <div class='stat-block'>
           <label class='stat-label'>ZEON</label>
@@ -108,20 +108,20 @@
               max='{{system.zeon.max}}'
             />
             <span class='stat-separator'>/</span>
-            <input
+          <input
               type='number'
               name='system.zeon.max'
               value='{{system.zeon.max}}'
               class='stat-input max'
               min='0'
-            />
-          </div>
+          />
         </div>
+      </div>
 
         <div class='stat-block'>
           <label class='stat-label'>KI</label>
           <div class='stat-values'>
-            <input
+          <input
               type='number'
               name='system.ki.value'
               value='{{system.ki.value}}'
@@ -130,15 +130,15 @@
               max='{{system.ki.max}}'
             />
             <span class='stat-separator'>/</span>
-            <input
+          <input
               type='number'
               name='system.ki.max'
               value='{{system.ki.max}}'
               class='stat-input max'
               min='0'
-            />
-          </div>
+          />
         </div>
+      </div>
       </div>
 
       <div class='combat-stats'>
@@ -191,14 +191,14 @@
 
       <div class='field-group'>
         <label class='field-label'>POINTS DE DÉVELOPPEMENT</label>
-        <input
+          <input
           type='number'
           name='system.developmentPoints'
           value='{{system.developmentPoints}}'
           class='field-input dp-input'
           min='0'
-        />
-      </div>
+          />
+        </div>
 
       <div class='field-group'>
         <label class='field-label'>PRÉSENCE</label>
@@ -213,30 +213,30 @@
 
       <div class='field-group'>
         <label class='field-label'>GENRE</label>
-        <input
-          type='text'
-          name='system.gender'
-          value='{{system.gender}}'
+          <input
+            type='text'
+            name='system.gender'
+            value='{{system.gender}}'
           class='field-input gender-input'
-        />
+          />
       </div>
 
       <div class='field-group'>
         <label class='field-label'>TAILLE</label>
-        <input
-          type='text'
-          name='system.height'
-          value='{{system.height}}'
+          <input
+            type='text'
+            name='system.height'
+            value='{{system.height}}'
           class='field-input height-input'
-        />
+          />
       </div>
 
       <div class='field-group'>
         <label class='field-label'>APPARENCE</label>
-        <input
-          type='text'
-          name='system.appearance'
-          value='{{system.appearance}}'
+          <input
+            type='text'
+            name='system.appearance'
+            value='{{system.appearance}}'
           class='field-input appearance-input'
         />
       </div>

@@ -2677,6 +2677,64 @@ input[type="hidden"].sheet-tabExtend[value="7"] ~ div.sheet-tab7 {
          }
        }
 
+       /* ===============================
+          STYLES COMPÉTENCES CLIQUABLES
+          =============================== */
+
+       .clickable-skill {
+         cursor: pointer;
+         padding: 0.2rem 0.4rem;
+         border-radius: 3px;
+         transition: all 0.2s ease;
+         position: relative;
+         z-index: 1;
+
+         &:hover {
+           background: rgba(212, 175, 55, 0.15);
+           border: 1px solid #d4af37;
+           box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+           transform: translateY(-1px);
+
+           .skill-name {
+             color: #d4af37;
+             text-shadow: 0 0 4px rgba(212, 175, 55, 0.5);
+           }
+
+           .skill-base-char {
+             color: #e6d7b3;
+             text-shadow: 0 0 4px rgba(230, 215, 179, 0.5);
+           }
+         }
+
+         &:active {
+           transform: translateY(0px);
+           box-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+         }
+       }
+
+       .clickable-compact-skill {
+         cursor: pointer;
+         padding: 0.1rem 0.3rem;
+         border-radius: 2px;
+         transition: all 0.2s ease;
+         position: relative;
+         z-index: 1;
+
+         &:hover {
+           background: rgba(212, 175, 55, 0.15);
+           border: 1px solid #d4af37;
+           box-shadow: 0 0 6px rgba(212, 175, 55, 0.3);
+           transform: translateY(-1px);
+           color: #d4af37;
+           text-shadow: 0 0 3px rgba(212, 175, 55, 0.5);
+         }
+
+         &:active {
+           transform: translateY(0px);
+           box-shadow: 0 0 3px rgba(212, 175, 55, 0.2);
+         }
+       }
+
        .skill-inputs-section {
          display: flex;
          align-items: center;

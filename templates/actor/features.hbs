@@ -452,7 +452,8 @@
                 <input type='number' name='system.secondaryAbilities.athletics.ride.temp' value='{{system.secondaryAbilities.athletics.ride.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.athletics.ride.special' value='{{system.secondaryAbilities.athletics.ride.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.athletics.ride.class' value='{{system.secondaryAbilities.athletics.ride.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.athletics.ride.base' value='{{system.secondaryAbilities.athletics.ride.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.athletics.ride.base' value='{{system.secondaryAbilities.athletics.ride.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
                 <button class='skill-natural-toggle' data-skill='ride' data-category='athletics' title='Paramètres naturels'>⚙️</button>
               </div>
             </div>
@@ -482,7 +483,8 @@
                 <input type='number' name='system.secondaryAbilities.athletics.swim.temp' value='{{system.secondaryAbilities.athletics.swim.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.athletics.swim.special' value='{{system.secondaryAbilities.athletics.swim.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.athletics.swim.class' value='{{system.secondaryAbilities.athletics.swim.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.athletics.swim.base' value='{{system.secondaryAbilities.athletics.swim.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.athletics.swim.base' value='{{system.secondaryAbilities.athletics.swim.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
                 <button class='skill-natural-toggle' data-skill='swim' data-category='athletics' title='Paramètres naturels'>⚙️</button>
               </div>
             </div>
@@ -491,13 +493,15 @@
 
           <!-- Paramètres naturels pour Natation -->
           {{#if system.secondaryAbilities.athletics.swim}}
+          
+          
           <div class='skill-natural-submenu' id='natural-submenu-athletics-swim' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.athletics.swim.natural' value='{{system.secondaryAbilities.athletics.swim.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.athletics.swim.naturalbi' value='{{system.secondaryAbilities.athletics.swim.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
           </div>
-          {{/if}}
+{{/if}}
 
         </div>
       </div>
@@ -510,15 +514,10 @@
           <!-- Sociales - Style -->
           {{#if system.secondaryAbilities.social.style}}
           
-          <div class='skill-natural-submenu' id='natural-submenu-athletics-swim' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.athletics.swim.natural' value='{{system.secondaryAbilities.athletics.swim.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.athletics.swim.naturalbi' value='{{system.secondaryAbilities.athletics.swim.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@style_base+@style_class+@style_special+@style_temp+@style_natural_effective+@style_naturalbi+@style_charmod+@style_globalbonus' data-label='Style' title='Jet de Style'>
               <span class='skill-name'>Style</span>
-              <span class='skill-base-char physical-char'>DEX</span>
+              <span class='skill-base-char mental-char'>POU</span>
             </div>
             <div class='skill-values-section'>
               <div class='skill-inputs-section'>
@@ -526,7 +525,7 @@
                 <input type='number' name='system.secondaryAbilities.social.style.temp' value='{{system.secondaryAbilities.social.style.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.social.style.special' value='{{system.secondaryAbilities.social.style.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.social.style.class' value='{{system.secondaryAbilities.social.style.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.style.base' value='{{system.secondaryAbilities.social.style.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.social.style.base' value='{{system.secondaryAbilities.social.style.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='style' data-category='social' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -537,15 +536,10 @@
           <!-- Sociales - Intimidation -->
           {{#if system.secondaryAbilities.social.intimidate}}
           
-          <div class='skill-natural-submenu' id='natural-submenu-social-style' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.social.style.natural' value='{{system.secondaryAbilities.social.style.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.social.style.naturalbi' value='{{system.secondaryAbilities.social.style.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@intimidate_base+@intimidate_class+@intimidate_special+@intimidate_temp+@intimidate_natural_effective+@intimidate_naturalbi+@intimidate_charmod+@intimidate_globalbonus' data-label='Intimidation' title='Jet de Intimidation'>
               <span class='skill-name'>Intimidation</span>
-              <span class='skill-base-char physical-char'>FOR</span>
+              <span class='skill-base-char mental-char'>VOL</span>
             </div>
             <div class='skill-values-section'>
               <div class='skill-inputs-section'>
@@ -553,36 +547,10 @@
                 <input type='number' name='system.secondaryAbilities.social.intimidate.temp' value='{{system.secondaryAbilities.social.intimidate.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.social.intimidate.special' value='{{system.secondaryAbilities.social.intimidate.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.social.intimidate.class' value='{{system.secondaryAbilities.social.intimidate.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.intimidate.base' value='{{system.secondaryAbilities.social.intimidate.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.social.intimidate.base' value='{{system.secondaryAbilities.social.intimidate.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{system.characteristics.will.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='intimidate' data-category='social' title='Paramètres naturels'>⚙️</button>
-              </div>
-            </div>
-          </div>
-          {{/if}}
-
-          <!-- Sociales - Commandement -->
-          {{#if system.secondaryAbilities.social.leadership}}
-          
-          <div class='skill-natural-submenu' id='natural-submenu-social-intimidate' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.social.intimidate.natural' value='{{system.secondaryAbilities.social.intimidate.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.social.intimidate.naturalbi' value='{{system.secondaryAbilities.social.intimidate.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
-            <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@leadership_base+@leadership_class+@leadership_special+@leadership_temp+@leadership_natural_effective+@leadership_naturalbi+@leadership_charmod+@leadership_globalbonus' data-label='Commandement' title='Jet de Commandement'>
-              <span class='skill-name'>Commandement</span>
-              <span class='skill-base-char mental-char'>POU</span>
-            </div>
-            <div class='skill-values-section'>
-              <div class='skill-inputs-section'>
-                <input type='number' name='system.secondaryAbilities.social.leadership.value' value='{{system.secondaryAbilities.social.leadership.value}}' placeholder='Final' class='skill-final-input' readonly />
-                <input type='number' name='system.secondaryAbilities.social.leadership.temp' value='{{system.secondaryAbilities.social.leadership.temp}}' placeholder='Temp' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.leadership.special' value='{{system.secondaryAbilities.social.leadership.special}}' placeholder='Spéc' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.leadership.class' value='{{system.secondaryAbilities.social.leadership.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.leadership.base' value='{{system.secondaryAbilities.social.leadership.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
-
-                                <button class='skill-natural-toggle' data-skill='leadership' data-category='social' title='Paramètres naturels'>⚙️</button>
               </div>
             </div>
           </div>
@@ -591,12 +559,7 @@
           <!-- Sociales - Persuasion -->
           {{#if system.secondaryAbilities.social.persuasion}}
           
-          <div class='skill-natural-submenu' id='natural-submenu-social-leadership' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.social.leadership.natural' value='{{system.secondaryAbilities.social.leadership.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.social.leadership.naturalbi' value='{{system.secondaryAbilities.social.leadership.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@persuasion_base+@persuasion_class+@persuasion_special+@persuasion_temp+@persuasion_natural_effective+@persuasion_naturalbi+@persuasion_charmod+@persuasion_globalbonus' data-label='Persuasion' title='Jet de Persuasion'>
               <span class='skill-name'>Persuasion</span>
               <span class='skill-base-char mental-char'>INT</span>
@@ -669,7 +632,74 @@
           </div>
           {{/if}}
 
-        </div>
+        
+          <!-- Sociales - Connaissance de la Rue -->
+          {{#if system.secondaryAbilities.social.streetKnowledge}}
+          
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@streetKnowledge_base+@streetKnowledge_class+@streetKnowledge_special+@streetKnowledge_temp+@streetKnowledge_natural_effective+@streetKnowledge_naturalbi+@streetKnowledge_charmod+@streetKnowledge_globalbonus' data-label='Connaissance de la Rue' title='Jet de Connaissance de la Rue'>
+              <span class='skill-name'>Connaissance de la Rue</span>
+              <span class='skill-base-char mental-char'>INT</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.value' value='{{system.secondaryAbilities.social.streetKnowledge.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.temp' value='{{system.secondaryAbilities.social.streetKnowledge.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.special' value='{{system.secondaryAbilities.social.streetKnowledge.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.class' value='{{system.secondaryAbilities.social.streetKnowledge.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.base' value='{{system.secondaryAbilities.social.streetKnowledge.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{system.characteristics.intelligence.mod}}</span>
+                <button class='skill-natural-toggle' data-skill='streetKnowledge' data-category='social' title='Paramètres naturels'>⚙️</button>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+
+          <!-- Paramètres naturels pour Connaissance de la Rue -->
+          {{#if system.secondaryAbilities.social.streetKnowledge}}
+          
+          
+          <div class='skill-natural-submenu' id='natural-submenu-social-streetKnowledge' style='display: none;'>
+            <div class='natural-inputs-row'>
+              <input type='number' name='system.secondaryAbilities.social.streetKnowledge.natural' value='{{system.secondaryAbilities.social.streetKnowledge.natural}}' placeholder='Bonus naturel' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.social.streetKnowledge.naturalbi' value='{{system.secondaryAbilities.social.streetKnowledge.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
+            </div>
+          </div>
+{{/if}}
+
+
+          <!-- Sociales - Connaissance de la Rue -->
+          {{#if system.secondaryAbilities.social.streetKnowledge}}
+          <div class='skill-horizontal-item'>
+            <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@streetKnowledge_base+@streetKnowledge_class+@streetKnowledge_special+@streetKnowledge_temp+@streetKnowledge_natural_effective+@streetKnowledge_naturalbi+@streetKnowledge_charmod+@streetKnowledge_globalbonus' data-label='Connaissance de la Rue' title='Jet de Connaissance de la Rue'>
+              <span class='skill-name'>Connaissance de la Rue</span>
+              <span class='skill-base-char mental-char'>INT</span>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.value' value='{{system.secondaryAbilities.social.streetKnowledge.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.temp' value='{{system.secondaryAbilities.social.streetKnowledge.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.special' value='{{system.secondaryAbilities.social.streetKnowledge.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.class' value='{{system.secondaryAbilities.social.streetKnowledge.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.base' value='{{system.secondaryAbilities.social.streetKnowledge.base}}' placeholder='Base' class='skill-input' />
+                <span class='skill-char-mod'>+{{system.characteristics.intelligence.mod}}</span>
+                <button class='skill-natural-toggle' data-skill='streetKnowledge' data-category='social' title='Paramètres naturels'>⚙️</button>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+
+          <!-- Paramètres naturels pour Connaissance de la Rue -->
+          {{#if system.secondaryAbilities.social.streetKnowledge}}
+          <div class='skill-natural-submenu' id='natural-submenu-social-streetKnowledge' style='display: none;'>
+            <div class='natural-inputs-row'>
+              <input type='number' name='system.secondaryAbilities.social.streetKnowledge.natural' value='{{system.secondaryAbilities.social.streetKnowledge.natural}}' placeholder='Bonus naturel' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.social.streetKnowledge.naturalbi' value='{{system.secondaryAbilities.social.streetKnowledge.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
+            </div>
+          </div>
+          {{/if}}
+
+</div>
       </div>
 
             <!-- Sensorielles -->
@@ -680,12 +710,7 @@
           <!-- Sensorielles - Perception -->
           {{#if system.secondaryAbilities.perceptive.notice}}
           
-          <div class='skill-natural-submenu' id='natural-submenu-social-etiquette' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.social.etiquette.natural' value='{{system.secondaryAbilities.social.etiquette.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.social.etiquette.naturalbi' value='{{system.secondaryAbilities.social.etiquette.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@notice_base+@notice_class+@notice_special+@notice_temp+@notice_natural_effective+@notice_naturalbi+@notice_charmod+@notice_globalbonus' data-label='Perception' title='Jet de Perception'>
               <span class='skill-name'>Perception</span>
               <span class='skill-base-char mental-char'>PER</span>
@@ -1111,7 +1136,7 @@
                 <input type='number' name='system.secondaryAbilities.vigor.featsOfStrength.temp' value='{{system.secondaryAbilities.vigor.featsOfStrength.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.vigor.featsOfStrength.special' value='{{system.secondaryAbilities.vigor.featsOfStrength.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.vigor.featsOfStrength.class' value='{{system.secondaryAbilities.vigor.featsOfStrength.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.vigor.featsOfStrength.base' value='{{system.secondaryAbilities.vigor.featsOfStrength.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.vigor.featsOfStrength.base' value='{{system.secondaryAbilities.vigor.featsOfStrength.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='featsOfStrength' data-category='vigor' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1173,7 +1198,7 @@
                 <input type='number' name='system.secondaryAbilities.subterfuge.disguise.temp' value='{{system.secondaryAbilities.subterfuge.disguise.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.disguise.special' value='{{system.secondaryAbilities.subterfuge.disguise.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.disguise.class' value='{{system.secondaryAbilities.subterfuge.disguise.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.subterfuge.disguise.base' value='{{system.secondaryAbilities.subterfuge.disguise.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.subterfuge.disguise.base' value='{{system.secondaryAbilities.subterfuge.disguise.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='disguise' data-category='subterfuge' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1227,7 +1252,7 @@
                 <input type='number' name='system.secondaryAbilities.subterfuge.lockpicking.temp' value='{{system.secondaryAbilities.subterfuge.lockpicking.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.lockpicking.special' value='{{system.secondaryAbilities.subterfuge.lockpicking.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.lockpicking.class' value='{{system.secondaryAbilities.subterfuge.lockpicking.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.subterfuge.lockpicking.base' value='{{system.secondaryAbilities.subterfuge.lockpicking.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.subterfuge.lockpicking.base' value='{{system.secondaryAbilities.subterfuge.lockpicking.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='lockpicking' data-category='subterfuge' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1281,7 +1306,7 @@
                 <input type='number' name='system.secondaryAbilities.subterfuge.sleightOfHand.temp' value='{{system.secondaryAbilities.subterfuge.sleightOfHand.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.sleightOfHand.special' value='{{system.secondaryAbilities.subterfuge.sleightOfHand.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.sleightOfHand.class' value='{{system.secondaryAbilities.subterfuge.sleightOfHand.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.subterfuge.sleightOfHand.base' value='{{system.secondaryAbilities.subterfuge.sleightOfHand.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.subterfuge.sleightOfHand.base' value='{{system.secondaryAbilities.subterfuge.sleightOfHand.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='sleightOfHand' data-category='subterfuge' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1308,7 +1333,7 @@
                 <input type='number' name='system.secondaryAbilities.subterfuge.stealth.temp' value='{{system.secondaryAbilities.subterfuge.stealth.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.stealth.special' value='{{system.secondaryAbilities.subterfuge.stealth.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.stealth.class' value='{{system.secondaryAbilities.subterfuge.stealth.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.subterfuge.stealth.base' value='{{system.secondaryAbilities.subterfuge.stealth.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.subterfuge.stealth.base' value='{{system.secondaryAbilities.subterfuge.stealth.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='stealth' data-category='subterfuge' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1335,7 +1360,7 @@
                 <input type='number' name='system.secondaryAbilities.subterfuge.theft.temp' value='{{system.secondaryAbilities.subterfuge.theft.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.theft.special' value='{{system.secondaryAbilities.subterfuge.theft.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.subterfuge.theft.class' value='{{system.secondaryAbilities.subterfuge.theft.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.subterfuge.theft.base' value='{{system.secondaryAbilities.subterfuge.theft.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.subterfuge.theft.base' value='{{system.secondaryAbilities.subterfuge.theft.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='theft' data-category='subterfuge' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1478,7 +1503,7 @@
                 <input type='number' name='system.secondaryAbilities.creative.dance.temp' value='{{system.secondaryAbilities.creative.dance.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.dance.special' value='{{system.secondaryAbilities.creative.dance.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.dance.class' value='{{system.secondaryAbilities.creative.dance.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.creative.dance.base' value='{{system.secondaryAbilities.creative.dance.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.creative.dance.base' value='{{system.secondaryAbilities.creative.dance.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='dance' data-category='creative' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1505,7 +1530,7 @@
                 <input type='number' name='system.secondaryAbilities.creative.forging.temp' value='{{system.secondaryAbilities.creative.forging.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.forging.special' value='{{system.secondaryAbilities.creative.forging.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.forging.class' value='{{system.secondaryAbilities.creative.forging.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.creative.forging.base' value='{{system.secondaryAbilities.creative.forging.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.creative.forging.base' value='{{system.secondaryAbilities.creative.forging.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='forging' data-category='creative' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1532,7 +1557,7 @@
                 <input type='number' name='system.secondaryAbilities.creative.jewelry.temp' value='{{system.secondaryAbilities.creative.jewelry.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.jewelry.special' value='{{system.secondaryAbilities.creative.jewelry.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.jewelry.class' value='{{system.secondaryAbilities.creative.jewelry.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.creative.jewelry.base' value='{{system.secondaryAbilities.creative.jewelry.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.creative.jewelry.base' value='{{system.secondaryAbilities.creative.jewelry.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='jewelry' data-category='creative' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1586,7 +1611,7 @@
                 <input type='number' name='system.secondaryAbilities.creative.ritualCalligraphy.temp' value='{{system.secondaryAbilities.creative.ritualCalligraphy.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.ritualCalligraphy.special' value='{{system.secondaryAbilities.creative.ritualCalligraphy.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.ritualCalligraphy.class' value='{{system.secondaryAbilities.creative.ritualCalligraphy.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.creative.ritualCalligraphy.base' value='{{system.secondaryAbilities.creative.ritualCalligraphy.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.creative.ritualCalligraphy.base' value='{{system.secondaryAbilities.creative.ritualCalligraphy.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='ritualCalligraphy' data-category='creative' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1613,7 +1638,7 @@
                 <input type='number' name='system.secondaryAbilities.creative.rune.temp' value='{{system.secondaryAbilities.creative.rune.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.rune.special' value='{{system.secondaryAbilities.creative.rune.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.rune.class' value='{{system.secondaryAbilities.creative.rune.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.creative.rune.base' value='{{system.secondaryAbilities.creative.rune.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.creative.rune.base' value='{{system.secondaryAbilities.creative.rune.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='rune' data-category='creative' title='Paramètres naturels'>⚙️</button>
               </div>
@@ -1640,7 +1665,7 @@
                 <input type='number' name='system.secondaryAbilities.creative.tailoring.temp' value='{{system.secondaryAbilities.creative.tailoring.temp}}' placeholder='Temp' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.tailoring.special' value='{{system.secondaryAbilities.creative.tailoring.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.creative.tailoring.class' value='{{system.secondaryAbilities.creative.tailoring.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.creative.tailoring.base' value='{{system.secondaryAbilities.creative.tailoring.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
+                <input type='number' name='system.secondaryAbilities.creative.tailoring.base' value='{{system.secondaryAbilities.creative.tailoring.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.power.mod}}</span>
 
                                 <button class='skill-natural-toggle' data-skill='tailoring' data-category='creative' title='Paramètres naturels'>⚙️</button>
               </div>

@@ -380,6 +380,49 @@ export class Anima extends Actor {
       data.lvl = data.attributes.level.value ?? 0;
     }
 
+    // Copy secondary abilities for easier access in rolls
+    if (data.secondaryAbilities) {
+      for (let [category, abilities] of Object.entries(data.secondaryAbilities)) {
+        for (let [key, ability] of Object.entries(abilities)) {
+          if (ability) {
+            // Copy the final calculated value
+            if (ability.value !== undefined) {
+              data[key] = ability.value;
+            }
+
+            // Copy individual components for roll calculations
+            if (ability.base !== undefined) data[`${key}_base`] = ability.base;
+            if (ability.class !== undefined) data[`${key}_class`] = ability.class;
+            if (ability.special !== undefined) data[`${key}_special`] = ability.special;
+            if (ability.temp !== undefined) data[`${key}_temp`] = ability.temp;
+            if (ability.natural !== undefined) data[`${key}_natural`] = ability.natural;
+            if (ability.naturalbi !== undefined) data[`${key}_naturalbi`] = ability.naturalbi;
+
+            // Copy characteristic modifier and global bonus
+            if (ability.baseChar && data.characteristics && data.characteristics[ability.baseChar]) {
+              data[`${key}_charmod`] = data.characteristics[ability.baseChar].mod || 0;
+            }
+
+            // Calculate global bonus based on characteristic type
+            let globalBonus = 0;
+            const physicalCharacteristics = ['agility', 'constitution', 'dexterity', 'strength'];
+            const mentalCharacteristics = ['intelligence', 'perception', 'power', 'willpower'];
+
+            if (ability.baseChar) {
+              if (physicalCharacteristics.includes(ability.baseChar)) {
+                globalBonus = (data.globalBonuses?.physical?.value) || 0;
+              } else if (mentalCharacteristics.includes(ability.baseChar)) {
+                globalBonus = (data.globalBonuses?.mental?.value) || 0;
+              }
+            }
+            data[`${key}_globalbonus`] = globalBonus;
+
+            console.log(`DEBUG: Copié compétence ${key} = ${ability.value} (Base: ${ability.base}, Classe: ${ability.class}, Spécial: ${ability.special}, Temp: ${ability.temp}, Natural: ${ability.natural}, NaturalBi: ${ability.naturalbi}, CharMod: ${data[`${key}_charmod`]}, Global: ${globalBonus})`);
+          }
+        }
+      }
+    }
+
     // Legacy support - copy characteristics to abilities for backward compatibility
     if (data.characteristics) {
       data.abilities = data.characteristics;
@@ -403,6 +446,49 @@ export class Anima extends Actor {
     if (data.combat) {
       for (let [k, v] of Object.entries(data.combat)) {
         data[k] = foundry.utils.deepClone(v);
+      }
+    }
+
+    // Copy secondary abilities for easier access in rolls (for NPCs too)
+    if (data.secondaryAbilities) {
+      for (let [category, abilities] of Object.entries(data.secondaryAbilities)) {
+        for (let [key, ability] of Object.entries(abilities)) {
+          if (ability) {
+            // Copy the final calculated value
+            if (ability.value !== undefined) {
+              data[key] = ability.value;
+            }
+
+            // Copy individual components for roll calculations
+            if (ability.base !== undefined) data[`${key}_base`] = ability.base;
+            if (ability.class !== undefined) data[`${key}_class`] = ability.class;
+            if (ability.special !== undefined) data[`${key}_special`] = ability.special;
+            if (ability.temp !== undefined) data[`${key}_temp`] = ability.temp;
+            if (ability.natural !== undefined) data[`${key}_natural`] = ability.natural;
+            if (ability.naturalbi !== undefined) data[`${key}_naturalbi`] = ability.naturalbi;
+
+            // Copy characteristic modifier and global bonus
+            if (ability.baseChar && data.characteristics && data.characteristics[ability.baseChar]) {
+              data[`${key}_charmod`] = data.characteristics[ability.baseChar].mod || 0;
+            }
+
+            // Calculate global bonus based on characteristic type
+            let globalBonus = 0;
+            const physicalCharacteristics = ['agility', 'constitution', 'dexterity', 'strength'];
+            const mentalCharacteristics = ['intelligence', 'perception', 'power', 'willpower'];
+
+            if (ability.baseChar) {
+              if (physicalCharacteristics.includes(ability.baseChar)) {
+                globalBonus = (data.globalBonuses?.physical?.value) || 0;
+              } else if (mentalCharacteristics.includes(ability.baseChar)) {
+                globalBonus = (data.globalBonuses?.mental?.value) || 0;
+              }
+            }
+            data[`${key}_globalbonus`] = globalBonus;
+
+            console.log(`DEBUG NPC: Copié compétence ${key} = ${ability.value} (Base: ${ability.base}, Classe: ${ability.class}, Spécial: ${ability.special}, Temp: ${ability.temp}, Natural: ${ability.natural}, NaturalBi: ${ability.naturalbi}, CharMod: ${data[`${key}_charmod`]}, Global: ${globalBonus})`);
+          }
+        }
       }
     }
 

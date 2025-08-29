@@ -304,6 +304,9 @@
      STYLES NOUVELLES COMPÉTENCES HORIZONTALES
      =============================== */
   /* ===============================
+     STYLES COULEURS CARACTÉRISTIQUES
+     =============================== */
+  /* ===============================
      STYLES COMPÉTENCES CLIQUABLES
      =============================== */
   /* ===============================
@@ -2710,6 +2713,16 @@
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
+.anima .physical-char {
+  color: #4ade80 !important; /* Vert */
+  text-shadow: 0 0 4px rgba(74, 222, 128, 0.4);
+  font-weight: 600;
+}
+.anima .mental-char {
+  color: #3b82f6 !important; /* Bleu foncé */
+  text-shadow: 0 0 4px rgba(59, 130, 246, 0.4);
+  font-weight: 600;
+}
 .anima .skill-values-section {
   display: flex;
   align-items: center;
@@ -2764,6 +2777,14 @@
 .anima .clickable-skill:hover .skill-base-char {
   color: #e6d7b3;
   text-shadow: 0 0 4px rgba(230, 215, 179, 0.5);
+}
+.anima .clickable-skill:hover .physical-char {
+  color: #4ade80 !important;
+  text-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
+}
+.anima .clickable-skill:hover .mental-char {
+  color: #3b82f6 !important;
+  text-shadow: 0 0 6px rgba(59, 130, 246, 0.6);
 }
 .anima .clickable-skill:active {
   transform: translateY(0px);

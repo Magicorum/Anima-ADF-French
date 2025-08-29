@@ -32,6 +32,11 @@ Remplacer les boutons de dés (🎲) par un système où cliquer directement sur
 - **Texte** : Change de couleur avec effet de lueur
 - **Animation** : Légère élévation au survol
 
+### Couleurs des caractéristiques
+- **Caractéristiques physiques** : Vert (#4ade80) avec ombre verte
+- **Caractéristiques mentales** : Bleu foncé (#3b82f6) avec ombre bleue
+- **Effet de survol** : Intensification des couleurs et ombres
+
 ### Prévention de la superposition
 - **Z-index** : Les compétences cliquables ont un z-index élevé
 - **Position relative** : Assure que les effets de survol ne dépassent pas
@@ -42,11 +47,15 @@ Remplacer les boutons de dés (🎲) par un système où cliquer directement sur
 - **0 bouton de dés restant** dans les compétences secondaires
 - **100% de conversion** réussie
 - **Cohérence technique** : Tous les attributs data sont correctement configurés
+- **46 acronymes de caractéristiques colorés** (20 physiques + 26 mentales)
+- **Styles CSS complets** : Couleurs de base et effets de survol
 
 ## 🔧 Scripts créés
 1. `replace_dice_buttons_with_clickable_skills.py` - Remplacement principal
 2. `fix_duplicate_sections_and_compact_skills.py` - Correction des sections dupliquées
 3. `test_clickable_skills.py` - Vérification de l'implémentation
+4. `add_characteristic_colors.py` - Ajout des couleurs des caractéristiques
+5. `test_characteristic_colors.py` - Test des couleurs des caractéristiques
 
 ## ✅ Fonctionnalités
 - ✅ Clic sur compétence = jet de dés
@@ -55,10 +64,13 @@ Remplacer les boutons de dés (🎲) par un système où cliquer directement sur
 - ✅ Compatible avec toutes les compétences secondaires
 - ✅ Maintien des formules de jet complètes
 - ✅ Interface intuitive et moderne
+- ✅ **Couleurs des caractéristiques** : Vert pour physiques (AGI, CON, DEX, FOR), Bleu pour mentales (INT, PER, POU, VOL)
+- ✅ **Ombres stylisées** : Effet de lueur derrière les acronymes
 
 ## 🎮 Utilisation
 1. **Survolez** une compétence secondaire → effet jaune doré
 2. **Cliquez** sur le nom de la compétence → jet de dés automatique
 3. **Modifiez** les valeurs dans les champs sans conflit
+4. **Identifiez visuellement** le type de caractéristique par la couleur
 
 L'implémentation est **complète et fonctionnelle** ! 🎉

@@ -420,10 +420,7 @@ export class AnimaSheet extends api.HandlebarsApplicationMixin(
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
       let label = dataset.label ? `Jet de ${dataset.label}` : 'Jet de compétence';
-      const rollData = this.actor.getRollData();
-      console.log(`DEBUG: Formule du jet: ${dataset.roll}`);
-      console.log(`DEBUG: Données de jet:`, rollData);
-      let roll = new Roll(dataset.roll, rollData);
+      let roll = new Roll(dataset.roll, this.actor.getRollData());
 
       await roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),

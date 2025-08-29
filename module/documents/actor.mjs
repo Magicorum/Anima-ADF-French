@@ -1,3 +1,5 @@
+import { ANIMA } from "../helpers/config.mjs";
+
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -273,7 +275,9 @@ export class Anima extends Actor {
     // Calculate each category of secondary abilities
     for (const [category, abilities] of Object.entries(systemData.secondaryAbilities)) {
       for (const [key, ability] of Object.entries(abilities)) {
-        if (ability && ability.baseChar && char[ability.baseChar]) {
+        // Get baseChar from config, don't rely on it being in the data
+        const baseChar = ANIMA.secondaryAbilities[category]?.[key]?.baseChar;
+        if (ability && baseChar && char[baseChar]) {
           // Get all the components
           const baseValue = ability.base || 0;
           const naturalValue = ability.natural || 0;
@@ -283,13 +287,13 @@ export class Anima extends Actor {
           const tempValue = ability.temp || 0;
 
           // Get characteristic modifier
-          const charMod = char[ability.baseChar].mod || 0;
+          const charMod = char[baseChar].mod || 0;
 
           // Add global bonus based on characteristic type
           let globalBonus = 0;
-          if (physicalCharacteristics.includes(ability.baseChar)) {
+          if (physicalCharacteristics.includes(baseChar)) {
             globalBonus = globalBonuses.physical?.value || 0;
-          } else if (mentalCharacteristics.includes(ability.baseChar)) {
+          } else if (mentalCharacteristics.includes(baseChar)) {
             globalBonus = globalBonuses.mental?.value || 0;
           }
 
@@ -398,9 +402,16 @@ export class Anima extends Actor {
             if (ability.natural !== undefined) data[`${key}_natural`] = ability.natural;
             if (ability.naturalbi !== undefined) data[`${key}_naturalbi`] = ability.naturalbi;
 
-            // Copy characteristic modifier and global bonus
-            if (ability.baseChar && data.characteristics && data.characteristics[ability.baseChar]) {
-              data[`${key}_charmod`] = data.characteristics[ability.baseChar].mod || 0;
+            // Get baseChar from config and copy characteristic modifier
+            const baseChar = ANIMA.secondaryAbilities[category]?.[key]?.baseChar;
+            if (baseChar && data.characteristics && data.characteristics[baseChar]) {
+              const charMod = data.characteristics[baseChar].mod || 0;
+              data[`${key}_charmod`] = charMod;
+
+              // Le bonus naturel agit comme un multiplicateur du modificateur de caractéristique
+              // Si natural = 2 et charMod = 15, alors natural_effective = 2 * 15 = 30
+              const naturalMultiplier = ability.natural || 0;
+              data[`${key}_natural_effective`] = naturalMultiplier * charMod;
             }
 
             // Calculate global bonus based on characteristic type
@@ -408,16 +419,16 @@ export class Anima extends Actor {
             const physicalCharacteristics = ['agility', 'constitution', 'dexterity', 'strength'];
             const mentalCharacteristics = ['intelligence', 'perception', 'power', 'willpower'];
 
-            if (ability.baseChar) {
-              if (physicalCharacteristics.includes(ability.baseChar)) {
+            if (baseChar) {
+              if (physicalCharacteristics.includes(baseChar)) {
                 globalBonus = (data.globalBonuses?.physical?.value) || 0;
-              } else if (mentalCharacteristics.includes(ability.baseChar)) {
+              } else if (mentalCharacteristics.includes(baseChar)) {
                 globalBonus = (data.globalBonuses?.mental?.value) || 0;
               }
             }
             data[`${key}_globalbonus`] = globalBonus;
 
-            console.log(`DEBUG: Copié compétence ${key} = ${ability.value} (Base: ${ability.base}, Classe: ${ability.class}, Spécial: ${ability.special}, Temp: ${ability.temp}, Natural: ${ability.natural}, NaturalBi: ${ability.naturalbi}, CharMod: ${data[`${key}_charmod`]}, Global: ${globalBonus})`);
+
           }
         }
       }
@@ -467,9 +478,16 @@ export class Anima extends Actor {
             if (ability.natural !== undefined) data[`${key}_natural`] = ability.natural;
             if (ability.naturalbi !== undefined) data[`${key}_naturalbi`] = ability.naturalbi;
 
-            // Copy characteristic modifier and global bonus
-            if (ability.baseChar && data.characteristics && data.characteristics[ability.baseChar]) {
-              data[`${key}_charmod`] = data.characteristics[ability.baseChar].mod || 0;
+            // Get baseChar from config and copy characteristic modifier
+            const baseChar = ANIMA.secondaryAbilities[category]?.[key]?.baseChar;
+            if (baseChar && data.characteristics && data.characteristics[baseChar]) {
+              const charMod = data.characteristics[baseChar].mod || 0;
+              data[`${key}_charmod`] = charMod;
+
+              // Le bonus naturel agit comme un multiplicateur du modificateur de caractéristique
+              // Si natural = 2 et charMod = 15, alors natural_effective = 2 * 15 = 30
+              const naturalMultiplier = ability.natural || 0;
+              data[`${key}_natural_effective`] = naturalMultiplier * charMod;
             }
 
             // Calculate global bonus based on characteristic type
@@ -477,16 +495,16 @@ export class Anima extends Actor {
             const physicalCharacteristics = ['agility', 'constitution', 'dexterity', 'strength'];
             const mentalCharacteristics = ['intelligence', 'perception', 'power', 'willpower'];
 
-            if (ability.baseChar) {
-              if (physicalCharacteristics.includes(ability.baseChar)) {
+            if (baseChar) {
+              if (physicalCharacteristics.includes(baseChar)) {
                 globalBonus = (data.globalBonuses?.physical?.value) || 0;
-              } else if (mentalCharacteristics.includes(ability.baseChar)) {
+              } else if (mentalCharacteristics.includes(baseChar)) {
                 globalBonus = (data.globalBonuses?.mental?.value) || 0;
               }
             }
             data[`${key}_globalbonus`] = globalBonus;
 
-            console.log(`DEBUG NPC: Copié compétence ${key} = ${ability.value} (Base: ${ability.base}, Classe: ${ability.class}, Spécial: ${ability.special}, Temp: ${ability.temp}, Natural: ${ability.natural}, NaturalBi: ${ability.naturalbi}, CharMod: ${data[`${key}_charmod`]}, Global: ${globalBonus})`);
+
           }
         }
       }

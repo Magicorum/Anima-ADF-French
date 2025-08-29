@@ -63,10 +63,11 @@ export class Anima extends Actor {
   _calculateCharacteristicModifiers(systemData) {
     // Calculate modifiers using the official Anima table
     for (let [key, characteristic] of Object.entries(systemData.characteristics || {})) {
-      const value = characteristic.value || 1;
+      // Calculate the final value from base + special + temp
+      const value = (characteristic.base || 1) + (characteristic.special || 0) + (characteristic.temp || 0);
 
-      // Official Anima modifier table
-      if (value === 1) {
+      // Official Anima modifier table - corrected
+      if (value <= 1) {
         characteristic.mod = -30;
       } else if (value === 2) {
         characteristic.mod = -20;
@@ -92,24 +93,20 @@ export class Anima extends Actor {
         characteristic.mod = 35;
       } else if (value >= 18 && value <= 19) {
         characteristic.mod = 40;
-      } else if (value === 20) {
+      } else if (value >= 20 && value <= 21) {
         characteristic.mod = 45;
+      } else if (value >= 22 && value <= 23) {
+        characteristic.mod = 50;
       } else {
-        // For values above 20, continue the pattern
-        if (value === 21) {
-          characteristic.mod = 45; // Same as 20
-        } else if (value >= 22 && value <= 23) {
-          characteristic.mod = 50;
-        } else if (value >= 24 && value <= 25) {
-          characteristic.mod = 55;
-        } else {
-          // For values above 25, continue the pattern
-          characteristic.mod = 55 + Math.floor((value - 26) / 2) * 5 + (value % 2 === 0 ? 0 : 5);
-        }
+        // For values above 23, continue the pattern
+        characteristic.mod = 50 + Math.floor((value - 24) / 2) * 5 + (value % 2 === 0 ? 0 : 5);
       }
 
       // Keep the modBonus for backward compatibility (though not used in Anima)
-      characteristic.modBonus = characteristic.value % 5;
+      characteristic.modBonus = value % 5;
+
+      // Update the final value
+      characteristic.final = value;
     }
   }
 

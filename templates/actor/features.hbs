@@ -337,28 +337,25 @@
               </div>
             </div>
           </div>
-                {{/if}}
+          {{/if}}
 
           <!-- Paramètres naturels pour Acrobatie -->
+          {{#if system.secondaryAbilities.athletics.acrobatics}}
           <div class='skill-natural-submenu' id='natural-submenu-athletics-acrobatics' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.athletics.acrobatics.natural' value='{{system.secondaryAbilities.athletics.acrobatics.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.athletics.acrobatics.naturalbi' value='{{system.secondaryAbilities.athletics.acrobatics.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-              </div>
-                  </div>
+            </div>
+          </div>
+          {{/if}}
 
           <!-- Athlétiques - Athlétisme -->
           {{#if system.secondaryAbilities.athletics.athleticism}}
-                    <div class='skill-natural-submenu' id='natural-submenu-athletics-acrobatics' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.athletics.acrobatics.natural' value='{{system.secondaryAbilities.athletics.acrobatics.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.athletics.acrobatics.naturalbi' value='{{system.secondaryAbilities.athletics.acrobatics.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-                </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section'>
               <span class='skill-name'>Athlétisme</span>
               <span class='skill-base-char'>FOR</span>
-                </div>
+            </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
                 <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+@athleticism_base+@athleticism_class+@athleticism_special+@athleticism_temp+@athleticism_natural_effective+@athleticism_naturalbi+@athleticism_charmod+@athleticism_globalbonus' data-label='Athlétisme' title='Jet d&apos;Athlétisme'>🎲</button>
@@ -374,28 +371,25 @@
               </div>
             </div>
           </div>
-                  {{/if}}
+          {{/if}}
 
           <!-- Paramètres naturels pour Athlétisme -->
+          {{#if system.secondaryAbilities.athletics.athleticism}}
           <div class='skill-natural-submenu' id='natural-submenu-athletics-athleticism' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.athletics.athleticism.natural' value='{{system.secondaryAbilities.athletics.athleticism.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.athletics.athleticism.naturalbi' value='{{system.secondaryAbilities.athletics.athleticism.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-                </div>
-      </div>
+            </div>
+          </div>
+          {{/if}}
 
           <!-- Athlétiques - Escalade -->
           {{#if system.secondaryAbilities.athletics.climb}}
-                    <div class='skill-natural-submenu' id='natural-submenu-athletics-athleticism' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.athletics.athleticism.natural' value='{{system.secondaryAbilities.athletics.athleticism.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.athletics.athleticism.naturalbi' value='{{system.secondaryAbilities.athletics.athleticism.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-      </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section'>
               <span class='skill-name'>Escalade</span>
               <span class='skill-base-char'>FOR</span>
-      </div>
+            </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
                 <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+@climb_base+@climb_class+@climb_special+@climb_temp+@climb_natural_effective+@climb_naturalbi+@climb_charmod+@climb_globalbonus' data-label='Escalade' title='Jet d&apos;Escalade'>🎲</button>
@@ -414,29 +408,26 @@
           {{/if}}
 
           <!-- Paramètres naturels pour Escalade -->
+          {{#if system.secondaryAbilities.athletics.climb}}
           <div class='skill-natural-submenu' id='natural-submenu-athletics-climb' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.athletics.climb.natural' value='{{system.secondaryAbilities.athletics.climb.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.athletics.climb.naturalbi' value='{{system.secondaryAbilities.athletics.climb.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
+            </div>
           </div>
-          </div>
+          {{/if}}
 
           <!-- Athlétiques - Saut -->
           {{#if system.secondaryAbilities.athletics.jump}}
-                    <div class='skill-natural-submenu' id='natural-submenu-athletics-climb' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.athletics.climb.natural' value='{{system.secondaryAbilities.athletics.climb.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.athletics.climb.naturalbi' value='{{system.secondaryAbilities.athletics.climb.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-          </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section'>
               <span class='skill-name'>Saut</span>
               <span class='skill-base-char'>FOR</span>
-          </div>
+            </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
                 <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+@jump_base+@jump_class+@jump_special+@jump_temp+@jump_natural_effective+@jump_naturalbi+@jump_charmod+@jump_globalbonus' data-label='Saut' title='Jet d&apos;Saut'>🎲</button>
-          </div>
+              </div>
               <div class='skill-inputs-section'>
                 <input type='number' name='system.secondaryAbilities.athletics.jump.value' value='{{system.secondaryAbilities.athletics.jump.value}}' placeholder='Final' class='skill-final-input' readonly />
                 <input type='number' name='system.secondaryAbilities.athletics.jump.temp' value='{{system.secondaryAbilities.athletics.jump.temp}}' placeholder='Temp' class='skill-input' />
@@ -447,12 +438,16 @@
                 <button class='skill-natural-toggle' data-skill='jump' data-category='athletics' title='Paramètres naturels'>⚙️</button>
               </div>
             </div>
+          </div>
+          {{/if}}
+
+          <!-- Paramètres naturels pour Saut -->
+          {{#if system.secondaryAbilities.athletics.jump}}
           <div class='skill-natural-submenu' id='natural-submenu-athletics-jump' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.athletics.jump.natural' value='{{system.secondaryAbilities.athletics.jump.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.athletics.jump.naturalbi' value='{{system.secondaryAbilities.athletics.jump.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
-          </div>
           </div>
           {{/if}}
 
@@ -462,7 +457,7 @@
             <div class='skill-name-section'>
               <span class='skill-name'>Équitation</span>
               <span class='skill-base-char'>AGI</span>
-          </div>
+            </div>
             <div class='skill-values-section'>
               <div class='skill-roll-section'>
                 <button class='skill-roll-btn rollable' data-action='roll' data-roll='1d100+@ride_base+@ride_class+@ride_special+@ride_temp+@ride_natural_effective+@ride_naturalbi+@ride_charmod+@ride_globalbonus' data-label='Équitation' title='Jet d&apos;Équitation'>🎲</button>
@@ -473,22 +468,25 @@
                 <input type='number' name='system.secondaryAbilities.athletics.ride.special' value='{{system.secondaryAbilities.athletics.ride.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.athletics.ride.class' value='{{system.secondaryAbilities.athletics.ride.class}}' placeholder='Classe' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.athletics.ride.base' value='{{system.secondaryAbilities.athletics.ride.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.agility.mod}}</span>
-
-                                <button class='skill-natural-toggle' data-skill='ride' data-category='athletics' title='Paramètres naturels'>⚙️</button>
+                <button class='skill-natural-toggle' data-skill='ride' data-category='athletics' title='Paramètres naturels'>⚙️</button>
               </div>
+            </div>
+          </div>
+          {{/if}}
+
+          <!-- Paramètres naturels pour Équitation -->
+          {{#if system.secondaryAbilities.athletics.ride}}
+          <div class='skill-natural-submenu' id='natural-submenu-athletics-ride' style='display: none;'>
+            <div class='natural-inputs-row'>
+              <input type='number' name='system.secondaryAbilities.athletics.ride.natural' value='{{system.secondaryAbilities.athletics.ride.natural}}' placeholder='Bonus naturel' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.athletics.ride.naturalbi' value='{{system.secondaryAbilities.athletics.ride.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
           </div>
           {{/if}}
 
           <!-- Athlétiques - Natation -->
           {{#if system.secondaryAbilities.athletics.swim}}
-          
-          <div class='skill-natural-submenu' id='natural-submenu-athletics-ride' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.athletics.ride.natural' value='{{system.secondaryAbilities.athletics.ride.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.athletics.ride.naturalbi' value='{{system.secondaryAbilities.athletics.ride.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section'>
               <span class='skill-name'>Natation</span>
               <span class='skill-base-char'>FOR</span>
@@ -503,9 +501,18 @@
                 <input type='number' name='system.secondaryAbilities.athletics.swim.special' value='{{system.secondaryAbilities.athletics.swim.special}}' placeholder='Spéc' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.athletics.swim.class' value='{{system.secondaryAbilities.athletics.swim.class}}' placeholder='Classe' class='skill-input' />
                 <input type='number' name='system.secondaryAbilities.athletics.swim.base' value='{{system.secondaryAbilities.athletics.swim.base}}' placeholder='Base' class='skill-input' /><span class='skill-char-mod'>+{{system.characteristics.strength.mod}}</span>
-
-                                <button class='skill-natural-toggle' data-skill='swim' data-category='athletics' title='Paramètres naturels'>⚙️</button>
+                <button class='skill-natural-toggle' data-skill='swim' data-category='athletics' title='Paramètres naturels'>⚙️</button>
               </div>
+            </div>
+          </div>
+          {{/if}}
+
+          <!-- Paramètres naturels pour Natation -->
+          {{#if system.secondaryAbilities.athletics.swim}}
+          <div class='skill-natural-submenu' id='natural-submenu-athletics-swim' style='display: none;'>
+            <div class='natural-inputs-row'>
+              <input type='number' name='system.secondaryAbilities.athletics.swim.natural' value='{{system.secondaryAbilities.athletics.swim.natural}}' placeholder='Bonus naturel' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.athletics.swim.naturalbi' value='{{system.secondaryAbilities.athletics.swim.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
           </div>
           {{/if}}

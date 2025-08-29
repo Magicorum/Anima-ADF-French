@@ -83,11 +83,11 @@ ANIMA.secondaryAbilityCategories = {
 ANIMA.secondaryAbilities = {
   athletics: {
     acrobatics: { name: "Acrobatie", baseChar: "agility" },
-    athleticism: { name: "Athlétisme", baseChar: "strength" },
-    climb: { name: "Escalade", baseChar: "strength" },
+    athleticism: { name: "Athlétisme", baseChar: "agility" },
+    climb: { name: "Escalade", baseChar: "agility" },
     jump: { name: "Saut", baseChar: "strength" },
     ride: { name: "Equitation", baseChar: "agility" },
-    swim: { name: "Natation", baseChar: "strength" }
+    swim: { name: "Natation", baseChar: "agility" }
   },
   social: {
     etiquette: { name: "Étiquette", baseChar: "intelligence" },

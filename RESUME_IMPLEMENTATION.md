@@ -56,6 +56,11 @@ Remplacer les boutons de dés (🎲) par un système où cliquer directement sur
 3. `test_clickable_skills.py` - Vérification de l'implémentation
 4. `add_characteristic_colors.py` - Ajout des couleurs des caractéristiques
 5. `test_characteristic_colors.py` - Test des couleurs des caractéristiques
+6. `fix_athletics_characteristics.py` - Correction des caractéristiques athlétiques
+7. `fix_athletics_modifiers.py` - Correction des modificateurs athlétiques
+8. `fix_all_athletics_characteristics.py` - Correction complète des compétences athlétiques
+9. `fix_jump_modifier.py` - Correction spécifique du modificateur du Saut
+10. `fix_jump_template.py` - Correction du template du Saut
 
 ## ✅ Fonctionnalités
 - ✅ Clic sur compétence = jet de dés
@@ -66,6 +71,7 @@ Remplacer les boutons de dés (🎲) par un système où cliquer directement sur
 - ✅ Interface intuitive et moderne
 - ✅ **Couleurs des caractéristiques** : Vert pour physiques (AGI, CON, DEX, FOR), Bleu pour mentales (INT, PER, POU, VOL)
 - ✅ **Ombres stylisées** : Effet de lueur derrière les acronymes
+- ✅ **Correction des compétences athlétiques** : AGI pour Acrobaties, Athlétisme, Escalade, Équitation, Natation ; FOR pour Saut
 
 ## 🎮 Utilisation
 1. **Survolez** une compétence secondaire → effet jaune doré

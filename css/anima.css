@@ -2694,9 +2694,11 @@
 }
 .anima .skill-name-section {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
   min-width: 120px;
-  align-items: flex-start;
+  flex-wrap: nowrap;
 }
 .anima .skill-name {
   font-weight: 600;
@@ -3657,4 +3659,55 @@
 }
 .anima .effects .item .effect-controls {
   border: none;
+}
+
+/* Styles pour les bonus naturels */
+.anima .natural-bonus-display {
+  color: #666 !important;
+  font-size: 0.6rem !important; /* Plus petit que l'acronyme */
+  margin-left: 4px;
+  white-space: nowrap; /* Empêcher le retour à la ligne */
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* S'assurer que l'acronyme et les bonus restent sur la même ligne */
+.anima .skill-base-char {
+  font-weight: 500;
+  color: #d4af37;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap; /* Empêcher le retour à la ligne */
+}
+
+/* Créer une ligne séparée pour l'acronyme et les bonus naturels */
+.anima .skill-char-bonus-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+
+/* Ajuster la section des noms pour permettre le wrapping */
+.anima .skill-name-section {
+  display: flex;
+  flex-direction: column; /* Changé de row à column */
+  align-items: flex-start; /* Aligner à gauche */
+  gap: 2px;
+  min-width: 120px;
+  flex-wrap: wrap;
+}
+
+/* S'assurer que le nom de la compétence reste sur sa propre ligne */
+.anima .skill-name {
+  font-weight: 600;
+  color: #e6d7b3;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.1rem;
+  display: block; /* Force le nom sur sa propre ligne */
+  width: 100%;
 }

@@ -533,7 +533,18 @@
           </div>
           {{/if}}
 
-          <!-- Sociales - Intimidation -->
+          
+          <!-- Paramètres naturels pour Style -->
+          {{#if system.secondaryAbilities.social.style}}
+          <div class='skill-natural-submenu' id='natural-submenu-social-style' style='display: none;'>
+            <div class='natural-inputs-row'>
+              <input type='number' name='system.secondaryAbilities.social.style.natural' value='{{system.secondaryAbilities.social.style.natural}}' placeholder='Bonus naturel' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.social.style.naturalbi' value='{{system.secondaryAbilities.social.style.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
+            </div>
+          </div>
+          {{/if}}
+
+<!-- Sociales - Intimidation -->
           {{#if system.secondaryAbilities.social.intimidate}}
           
           <div class='skill-horizontal-item'>
@@ -556,7 +567,18 @@
           </div>
           {{/if}}
 
-          <!-- Sociales - Persuasion -->
+          
+          <!-- Paramètres naturels pour Intimidation -->
+          {{#if system.secondaryAbilities.social.intimidate}}
+          <div class='skill-natural-submenu' id='natural-submenu-social-intimidate' style='display: none;'>
+            <div class='natural-inputs-row'>
+              <input type='number' name='system.secondaryAbilities.social.intimidate.natural' value='{{system.secondaryAbilities.social.intimidate.natural}}' placeholder='Bonus naturel' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.social.intimidate.naturalbi' value='{{system.secondaryAbilities.social.intimidate.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
+            </div>
+          </div>
+          {{/if}}
+
+<!-- Sociales - Persuasion -->
           {{#if system.secondaryAbilities.social.persuasion}}
           
           <div class='skill-horizontal-item'>
@@ -578,15 +600,21 @@
           </div>
           {{/if}}
 
-          <!-- Sociales - Commerce -->
-          {{#if system.secondaryAbilities.social.trading}}
           
+          <!-- Paramètres naturels pour Persuasion -->
+          {{#if system.secondaryAbilities.social.persuasion}}
           <div class='skill-natural-submenu' id='natural-submenu-social-persuasion' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.social.persuasion.natural' value='{{system.secondaryAbilities.social.persuasion.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.social.persuasion.naturalbi' value='{{system.secondaryAbilities.social.persuasion.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
-          </div><div class='skill-horizontal-item'>
+          </div>
+          {{/if}}
+
+<!-- Sociales - Commerce -->
+          {{#if system.secondaryAbilities.social.trading}}
+          
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@trading_base+@trading_class+@trading_special+@trading_temp+@trading_natural_effective+@trading_naturalbi+@trading_charmod+@trading_globalbonus' data-label='Commerce' title='Jet de Commerce'>
               <span class='skill-name'>Commerce</span>
               <span class='skill-base-char mental-char'>INT</span>
@@ -605,15 +633,21 @@
           </div>
           {{/if}}
 
-          <!-- Sociales - Étiquette -->
-          {{#if system.secondaryAbilities.social.etiquette}}
           
+          <!-- Paramètres naturels pour Commerce -->
+          {{#if system.secondaryAbilities.social.trading}}
           <div class='skill-natural-submenu' id='natural-submenu-social-trading' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.social.trading.natural' value='{{system.secondaryAbilities.social.trading.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.social.trading.naturalbi' value='{{system.secondaryAbilities.social.trading.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
-          </div><div class='skill-horizontal-item'>
+          </div>
+          {{/if}}
+
+<!-- Sociales - Étiquette -->
+          {{#if system.secondaryAbilities.social.etiquette}}
+          
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@etiquette_base+@etiquette_class+@etiquette_special+@etiquette_temp+@etiquette_natural_effective+@etiquette_naturalbi+@etiquette_charmod+@etiquette_globalbonus' data-label='Étiquette' title='Jet de Étiquette'>
               <span class='skill-name'>Étiquette</span>
               <span class='skill-base-char mental-char'>INT</span>
@@ -633,73 +667,53 @@
           {{/if}}
 
         
-          <!-- Sociales - Connaissance de la Rue -->
-          {{#if system.secondaryAbilities.social.streetKnowledge}}
+          
+          <!-- Paramètres naturels pour Étiquette -->
+          {{#if system.secondaryAbilities.social.etiquette}}
+          <div class='skill-natural-submenu' id='natural-submenu-social-etiquette' style='display: none;'>
+            <div class='natural-inputs-row'>
+              <input type='number' name='system.secondaryAbilities.social.etiquette.natural' value='{{system.secondaryAbilities.social.etiquette.natural}}' placeholder='Bonus naturel' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.social.etiquette.naturalbi' value='{{system.secondaryAbilities.social.etiquette.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
+            </div>
+          </div>
+          {{/if}}
+
+<!-- Sociales - Conn. de la rue -->
+          {{#if system.secondaryAbilities.social.streetwise}}
           
           <div class='skill-horizontal-item'>
-            <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@streetKnowledge_base+@streetKnowledge_class+@streetKnowledge_special+@streetKnowledge_temp+@streetKnowledge_natural_effective+@streetKnowledge_naturalbi+@streetKnowledge_charmod+@streetKnowledge_globalbonus' data-label='Connaissance de la Rue' title='Jet de Connaissance de la Rue'>
-              <span class='skill-name'>Connaissance de la Rue</span>
+            <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@streetwise_base+@streetwise_class+@streetwise_special+@streetwise_temp+@streetwise_natural_effective+@streetwise_naturalbi+@streetwise_charmod+@streetwise_globalbonus' data-label='Conn. de la rue' title='Jet de Conn. de la rue'>
+              <span class='skill-name'>Conn. de la rue</span>
               <span class='skill-base-char mental-char'>INT</span>
             </div>
             <div class='skill-values-section'>
               <div class='skill-inputs-section'>
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.value' value='{{system.secondaryAbilities.social.streetKnowledge.value}}' placeholder='Final' class='skill-final-input' readonly />
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.temp' value='{{system.secondaryAbilities.social.streetKnowledge.temp}}' placeholder='Temp' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.special' value='{{system.secondaryAbilities.social.streetKnowledge.special}}' placeholder='Spéc' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.class' value='{{system.secondaryAbilities.social.streetKnowledge.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.base' value='{{system.secondaryAbilities.social.streetKnowledge.base}}' placeholder='Base' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetwise.value' value='{{system.secondaryAbilities.social.streetwise.value}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.secondaryAbilities.social.streetwise.temp' value='{{system.secondaryAbilities.social.streetwise.temp}}' placeholder='Temp' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetwise.special' value='{{system.secondaryAbilities.social.streetwise.special}}' placeholder='Spéc' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetwise.class' value='{{system.secondaryAbilities.social.streetwise.class}}' placeholder='Classe' class='skill-input' />
+                <input type='number' name='system.secondaryAbilities.social.streetwise.base' value='{{system.secondaryAbilities.social.streetwise.base}}' placeholder='Base' class='skill-input' />
                 <span class='skill-char-mod'>+{{system.characteristics.intelligence.mod}}</span>
-                <button class='skill-natural-toggle' data-skill='streetKnowledge' data-category='social' title='Paramètres naturels'>⚙️</button>
+                <button class='skill-natural-toggle' data-skill='streetwise' data-category='social' title='Paramètres naturels'>⚙️</button>
               </div>
             </div>
           </div>
           {{/if}}
 
-          <!-- Paramètres naturels pour Connaissance de la Rue -->
-          {{#if system.secondaryAbilities.social.streetKnowledge}}
+          <!-- Paramètres naturels pour Conn. de la rue -->
+          {{#if system.secondaryAbilities.social.streetwise}}
           
           
-          <div class='skill-natural-submenu' id='natural-submenu-social-streetKnowledge' style='display: none;'>
+          <div class='skill-natural-submenu' id='natural-submenu-social-streetwise' style='display: none;'>
             <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.social.streetKnowledge.natural' value='{{system.secondaryAbilities.social.streetKnowledge.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.social.streetKnowledge.naturalbi' value='{{system.secondaryAbilities.social.streetKnowledge.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.social.streetwise.natural' value='{{system.secondaryAbilities.social.streetwise.natural}}' placeholder='Bonus naturel' class='natural-input' />
+              <input type='number' name='system.secondaryAbilities.social.streetwise.naturalbi' value='{{system.secondaryAbilities.social.streetwise.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
           </div>
 {{/if}}
 
 
-          <!-- Sociales - Connaissance de la Rue -->
-          {{#if system.secondaryAbilities.social.streetKnowledge}}
-          <div class='skill-horizontal-item'>
-            <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@streetKnowledge_base+@streetKnowledge_class+@streetKnowledge_special+@streetKnowledge_temp+@streetKnowledge_natural_effective+@streetKnowledge_naturalbi+@streetKnowledge_charmod+@streetKnowledge_globalbonus' data-label='Connaissance de la Rue' title='Jet de Connaissance de la Rue'>
-              <span class='skill-name'>Connaissance de la Rue</span>
-              <span class='skill-base-char mental-char'>INT</span>
-            </div>
-            <div class='skill-values-section'>
-              <div class='skill-inputs-section'>
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.value' value='{{system.secondaryAbilities.social.streetKnowledge.value}}' placeholder='Final' class='skill-final-input' readonly />
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.temp' value='{{system.secondaryAbilities.social.streetKnowledge.temp}}' placeholder='Temp' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.special' value='{{system.secondaryAbilities.social.streetKnowledge.special}}' placeholder='Spéc' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.class' value='{{system.secondaryAbilities.social.streetKnowledge.class}}' placeholder='Classe' class='skill-input' />
-                <input type='number' name='system.secondaryAbilities.social.streetKnowledge.base' value='{{system.secondaryAbilities.social.streetKnowledge.base}}' placeholder='Base' class='skill-input' />
-                <span class='skill-char-mod'>+{{system.characteristics.intelligence.mod}}</span>
-                <button class='skill-natural-toggle' data-skill='streetKnowledge' data-category='social' title='Paramètres naturels'>⚙️</button>
-              </div>
-            </div>
           </div>
-          {{/if}}
-
-          <!-- Paramètres naturels pour Connaissance de la Rue -->
-          {{#if system.secondaryAbilities.social.streetKnowledge}}
-          <div class='skill-natural-submenu' id='natural-submenu-social-streetKnowledge' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.social.streetKnowledge.natural' value='{{system.secondaryAbilities.social.streetKnowledge.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.social.streetKnowledge.naturalbi' value='{{system.secondaryAbilities.social.streetKnowledge.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div>
-          {{/if}}
-
-</div>
       </div>
 
             <!-- Sensorielles -->

@@ -7,6 +7,7 @@ import { AnimaItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { ANIMA } from './helpers/config.mjs';
 import './helpers/skill-natural-manager.mjs';
+import './helpers/scroll-preservation.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */

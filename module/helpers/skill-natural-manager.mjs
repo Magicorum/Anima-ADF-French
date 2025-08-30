@@ -5,6 +5,7 @@
 export class SkillNaturalManager {
   constructor() {
     this.activeMenus = new Set();
+    this.scrollPosition = 0;
     this.initializeEventListeners();
   }
 
@@ -20,8 +21,20 @@ export class SkillNaturalManager {
       if (toggleButton) {
         this.handleToggleClick(toggleButton);
       }
-      // Removed auto-close on outside click to prevent accidental closures
-      // Users can now only close menus by clicking the gear button again
+      
+      // Gestion intelligente des clics extérieurs
+      if (!toggleButton && !isInSubmenu && this.activeMenus.size > 0) {
+        // Préserver la position de scroll AVANT toute action
+        const currentScroll = window.scrollY || document.documentElement.scrollTop;
+        
+        // Fermer tous les menus ouverts
+        this.closeAllMenus();
+        
+        // Restaurer immédiatement la position de scroll
+        requestAnimationFrame(() => {
+          window.scrollTo(0, currentScroll);
+        });
+      }
     });
 
     // Add visual feedback when hovering over submenu inputs
@@ -38,6 +51,38 @@ export class SkillNaturalManager {
         input.classList.remove('focused');
       }
     });
+
+    // Preserve scroll position when input values change
+    document.addEventListener('input', (event) => {
+      const input = event.target.closest('.natural-input');
+      if (input) {
+        this.preserveScrollPosition();
+      }
+    });
+
+    // Preserve scroll position when input values change (for number inputs)
+    document.addEventListener('change', (event) => {
+      const input = event.target.closest('.natural-input');
+      if (input) {
+        this.preserveScrollPosition();
+      }
+    });
+  }
+
+  /**
+   * Preserve the current scroll position
+   */
+  preserveScrollPosition() {
+    this.scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  }
+
+  /**
+   * Restore the scroll position after DOM updates
+   */
+  restoreScrollPosition() {
+    if (this.scrollPosition > 0) {
+      window.scrollTo(0, this.scrollPosition);
+    }
   }
 
   /**

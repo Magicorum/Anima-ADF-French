@@ -943,12 +943,7 @@
           <!-- Intellectuelles - Mémorisation -->
           {{#if system.secondaryAbilities.intellectual.memorize}}
           
-          <div class='skill-natural-submenu' id='natural-submenu-intellectual-history' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.intellectual.history.natural' value='{{system.secondaryAbilities.intellectual.history.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.history.naturalbi' value='{{system.secondaryAbilities.intellectual.history.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@memorize_base+@memorize_class+@memorize_special+@memorize_temp+@memorize_natural_effective+@memorize_naturalbi+@memorize_charmod+@memorize_globalbonus' data-label='Mémorisation' title='Jet de Mémorisation'>
               <span class='skill-name'>Mémorisation</span>
               <span class='skill-base-char mental-char'>INT</span>
@@ -968,21 +963,22 @@
           {{/if}}
 
           <!-- Paramètres naturels pour Mémorisation -->
+          
+
+          
+          {{#if system.secondaryAbilities.intellectual.memorize}}
           <div class='skill-natural-submenu' id='natural-submenu-intellectual-memorize' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.intellectual.memorize.natural' value='{{system.secondaryAbilities.intellectual.memorize.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.intellectual.memorize.naturalbi' value='{{system.secondaryAbilities.intellectual.memorize.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
           </div>
+          {{/if}}
 
-          <!-- Intellectuelles - Médecine -->
+<!-- Intellectuelles - Médecine -->
           {{#if system.secondaryAbilities.intellectual.medicine}}
-                    <div class='skill-natural-submenu' id='natural-submenu-intellectual-memorize' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.intellectual.memorize.natural' value='{{system.secondaryAbilities.intellectual.memorize.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.memorize.naturalbi' value='{{system.secondaryAbilities.intellectual.memorize.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+          
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@medicine_base+@medicine_class+@medicine_special+@medicine_temp+@medicine_natural_effective+@medicine_naturalbi+@medicine_charmod+@medicine_globalbonus' data-label='Médecine' title='Jet de Médecine'>
               <span class='skill-name'>Médecine</span>
               <span class='skill-base-char mental-char'>INT</span>
@@ -1002,21 +998,22 @@
           {{/if}}
 
           <!-- Paramètres naturels pour Médecine -->
+          
+
+          
+          {{#if system.secondaryAbilities.intellectual.medicine}}
           <div class='skill-natural-submenu' id='natural-submenu-intellectual-medicine' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.intellectual.medicine.natural' value='{{system.secondaryAbilities.intellectual.medicine.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.intellectual.medicine.naturalbi' value='{{system.secondaryAbilities.intellectual.medicine.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
           </div>
+          {{/if}}
 
-          <!-- Intellectuelles - Navigation -->
+<!-- Intellectuelles - Navigation -->
           {{#if system.secondaryAbilities.intellectual.navigation}}
-                    <div class='skill-natural-submenu' id='natural-submenu-intellectual-medicine' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.intellectual.medicine.natural' value='{{system.secondaryAbilities.intellectual.medicine.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.medicine.naturalbi' value='{{system.secondaryAbilities.intellectual.medicine.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+          
+          <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@navigation_base+@navigation_class+@navigation_special+@navigation_temp+@navigation_natural_effective+@navigation_naturalbi+@navigation_charmod+@navigation_globalbonus' data-label='Navigation' title='Jet de Navigation'>
               <span class='skill-name'>Navigation</span>
               <span class='skill-base-char mental-char'>INT</span>
@@ -1036,21 +1033,21 @@
           {{/if}}
 
           <!-- Paramètres naturels pour Navigation -->
+          
+
+          
+          {{#if system.secondaryAbilities.intellectual.navigation}}
           <div class='skill-natural-submenu' id='natural-submenu-intellectual-navigation' style='display: none;'>
             <div class='natural-inputs-row'>
               <input type='number' name='system.secondaryAbilities.intellectual.navigation.natural' value='{{system.secondaryAbilities.intellectual.navigation.natural}}' placeholder='Bonus naturel' class='natural-input' />
               <input type='number' name='system.secondaryAbilities.intellectual.navigation.naturalbi' value='{{system.secondaryAbilities.intellectual.navigation.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
             </div>
           </div>
+          {{/if}}
 
-          <!-- Intellectuelles - Tactique -->
+<!-- Intellectuelles - Tactique -->
           {{#if system.secondaryAbilities.intellectual.tactics}}
-                    <div class='skill-natural-submenu' id='natural-submenu-intellectual-navigation' style='display: none;'>
-            <div class='natural-inputs-row'>
-              <input type='number' name='system.secondaryAbilities.intellectual.navigation.natural' value='{{system.secondaryAbilities.intellectual.navigation.natural}}' placeholder='Bonus naturel' class='natural-input' />
-              <input type='number' name='system.secondaryAbilities.intellectual.navigation.naturalbi' value='{{system.secondaryAbilities.intellectual.navigation.naturalbi}}' placeholder='Bonus naturel bio' class='natural-input' />
-            </div>
-          </div><div class='skill-horizontal-item'>
+                    <div class='skill-horizontal-item'>
             <div class='skill-name-section clickable-skill' data-action='roll' data-roll='1d100+@tactics_base+@tactics_class+@tactics_special+@tactics_temp+@tactics_natural_effective+@tactics_naturalbi+@tactics_charmod+@tactics_globalbonus' data-label='Tactique' title='Jet de Tactique'>
               <span class='skill-name'>Tactique</span>
               <span class='skill-base-char mental-char'>INT</span>

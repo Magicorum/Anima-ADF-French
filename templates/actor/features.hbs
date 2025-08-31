@@ -3,79 +3,154 @@
   <div class="main-content-layout">
     <!-- Colonne Gauche : Caractéristiques Principales -->
     <div class="left-column">
-      <!-- Caractéristiques Physiques (Vert) -->
+      <!-- Caractéristiques Unifiées -->
       <div class='characteristics-group'>
-        <h4 class='group-title'>Caractéristiques Physiques</h4>
-        <div class='characteristics-list'>
+        <h4 class='group-title'>Caractéristiques</h4>
+        <div class='characteristics-unified-grid'>
+
+          <!-- CARACTÉRISTIQUES PHYSIQUES -->
           <!-- Agilité -->
-          <div class='characteristic-item'>
-            <div class='char-header'>
-              <span class='char-name'>AGI</span>
-              <div class='char-values'>
-                <span class='char-final'>{{system.characteristics.agility.final}}</span>
-                <span class='char-mod'>+{{system.characteristics.power.mod}}</span>
-                <span class='char-opposed'>{{system.characteristics.agility.opposed_final}}</span>
+          <div class='characteristic-skill-item physical-char'>
+            <div class='skill-name-section'>
+              <span class='skill-name physical-char clickable-char' data-action='roll' data-roll='1d100+{{system.characteristics.agility.final}}' data-label='Agilité'>Agilité</span>
+              <div class='skill-char-bonus-line'>
+                <span class='skill-base-char physical-char'>AGI</span>
             </div>
             </div>
-            <div class='char-inputs'>
-              <input type='number' name='system.characteristics.agility.base' value='{{system.characteristics.agility.base}}' placeholder='B' class='char-input base-input' min='1' max='20' />
-              <input type='number' name='system.characteristics.agility.special' value='{{system.characteristics.agility.special}}' placeholder='S' class='char-input special-input' min='0' max='20' />
-              <input type='number' name='system.characteristics.agility.temp' value='{{system.characteristics.agility.temp}}' placeholder='T' class='char-input temp-input' min='-20' max='20' />
-              <button class='char-roll-btn physical-roll rollable' data-action='roll' data-roll='1d100+{{system.characteristics.agility.final}}' title='Agilité'>⚔️</button>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.characteristics.agility.value' value='{{system.characteristics.agility.final}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.characteristics.agility.temp' value='{{system.characteristics.agility.temp}}' placeholder='Temp' class='skill-input temp-input' />
+                <input type='number' name='system.characteristics.agility.special' value='{{system.characteristics.agility.special}}' placeholder='Spéc' class='skill-input special-input' />
+                <input type='number' name='system.characteristics.agility.base' value='{{system.characteristics.agility.base}}' placeholder='Base' class='skill-input base-input' />
+              </div>
             </div>
         </div>
 
           <!-- Constitution -->
-          <div class='characteristic-item'>
-            <div class='char-header'>
-              <span class='char-name'>CON</span>
-              <div class='char-values'>
-                <span class='char-final'>{{system.characteristics.constitution.final}}</span>
-                <span class='char-mod'>+{{system.characteristics.constitution.mod}}</span>
-                <span class='char-opposed'>{{system.characteristics.constitution.opposed_final}}</span>
+          <div class='characteristic-skill-item physical-char'>
+            <div class='skill-name-section'>
+              <span class='skill-name physical-char clickable-char' data-action='roll' data-roll='1d100+{{system.characteristics.constitution.final}}' data-label='Constitution'>Constitution</span>
+              <div class='skill-char-bonus-line'>
+                <span class='skill-base-char physical-char'>CON</span>
               </div>
             </div>
-            <div class='char-inputs'>
-              <input type='number' name='system.characteristics.constitution.base' value='{{system.characteristics.constitution.base}}' placeholder='B' class='char-input base-input' min='1' max='20' />
-              <input type='number' name='system.characteristics.constitution.special' value='{{system.characteristics.constitution.special}}' placeholder='S' class='char-input special-input' min='0' max='20' />
-              <input type='number' name='system.characteristics.constitution.temp' value='{{system.characteristics.constitution.temp}}' placeholder='T' class='char-input temp-input' min='-20' max='20' />
-              <button class='char-roll-btn physical-roll rollable' data-action='roll' data-roll='1d100+{{system.characteristics.constitution.final}}' title='Constitution'>🛡️</button>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.characteristics.constitution.value' value='{{system.characteristics.constitution.final}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.characteristics.constitution.temp' value='{{system.characteristics.constitution.temp}}' placeholder='Temp' class='skill-input temp-input' />
+                <input type='number' name='system.characteristics.constitution.special' value='{{system.characteristics.constitution.special}}' placeholder='Spéc' class='skill-input special-input' />
+                <input type='number' name='system.characteristics.constitution.base' value='{{system.characteristics.constitution.base}}' placeholder='Base' class='skill-input base-input' />
+              </div>
             </div>
           </div>
 
           <!-- Dextérité -->
-          <div class='characteristic-item'>
-            <div class='char-header'>
-              <span class='char-name'>DEX</span>
-              <div class='char-values'>
-                <span class='char-final'>{{system.characteristics.dexterity.final}}</span>
-                <span class='char-mod'>+{{system.characteristics.power.mod}}</span>
-                <span class='char-opposed'>{{system.characteristics.dexterity.opposed_final}}</span>
+          <div class='characteristic-skill-item physical-char'>
+            <div class='skill-name-section'>
+              <span class='skill-name physical-char clickable-char' data-action='roll' data-roll='1d100+{{system.characteristics.dexterity.final}}' data-label='Dextérité'>Dextérité</span>
+              <div class='skill-char-bonus-line'>
+                <span class='skill-base-char physical-char'>DEX</span>
               </div>
             </div>
-            <div class='char-inputs'>
-              <input type='number' name='system.characteristics.dexterity.base' value='{{system.characteristics.dexterity.base}}' placeholder='B' class='char-input base-input' min='1' max='20' />
-              <input type='number' name='system.characteristics.dexterity.special' value='{{system.characteristics.dexterity.special}}' placeholder='S' class='char-input special-input' min='0' max='20' />
-              <input type='number' name='system.characteristics.dexterity.temp' value='{{system.characteristics.dexterity.temp}}' placeholder='T' class='char-input temp-input' min='-20' max='20' />
-              <button class='char-roll-btn physical-roll rollable' data-action='roll' data-roll='1d100+{{system.characteristics.dexterity.final}}' title='Dextérité'>🎯</button>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.characteristics.dexterity.value' value='{{system.characteristics.dexterity.final}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.characteristics.dexterity.temp' value='{{system.characteristics.dexterity.temp}}' placeholder='Temp' class='skill-input temp-input' />
+                <input type='number' name='system.characteristics.dexterity.special' value='{{system.characteristics.dexterity.special}}' placeholder='Spéc' class='skill-input special-input' />
+                <input type='number' name='system.characteristics.dexterity.base' value='{{system.characteristics.dexterity.base}}' placeholder='Base' class='skill-input base-input' />
+              </div>
             </div>
           </div>
 
           <!-- Force -->
-          <div class='characteristic-item'>
-            <div class='char-header'>
-              <span class='char-name'>FOR</span>
-              <div class='char-values'>
-                <span class='char-final'>{{system.characteristics.strength.final}}</span>
-                <span class='char-mod'>+{{system.characteristics.power.mod}}</span>
-                <span class='char-opposed'>{{system.characteristics.strength.opposed_final}}</span>
+          <div class='characteristic-skill-item physical-char'>
+            <div class='skill-name-section'>
+              <span class='skill-name physical-char clickable-char' data-action='roll' data-roll='1d100+{{system.characteristics.strength.final}}' data-label='Force'>Force</span>
+              <div class='skill-char-bonus-line'>
+                <span class='skill-base-char physical-char'>FOR</span>
               </div>
             </div>
-            <div class='char-inputs'>
-              <input type='number' name='system.characteristics.strength.base' value='{{system.characteristics.strength.base}}' placeholder='B' class='char-input base-input' min='1' max='20' />
-              <input type='number' name='system.characteristics.strength.special' value='{{system.characteristics.strength.special}}' placeholder='S' class='char-input special-input' min='0' max='20' />
-              <input type='number' name='system.characteristics.strength.temp' value='{{system.characteristics.strength.temp}}' placeholder='T' class='char-input temp-input' min='-20' max='20' />
-              <button class='char-roll-btn physical-roll rollable' data-action='roll' data-roll='1d100+{{system.characteristics.strength.final}}' title='Force'>💪</button>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.characteristics.strength.value' value='{{system.characteristics.strength.final}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.characteristics.strength.temp' value='{{system.characteristics.strength.temp}}' placeholder='Temp' class='skill-input temp-input' />
+                <input type='number' name='system.characteristics.strength.special' value='{{system.characteristics.strength.special}}' placeholder='Spéc' class='skill-input special-input' />
+                <input type='number' name='system.characteristics.strength.base' value='{{system.characteristics.strength.base}}' placeholder='Base' class='skill-input base-input' />
+              </div>
+            </div>
+          </div>
+
+          <!-- CARACTÉRISTIQUES MENTALES -->
+          <!-- Intelligence -->
+          <div class='characteristic-skill-item mental-char'>
+            <div class='skill-name-section'>
+              <span class='skill-name mental-char clickable-char' data-action='roll' data-roll='1d100+{{system.characteristics.intelligence.final}}' data-label='Intelligence'>Intelligence</span>
+              <div class='skill-char-bonus-line'>
+                <span class='skill-base-char mental-char'>INT</span>
+              </div>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.characteristics.intelligence.value' value='{{system.characteristics.intelligence.final}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.characteristics.intelligence.temp' value='{{system.characteristics.intelligence.temp}}' placeholder='Temp' class='skill-input temp-input' />
+                <input type='number' name='system.characteristics.intelligence.special' value='{{system.characteristics.intelligence.special}}' placeholder='Spéc' class='skill-input special-input' />
+                <input type='number' name='system.characteristics.intelligence.base' value='{{system.characteristics.intelligence.base}}' placeholder='Base' class='skill-input base-input' />
+              </div>
+            </div>
+          </div>
+
+          <!-- Perception -->
+          <div class='characteristic-skill-item mental-char'>
+            <div class='skill-name-section'>
+              <span class='skill-name mental-char clickable-char' data-action='roll' data-roll='1d100+{{system.characteristics.perception.final}}' data-label='Perception'>Perception</span>
+              <div class='skill-char-bonus-line'>
+                <span class='skill-base-char mental-char'>PER</span>
+              </div>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.characteristics.perception.value' value='{{system.characteristics.perception.final}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.characteristics.perception.temp' value='{{system.characteristics.perception.temp}}' placeholder='Temp' class='skill-input temp-input' />
+                <input type='number' name='system.characteristics.perception.special' value='{{system.characteristics.perception.special}}' placeholder='Spéc' class='skill-input special-input' />
+                <input type='number' name='system.characteristics.perception.base' value='{{system.characteristics.perception.base}}' placeholder='Base' class='skill-input base-input' />
+              </div>
+            </div>
+          </div>
+
+          <!-- Pouvoir -->
+          <div class='characteristic-skill-item mental-char'>
+            <div class='skill-name-section'>
+              <span class='skill-name mental-char clickable-char' data-action='roll' data-roll='1d100+{{system.characteristics.power.final}}' data-label='Pouvoir'>Pouvoir</span>
+              <div class='skill-char-bonus-line'>
+                <span class='skill-base-char mental-char'>POU</span>
+              </div>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.characteristics.power.value' value='{{system.characteristics.power.final}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.characteristics.power.temp' value='{{system.characteristics.power.temp}}' placeholder='Temp' class='skill-input temp-input' />
+                <input type='number' name='system.characteristics.power.special' value='{{system.characteristics.power.special}}' placeholder='Spéc' class='skill-input special-input' />
+                <input type='number' name='system.characteristics.power.base' value='{{system.characteristics.power.base}}' placeholder='Base' class='skill-input base-input' />
+              </div>
+            </div>
+          </div>
+
+          <!-- Volonté -->
+          <div class='characteristic-skill-item mental-char'>
+            <div class='skill-name-section'>
+              <span class='skill-name mental-char clickable-char' data-action='roll' data-roll='1d100+{{system.characteristics.willpower.final}}' data-label='Volonté'>Volonté</span>
+              <div class='skill-char-bonus-line'>
+                <span class='skill-base-char mental-char'>VOL</span>
+              </div>
+            </div>
+            <div class='skill-values-section'>
+              <div class='skill-inputs-section'>
+                <input type='number' name='system.characteristics.willpower.value' value='{{system.characteristics.willpower.final}}' placeholder='Final' class='skill-final-input' readonly />
+                <input type='number' name='system.characteristics.willpower.temp' value='{{system.characteristics.willpower.temp}}' placeholder='Temp' class='skill-input temp-input' />
+                <input type='number' name='system.characteristics.willpower.special' value='{{system.characteristics.willpower.special}}' placeholder='Spéc' class='skill-input special-input' />
+                <input type='number' name='system.characteristics.willpower.base' value='{{system.characteristics.willpower.base}}' placeholder='Base' class='skill-input base-input' />
+              </div>
             </div>
           </div>
         </div>
@@ -88,222 +163,303 @@
           <div class='bonus-item'>
             <label class='bonus-label'>Bonus Physique</label>
             <input type='number' name='system.globalBonuses.physical.value' value='{{system.globalBonuses.physical.value}}' placeholder='0' class='bonus-input' min='-50' max='50' />
-            <span class='bonus-desc'>Appliqué à toutes les compétences utilisant AGI, CON, DEX, FOR</span>
+            <span class='bonus-desc'>Appliqué à toutes les compétences utilisant les caractéristiques physiques</span>
           </div>
           <div class='bonus-item'>
             <label class='bonus-label'>Bonus Mental</label>
             <input type='number' name='system.globalBonuses.mental.value' value='{{system.globalBonuses.mental.value}}' placeholder='0' class='bonus-input' min='-50' max='50' />
-            <span class='bonus-desc'>Appliqué à toutes les compétences utilisant INT, PER, POU, VOL</span>
+            <span class='bonus-desc'>Appliqué à toutes les compétences utilisant les caractéristiques mentales</span>
           </div>
         </div>
       </div>
 
-      <!-- Caractéristiques Mentales (Bleu) -->
+      <!-- Résistances Détaillées -->
       <div class='characteristics-group'>
-        <h4 class='group-title'>Caractéristiques Mentales</h4>
-        <div class='characteristics-list'>
-          <!-- Intelligence -->
-          <div class='characteristic-item'>
-            <div class='char-header'>
-              <span class='char-name'>INT</span>
-              <div class='char-values'>
-                <span class='char-final'>{{system.characteristics.intelligence.final}}</span>
-                <span class='char-mod'>+{{system.characteristics.intelligence.mod}}</span>
-                <span class='char-opposed'>{{system.characteristics.intelligence.opposed_final}}</span>
+        <h4 class='group-title'>Résistances</h4>
+        <div class='resistances-detailed-grid'>
+          <!-- Résistance Physique -->
+          <div class='resistance-detailed-item'>
+            <div class='resistance-header'>
+              <span class='resistance-name'>Physique</span>
+              <span class='resistance-final'>{{system.resistances.physical.final}}</span>
               </div>
-            </div>
-            <div class='char-inputs'>
-              <input type='number' name='system.characteristics.intelligence.base' value='{{system.characteristics.intelligence.base}}' placeholder='B' class='char-input base-input' min='1' max='20' />
-              <input type='number' name='system.characteristics.intelligence.special' value='{{system.characteristics.intelligence.special}}' placeholder='S' class='char-input special-input' min='0' max='20' />
-              <input type='number' name='system.characteristics.intelligence.temp' value='{{system.characteristics.intelligence.temp}}' placeholder='T' class='char-input temp-input' min='-20' max='20' />
-              <button class='char-roll-btn mental-roll rollable' data-action='roll' data-roll='1d100+{{system.characteristics.intelligence.final}}' title='Intelligence'>🧠</button>
+            <div class='resistance-inputs'>
+              <input type='number' name='system.resistances.physical.base' value='{{system.resistances.physical.base}}' placeholder='B' class='resistance-input base-input' />
+              <input type='number' name='system.resistances.physical.special' value='{{system.resistances.physical.special}}' placeholder='S' class='resistance-input special-input' />
+              <input type='number' name='system.resistances.physical.temp' value='{{system.resistances.physical.temp}}' placeholder='T' class='resistance-input temp-input' />
+              <input type='number' name='system.resistances.physical.allAction' value='{{system.resistances.physical.allAction}}' placeholder='AA' class='resistance-input all-action-input' title='All Action' />
+              <input type='number' name='system.resistances.physical.mod' value='{{system.resistances.physical.mod}}' placeholder='M' class='resistance-input mod-input' title='Modificateur' />
+              <input type='number' name='system.resistances.physical.actions' value='{{system.resistances.physical.actions}}' placeholder='NA' class='resistance-input actions-input' title='Number of Actions' />
             </div>
           </div>
 
-          <!-- Perception -->
-          <div class='characteristic-item'>
-            <div class='char-header'>
-              <span class='char-name'>PER</span>
-              <div class='char-values'>
-                <span class='char-final'>{{system.characteristics.perception.final}}</span>
-                <span class='char-mod'>+{{system.characteristics.perception.mod}}</span>
-                <span class='char-opposed'>{{system.characteristics.perception.opposed_final}}</span>
+          <!-- Résistance Maladie -->
+          <div class='resistance-detailed-item'>
+            <div class='resistance-header'>
+              <span class='resistance-name'>Maladie</span>
+              <span class='resistance-final'>{{system.resistances.disease.final}}</span>
+            </div>
+            <div class='resistance-inputs'>
+              <input type='number' name='system.resistances.disease.base' value='{{system.resistances.disease.base}}' placeholder='B' class='resistance-input base-input' />
+              <input type='number' name='system.resistances.disease.special' value='{{system.resistances.disease.special}}' placeholder='S' class='resistance-input special-input' />
+              <input type='number' name='system.resistances.disease.temp' value='{{system.resistances.disease.temp}}' placeholder='T' class='resistance-input temp-input' />
+              <input type='number' name='system.resistances.disease.allAction' value='{{system.resistances.disease.allAction}}' placeholder='AA' class='resistance-input all-action-input' title='All Action' />
+              <input type='number' name='system.resistances.disease.mod' value='{{system.resistances.disease.mod}}' placeholder='M' class='resistance-input mod-input' title='Modificateur' />
+              <input type='number' name='system.resistances.disease.actions' value='{{system.resistances.disease.actions}}' placeholder='NA' class='resistance-input actions-input' title='Number of Actions' />
+            </div>
+          </div>
+
+          <!-- Résistance Poison -->
+          <div class='resistance-detailed-item'>
+            <div class='resistance-header'>
+              <span class='resistance-name'>Poison</span>
+              <span class='resistance-final'>{{system.resistances.poison.final}}</span>
               </div>
-            </div>
-            <div class='char-inputs'>
-              <input type='number' name='system.characteristics.perception.base' value='{{system.characteristics.perception.base}}' placeholder='B' class='char-input base-input' min='1' max='20' />
-              <input type='number' name='system.characteristics.perception.special' value='{{system.characteristics.perception.special}}' placeholder='S' class='char-input special-input' min='0' max='20' />
-              <input type='number' name='system.characteristics.perception.temp' value='{{system.characteristics.perception.temp}}' placeholder='T' class='char-input temp-input' min='-20' max='20' />
-              <button class='char-roll-btn mental-roll rollable' data-action='roll' data-roll='1d100+{{system.characteristics.perception.final}}' title='Perception'>👁️</button>
+            <div class='resistance-inputs'>
+              <input type='number' name='system.resistances.poison.base' value='{{system.resistances.poison.base}}' placeholder='B' class='resistance-input base-input' />
+              <input type='number' name='system.resistances.poison.special' value='{{system.resistances.poison.special}}' placeholder='S' class='resistance-input special-input' />
+              <input type='number' name='system.resistances.poison.temp' value='{{system.resistances.poison.temp}}' placeholder='T' class='resistance-input temp-input' />
+              <input type='number' name='system.resistances.poison.allAction' value='{{system.resistances.poison.allAction}}' placeholder='AA' class='resistance-input all-action-input' title='All Action' />
+              <input type='number' name='system.resistances.poison.mod' value='{{system.resistances.poison.mod}}' placeholder='M' class='resistance-input mod-input' title='Modificateur' />
+              <input type='number' name='system.resistances.poison.actions' value='{{system.resistances.poison.actions}}' placeholder='NA' class='resistance-input actions-input' title='Number of Actions' />
             </div>
           </div>
 
-          <!-- Pouvoir -->
-          <div class='characteristic-item'>
-            <div class='char-header'>
-              <span class='char-name'>POU</span>
-              <div class='char-values'>
-                <span class='char-final'>{{system.characteristics.power.final}}</span>
-                <span class='char-mod'>+{{system.characteristics.power.mod}}</span>
-                <span class='char-opposed'>{{system.characteristics.power.opposed_final}}</span>
+          <!-- Résistance Magie -->
+          <div class='resistance-detailed-item'>
+            <div class='resistance-header'>
+              <span class='resistance-name'>Magie</span>
+              <span class='resistance-final'>{{system.resistances.magic.final}}</span>
+            </div>
+            <div class='resistance-inputs'>
+              <input type='number' name='system.resistances.magic.base' value='{{system.resistances.magic.base}}' placeholder='B' class='resistance-input base-input' />
+              <input type='number' name='system.resistances.magic.special' value='{{system.resistances.magic.special}}' placeholder='S' class='resistance-input special-input' />
+              <input type='number' name='system.resistances.magic.temp' value='{{system.resistances.magic.temp}}' placeholder='T' class='resistance-input temp-input' />
+              <input type='number' name='system.resistances.magic.allAction' value='{{system.resistances.magic.allAction}}' placeholder='AA' class='resistance-input all-action-input' title='All Action' />
+              <input type='number' name='system.resistances.magic.mod' value='{{system.resistances.magic.mod}}' placeholder='M' class='resistance-input mod-input' title='Modificateur' />
+              <input type='number' name='system.resistances.magic.actions' value='{{system.resistances.magic.actions}}' placeholder='NA' class='resistance-input actions-input' title='Number of Actions' />
+            </div>
+          </div>
+
+          <!-- Résistance Psychique -->
+          <div class='resistance-detailed-item'>
+            <div class='resistance-header'>
+              <span class='resistance-name'>Psychique</span>
+              <span class='resistance-final'>{{system.resistances.psychic.final}}</span>
               </div>
+            <div class='resistance-inputs'>
+              <input type='number' name='system.resistances.psychic.base' value='{{system.resistances.psychic.base}}' placeholder='B' class='resistance-input base-input' />
+              <input type='number' name='system.resistances.psychic.special' value='{{system.resistances.psychic.special}}' placeholder='S' class='resistance-input special-input' />
+              <input type='number' name='system.resistances.psychic.temp' value='{{system.resistances.psychic.temp}}' placeholder='T' class='resistance-input temp-input' />
+              <input type='number' name='system.resistances.psychic.allAction' value='{{system.resistances.psychic.allAction}}' placeholder='AA' class='resistance-input all-action-input' title='All Action' />
+              <input type='number' name='system.resistances.psychic.mod' value='{{system.resistances.psychic.mod}}' placeholder='M' class='resistance-input mod-input' title='Modificateur' />
+              <input type='number' name='system.resistances.psychic.actions' value='{{system.resistances.psychic.actions}}' placeholder='NA' class='resistance-input actions-input' title='Number of Actions' />
             </div>
-            <div class='char-inputs'>
-              <input type='number' name='system.characteristics.power.base' value='{{system.characteristics.power.base}}' placeholder='B' class='char-input base-input' min='1' max='20' />
-              <input type='number' name='system.characteristics.power.special' value='{{system.characteristics.power.special}}' placeholder='S' class='char-input special-input' min='0' max='20' />
-              <input type='number' name='system.characteristics.power.temp' value='{{system.characteristics.power.temp}}' placeholder='T' class='char-input temp-input' min='-20' max='20' />
-              <button class='char-roll-btn mental-roll rollable' data-action='roll' data-roll='1d100+{{system.characteristics.power.final}}' title='Pouvoir'>⚡</button>
+          </div>
             </div>
           </div>
 
-          <!-- Volonté -->
-          <div class='characteristic-item'>
-            <div class='char-header'>
-              <span class='char-name'>VOL</span>
-              <div class='char-values'>
-                <span class='char-final'>{{system.characteristics.willpower.final}}</span>
-                <span class='char-mod'>+{{system.characteristics.will.mod}}</span>
-                <span class='char-opposed'>{{system.characteristics.willpower.opposed_final}}</span>
-              </div>
-            </div>
-            <div class='char-inputs'>
-              <input type='number' name='system.characteristics.willpower.base' value='{{system.characteristics.willpower.base}}' placeholder='B' class='char-input base-input' min='1' max='20' />
-              <input type='number' name='system.characteristics.willpower.special' value='{{system.characteristics.willpower.special}}' placeholder='S' class='char-input special-input' min='0' max='20' />
-              <input type='number' name='system.characteristics.willpower.temp' value='{{system.characteristics.willpower.temp}}' placeholder='T' class='char-input temp-input' min='-20' max='20' />
-              <button class='char-roll-btn mental-roll rollable' data-action='roll' data-roll='1d100+{{system.characteristics.willpower.final}}' title='Volonté'>🛡️</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sections Compactes -->
-      <div class='characteristics-group'>
-        <h4 class='group-title'>Résistances & Stats</h4>
-        <div class='resistances-compact-grid'>
-          <div class='resistance-compact-item'>
-            <label>Physique:</label>
-            <input type='number' name='system.resistances.physical' value='{{system.resistances.physical}}' class='resistance-compact-input' />
-          </div>
-          <div class='resistance-compact-item'>
-            <label>Maladie:</label>
-            <input type='number' name='system.resistances.disease' value='{{system.resistances.disease}}' class='resistance-compact-input' />
-          </div>
-          <div class='resistance-compact-item'>
-            <label>Poison:</label>
-            <input type='number' name='system.resistances.poison' value='{{system.resistances.poison}}' class='resistance-compact-input' />
-          </div>
-          <div class='resistance-compact-item'>
-            <label>Magie:</label>
-            <input type='number' name='system.resistances.magic' value='{{system.resistances.magic}}' class='resistance-compact-input' />
-          </div>
-          <div class='resistance-compact-item'>
-            <label>Psychique:</label>
-            <input type='number' name='system.resistances.psychic' value='{{system.resistances.psychic}}' class='resistance-compact-input' />
-          </div>
-        </div>
-      </div>
-
-      <!-- Mouvement Compact -->
+      <!-- Mouvement Détaillé -->
       <div class='characteristics-group'>
         <h4 class='group-title'>Mouvement</h4>
-        <div class='movement-compact-grid'>
-          <div class='movement-compact-item'>
-            <label>Base:</label>
-            <input type='number' name='system.movement.base' value='{{system.movement.base}}' class='movement-compact-input' />
-          </div>
-          <div class='movement-compact-item'>
-            <label>Final:</label>
-            <span class='movement-compact-final'>{{system.movement.final}}</span>
+        <div class='movement-detailed-grid'>
+          <div class='movement-detailed-item'>
+            <div class='movement-header'>
+              <span class='movement-name'>Mouvement</span>
+              <span class='movement-final'>{{system.movement.final}}</span>
+              </div>
+            <div class='movement-inputs'>
+              <input type='number' name='system.movement.base' value='{{system.movement.base}}' placeholder='B' class='movement-input base-input' title='Base' />
+              <input type='number' name='system.movement.penalty' value='{{system.movement.penalty}}' placeholder='Pen.' class='movement-input penalty-input' title='Penalty' />
+              <input type='number' name='system.movement.special' value='{{system.movement.special}}' placeholder='Spec.' class='movement-input special-input' title='Special' />
+              <input type='number' name='system.movement.temp' value='{{system.movement.temp}}' placeholder='Temp.' class='movement-input temp-input' title='Temporary' />
+              <span class='movement-label'>Final:</span>
+              <span class='movement-full'>{{system.movement.full}}</span>
+              <span class='movement-label'>FT:</span>
+              <span class='movement-ft'>{{system.movement.ft}}</span>
+              <span class='movement-label'>1/4 Move:</span>
+              <span class='movement-quarter'>{{system.movement.quarter}}</span>
+              <span class='movement-label'>FT:</span>
+              <span class='movement-quarter-ft'>{{system.movement.quarterFt}}</span>
+              <span class='movement-label'>Running:</span>
+              <span class='movement-running'>{{system.movement.running}}</span>
+              <span class='movement-label'>FT:</span>
+              <span class='movement-running-ft'>{{system.movement.runningFt}}</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Points de Vie & Fatigue Compact -->
+      <!-- Points de Vie Détaillés -->
       <div class='characteristics-group'>
-        <div class='vital-compact-group'>
-          <h5>Points de Vie</h5>
-          <div class='vital-compact-items'>
-            <div class='vital-compact-item'>
-              <label>Actuel:</label>
-              <input type='number' name='system.health.value' value='{{system.health.value}}' class='vital-compact-input' />
-            </div>
-            <div class='vital-compact-item'>
-              <label>Final:</label>
-              <span class='vital-compact-final'>{{system.health.max}}</span>
-            </div>
+        <h4 class='group-title'>LP</h4>
+        <div class='lp-detailed-grid'>
+          <div class='lp-detailed-item'>
+            <div class='lp-header'>
+              <span class='lp-name'>Points de Vie</span>
+              <span class='lp-actual'>{{system.health.value}}</span>
           </div>
-        </div>
+            <div class='lp-inputs'>
+              <input type='number' name='system.health.base' value='{{system.health.base}}' placeholder='B' class='lp-input base-input' title='Base' />
+              <input type='number' name='system.health.multi' value='{{system.health.multi}}' placeholder='Mult.' class='lp-input multi-input' title='Multiplier' />
+              <input type='number' name='system.health.class' value='{{system.health.class}}' placeholder='Class' class='lp-input class-input' title='Class' />
+              <input type='number' name='system.health.special' value='{{system.health.special}}' placeholder='Spec.' class='lp-input special-input' title='Special' />
+              <input type='number' name='system.health.temp' value='{{system.health.temp}}' placeholder='Temp.' class='lp-input temp-input' title='Temporary' />
+              <span class='lp-label'>Final:</span>
+              <span class='lp-final'>{{system.health.max}}</span>
+          </div>
+          </div>
+          </div>
+          </div>
 
-        <div class='vital-compact-group'>
-          <h5>Fatigue</h5>
-          <div class='vital-compact-items'>
-            <div class='vital-compact-item'>
-              <label>Actuel:</label>
-              <input type='number' name='system.fatigue.value' value='{{system.fatigue.value}}' class='vital-compact-input' />
-            </div>
-            <div class='vital-compact-item'>
-              <label>Final:</label>
-              <span class='vital-compact-final'>{{system.fatigue.max}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Régénération Compacte -->
-      <div class='regeneration-compact-section'>
-        <h5>Régénération</h5>
-        <div class='regeneration-compact-grid'>
-          <div class='regen-compact-item'>
-            <label>Base:</label>
-            <input type='number' name='system.regeneration.base' value='{{system.regeneration.base}}' class='regen-compact-input' />
-          </div>
-          <div class='regen-compact-item'>
-            <label>Spéc:</label>
-            <input type='number' name='system.regeneration.special' value='{{system.regeneration.special}}' class='regen-compact-input' />
-          </div>
-          <div class='regen-compact-item'>
-            <label>Temp:</label>
-            <input type='number' name='system.regeneration.temp' value='{{system.regeneration.temp}}' class='regen-compact-input' />
-          </div>
-          <div class='regen-compact-item'>
-            <label>Final:</label>
-            <span class='regen-compact-final'>{{system.regeneration.final}}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Combat Stats Compact -->
+      <!-- Fatigue Détaillée -->
       <div class='characteristics-group'>
-        <h4 class='group-title'>Combat</h4>
-        <div class='combat-compact-grid'>
-          <div class='combat-compact-item'>
-            <label>Attaque:</label>
-            <div class='combat-compact-values'>
-              <input type='number' name='system.combat.attack.temp' value='{{system.combat.attack.temp}}' class='combat-compact-input' placeholder='T' />
-              <span class='combat-compact-final'>{{system.combat.attack.value}}</span>
+        <h4 class='group-title'>Fatigue</h4>
+        <div class='fatigue-detailed-grid'>
+          <div class='fatigue-detailed-item'>
+            <div class='fatigue-header'>
+              <span class='fatigue-name'>Fatigue</span>
+              <span class='fatigue-actual'>{{system.fatigue.value}}</span>
+            </div>
+            <div class='fatigue-inputs'>
+              <input type='number' name='system.fatigue.base' value='{{system.fatigue.base}}' placeholder='B' class='fatigue-input base-input' title='Base' />
+              <input type='number' name='system.fatigue.special' value='{{system.fatigue.special}}' placeholder='Spec.' class='fatigue-input special-input' title='Special' />
+              <input type='number' name='system.fatigue.temp' value='{{system.fatigue.temp}}' placeholder='Temp.' class='fatigue-input temp-input' title='Temporary' />
+              <span class='fatigue-label'>Final:</span>
+              <span class='fatigue-final'>{{system.fatigue.max}}</span>
             </div>
           </div>
-          <div class='combat-compact-item'>
-            <label>Parade:</label>
-            <div class='combat-compact-values'>
-              <input type='number' name='system.combat.defense.temp' value='{{system.combat.defense.temp}}' class='combat-compact-input' placeholder='T' />
-              <span class='combat-compact-final'>{{system.combat.defense.value}}</span>
+        </div>
+      </div>
+
+      <!-- Régénération Détaillée -->
+      <div class='characteristics-group'>
+        <h4 class='group-title'>Régénération</h4>
+        <div class='regeneration-detailed-grid'>
+          <div class='regeneration-detailed-item'>
+            <div class='regeneration-header'>
+              <span class='regeneration-name'>Régénération</span>
+              <span class='regeneration-final'>{{system.regeneration.final}}</span>
+          </div>
+            <div class='regeneration-inputs'>
+              <input type='number' name='system.regeneration.base' value='{{system.regeneration.base}}' placeholder='B' class='regeneration-input base-input' title='Base' />
+              <input type='number' name='system.regeneration.special' value='{{system.regeneration.special}}' placeholder='Spec.' class='regeneration-input special-input' title='Special' />
+              <input type='number' name='system.regeneration.temp' value='{{system.regeneration.temp}}' placeholder='Temp.' class='regeneration-input temp-input' title='Temporary' />
+              <span class='regeneration-label'>Final:</span>
+              <span class='regeneration-final-display'>{{system.regeneration.final}}</span>
+              <span class='regeneration-label'>Resting:</span>
+              <span class='regeneration-resting'>{{system.regeneration.resting}}</span>
+              <span class='regeneration-label'>Not Resting:</span>
+              <span class='regeneration-not-resting'>{{system.regeneration.notResting}}</span>
+              <span class='regeneration-label'>Redu. Penalty:</span>
+              <span class='regeneration-penalty'>{{system.regeneration.reductionPenalty}}</span>
             </div>
           </div>
-          <div class='combat-compact-item'>
-            <label>Esquive:</label>
-            <div class='combat-compact-values'>
-              <input type='number' name='system.combat.dodge.temp' value='{{system.combat.dodge.temp}}' class='combat-compact-input' placeholder='T' />
-              <span class='combat-compact-final'>{{system.combat.dodge.value}}</span>
+        </div>
+      </div>
+
+      <!-- Attaque Détaillée -->
+      <div class='characteristics-group'>
+        <h4 class='group-title'>Attaque</h4>
+        <div class='attack-detailed-grid'>
+          <div class='attack-detailed-item'>
+            <div class='attack-header'>
+              <span class='attack-name'>Attaque</span>
+              <span class='attack-final'>{{system.combat.attack.final}}</span>
+            </div>
+            <div class='attack-inputs'>
+              <input type='number' name='system.combat.attack.base' value='{{system.combat.attack.base}}' placeholder='B' class='attack-input base-input' title='Base' />
+              <input type='number' name='system.combat.attack.class' value='{{system.combat.attack.class}}' placeholder='Class' class='attack-input class-input' title='Class' />
+              <input type='number' name='system.combat.attack.special' value='{{system.combat.attack.special}}' placeholder='Spec.' class='attack-input special-input' title='Special' />
+              <input type='number' name='system.combat.attack.temp' value='{{system.combat.attack.temp}}' placeholder='Temp.' class='attack-input temp-input' title='Temporary' />
+            </div>
             </div>
           </div>
-          <div class='combat-compact-item'>
-            <label>Initiative:</label>
-            <div class='combat-compact-values'>
-              <input type='number' name='system.combat.initiative.temp' value='{{system.combat.initiative.temp}}' class='combat-compact-input' placeholder='T' />
-              <span class='combat-compact-final'>{{system.combat.initiative.value}}</span>
+        </div>
+
+      <!-- Parade Détaillée -->
+      <div class='characteristics-group'>
+        <h4 class='group-title'>Parade</h4>
+        <div class='block-detailed-grid'>
+          <div class='block-detailed-item'>
+            <div class='block-header'>
+              <span class='block-name'>Parade</span>
+              <span class='block-final'>{{system.combat.defense.final}}</span>
+            </div>
+            <div class='block-inputs'>
+              <input type='number' name='system.combat.defense.base' value='{{system.combat.defense.base}}' placeholder='B' class='block-input base-input' title='Base' />
+              <input type='number' name='system.combat.defense.class' value='{{system.combat.defense.class}}' placeholder='Class' class='block-input class-input' title='Class' />
+              <input type='number' name='system.combat.defense.special' value='{{system.combat.defense.special}}' placeholder='Spec.' class='block-input special-input' title='Special' />
+              <input type='number' name='system.combat.defense.temp' value='{{system.combat.defense.temp}}' placeholder='Temp.' class='block-input temp-input' title='Temporary' />
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Esquive Détaillée -->
+      <div class='characteristics-group'>
+        <h4 class='group-title'>Esquive</h4>
+        <div class='dodge-detailed-grid'>
+          <div class='dodge-detailed-item'>
+            <div class='dodge-header'>
+              <span class='dodge-name'>Esquive</span>
+              <span class='dodge-final'>{{system.combat.dodge.final}}</span>
+          </div>
+            <div class='dodge-inputs'>
+              <input type='number' name='system.combat.dodge.base' value='{{system.combat.dodge.base}}' placeholder='B' class='dodge-input base-input' title='Base' />
+              <input type='number' name='system.combat.dodge.class' value='{{system.combat.dodge.class}}' placeholder='Class' class='dodge-input class-input' title='Class' />
+              <input type='number' name='system.combat.dodge.special' value='{{system.combat.dodge.special}}' placeholder='Spec.' class='dodge-input special-input' title='Special' />
+              <input type='number' name='system.combat.dodge.temp' value='{{system.combat.dodge.temp}}' placeholder='Temp.' class='dodge-input temp-input' title='Temporary' />
+          </div>
+          </div>
+          </div>
+        </div>
+      <!-- Initiative Détaillée -->
+      <div class='characteristics-group'>
+        <h4 class='group-title'>Initiative</h4>
+        <div class='initiative-detailed-grid'>
+          <div class='initiative-detailed-item'>
+            <div class='initiative-header'>
+              <span class='initiative-name'>Initiative</span>
+              <span class='initiative-final'>{{system.combat.initiative.final}}</span>
+            </div>
+            <div class='initiative-inputs'>
+              <input type='number' name='system.combat.initiative.armor' value='{{system.combat.initiative.armor}}' placeholder='Armor' class='initiative-input armor-input' title='Armor' />
+              <input type='number' name='system.combat.initiative.weapon' value='{{system.combat.initiative.weapon}}' placeholder='Weapon' class='initiative-input weapon-input' title='Weapon' />
+              <input type='number' name='system.combat.initiative.class' value='{{system.combat.initiative.class}}' placeholder='Class' class='initiative-input class-input' title='Class' />
+              <input type='number' name='system.combat.initiative.special' value='{{system.combat.initiative.special}}' placeholder='Spec.' class='initiative-input special-input' title='Special' />
+          </div>
+            </div>
+          </div>
+            </div>
+
+      <!-- Avantages -->
+      <div class='characteristics-group'>
+        <h4 class='group-title'>Avantages</h4>
+        <div class='advantages-list'>
+          {{#each system.advantages as |advantage|}}
+          <div class='advantage-item'>
+            <input type='text' name='system.advantages.{{@key}}.name' value='{{advantage.name}}' placeholder='Nom' class='advantage-name-input' />
+            <input type='number' name='system.advantages.{{@key}}.benefit' value='{{advantage.benefit}}' placeholder='Bénéfice' class='advantage-benefit-input' />
+            <button type='button' class='advantage-remove' data-action='remove-advantage' data-key='{{@key}}'>×</button>
+          </div>
+          {{/each}}
+          <button type='button' class='advantage-add' data-action='add-advantage'>+ Ajouter Avantage</button>
+            </div>
+          </div>
+
+      <!-- Désavantages -->
+      <div class='characteristics-group'>
+        <h4 class='group-title'>Désavantages</h4>
+        <div class='disadvantages-list'>
+          {{#each system.disadvantages as |disadvantage|}}
+          <div class='disadvantage-item'>
+            <input type='text' name='system.disadvantages.{{@key}}.name' value='{{disadvantage.name}}' placeholder='Nom' class='disadvantage-name-input' />
+            <input type='number' name='system.disadvantages.{{@key}}.benefit' value='{{disadvantage.benefit}}' placeholder='Bénéfice' class='disadvantage-benefit-input' />
+            <button type='button' class='disadvantage-remove' data-action='remove-disadvantage' data-key='{{@key}}'>×</button>
+          </div>
+          {{/each}}
+          <button type='button' class='disadvantage-add' data-action='add-disadvantage'>+ Ajouter Désavantage</button>
         </div>
       </div>
     </div>
